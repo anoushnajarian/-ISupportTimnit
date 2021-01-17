@@ -114,6 +114,8 @@ Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tec
 1. 01net https://www.01net.com/actualites/les-salaries-de-google-annoncent-la-creation-d-un-syndicat-2026887.html Les salariés de Google annoncent la création d'un syndicat
 1. mercadonegro.pe https://www.mercadonegro.pe/actualidad/google-despide-a-experta-que-acuso-de-racista-y-misogino-a-su-sistema-de-identificacion-facial/ Google despide a experta que acusó de «racista y misógino» a su sistema de identificación facial
 1. La Presse https://www.lapresse.ca/affaires/techno/2021-01-04/des-salaries-de-google-creent-un-syndicat-face-aux-tensions-internes.php Des salariés de Google créent un syndicat face aux tensions internes
+1. MIT Technilogy Review en Espanol https://www.technologyreview.es/s/12953/polemica-en-google-por-despedir-su-codirectora-de-etica-para-la-ia Polémica en Google por despedir a su codirectora de Ética para la IA
+
 
 ## Videos and podcasts
 
