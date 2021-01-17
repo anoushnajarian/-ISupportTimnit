@@ -116,7 +116,7 @@ This type of reporting is possible because a certain Black Woman took a stand an
 Dec 5, 2020
 When granted access you must sometimes use that opportunity to stand in solidarity for someone else who was wronged by the same people. Timnit Gebru didn't deserve this treatment by Google and @GoogleForEdu doesn't deserve my help any longer as well. #ISupportTimnit
 
-##### Outrageous Google AI "year in review" by Jeff Dean
+##### Gaslighting "year in review" by Jeff Dean
 1. Dr. Nicki Washington
 @dr_nickiw https://twitter.com/dr_nickiw/status/1349116676042874883?s=20
 Jan 12
@@ -146,7 +146,7 @@ Yes,
 @timnitGebru
  did do excellent work before you fired her.
 
-##### Rejections sent to Google Recruiting
+##### Rejections to Google Recruiting
 1. Molly White
 @molly0xFFF https://twitter.com/molly0xFFF/status/1334919780143390724?s=20
 Dec 4, 2020
@@ -159,8 +159,8 @@ Jan 9
 This is now my default response when a Google recruiter emails me.
 @timnitGebru 
 1. Bryan D Martin
-@BryanDMartin_ https://twitter.com/BryanDMartin_/status/1348008509841920000?s=20
-Hey me too. Small action from any one person, but these things do compound! Hopefully they take notice that people take notice.
+@BryanDMartin_ https://twitter.com/BryanDMartin_/status/1334635603627966464?s=20 What sway do I have over a company like Google? Essentially none. But they have been recruiting me, and I had an interview scheduled in a week.  I won't contribute to a company that treats its employees the way Google treated @timnitGebru
+!(screenshot of letter to Google Recruiting)[https://twitter.com/BryanDMartin_/status/1334635603627966464/photo/1]
 
 ## fb
 1. Samy Bengio https://www.facebook.com/samy.bengio/posts/3469738016467233 Dec 5, 2020 
