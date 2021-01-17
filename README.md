@@ -45,6 +45,7 @@ AI Ethics Researcher Timnit Gebru's Firing Doesn’t Look Good For Google
 https://www.youtube.com/watch?v=PU-ilYUpWy0
 Firing Backlash Led to Google CEO Apology: Timnit Gebru
 
-#Tweets
+## Tweets
+
 Under construction
 
