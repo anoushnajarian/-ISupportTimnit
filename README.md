@@ -61,5 +61,20 @@ Firing Backlash Led to Google CEO Apology: Timnit Gebru
 
 ## Tweets
 
-Under construction
-
+1. https://twitter.com/BlkWomenInData/status/1338997725518553091?s=20
+1. Leslie Miley
+@shaft
+Dec 23, 2020
+This type of reporting is possible because a certain Black Woman took a stand and would not allow her tone to be policed by corporate PR. #ISupportTimnit #BiasInAI https://twitter.com/shaft/status/1341846233875238912?s=20
+1. Shana V. White (she/her)
+@ShanaVWhite
+Dec 5, 2020
+When granted access you must sometimes use that opportunity to stand in solidarity for someone else who was wronged by the same people. Timnit Gebru didn't deserve this treatment by Google and @GoogleForEdu doesn't deserve my help any longer as well. #ISupportTimnit
+https://twitter.com/ShanaVWhite/status/1335240132404850692?s=20
+1. Molly White
+@molly0xFFF
+Dec 4, 2020
+People in tech: if you're hearing from Google recruiters, now is as good a time as any to explain to them why Google's treatment of former employees like 
+@timnitGebru, @computerfemme, and @lizthegrey is driving away talent.
+#ISupportTimnit #BelieveBlackWomen
+https://twitter.com/molly0xFFF/status/1334919780143390724?s=20
