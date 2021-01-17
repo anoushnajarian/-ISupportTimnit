@@ -81,7 +81,8 @@ Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tec
 1. VICE https://www.vice.com/en/article/n7vqwq/google-has-shattered-its-pipeline-to-black-talent Google Has 'Shattered' Its Pipeline To Black Talent
 1. The Gradient https://thegradient.pub/the-far-reaching-impacts-of-timnit-gebru/ The Far-Reaching Impact of Dr. Timnit Gebru
 1. Wired https://www.wired.com/story/behind-paper-led-google-researchers-firing/ Behind the Paper That Led to a Google Researcher’s Firing
-
+1. Business Insider https://www.businessinsider.com/google-fired-employee-diversity-recruiter-baltimore-accent-was-disability-2020-12 A Black ex-Googler claimed she was told by a manager that her Baltimore-accented speech was a 'disability' and later fired
+1. Business Insider https://www.businessinsider.com/timnit-gebru-google-ceo-sundar-pichai-non-apology-ai-researcher-2020-12 Former Google AI researcher Timnit Gebru accused Sundar Pichai of glossing over her dismissal with a non-apology designed to make the company look good
 
 #Events
 1. https://www.eventbrite.com/e/the-fight-for-the-future-organizing-the-tech-industry-tickets-136885274541 The Fight for the Future: Organizing the Tech Industry
