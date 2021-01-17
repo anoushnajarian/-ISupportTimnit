@@ -127,7 +127,7 @@ https://www.youtube.com/watch?v=PU-ilYUpWy0
 Firing Backlash Led to Google CEO Apology: Timnit Gebru
 1. In Machines We Trust https://open.spotify.com/episode/6skJyabCcgxuoSvkWGVkSV?si=xZC6_L-hR8SQafFkKHvEAQ Timnit Gebru Tells Her Story
 
-##Events
+## Events
 1. https://www.eventbrite.com/e/the-fight-for-the-future-organizing-the-tech-industry-tickets-136885274541 The Fight for the Future: Organizing the Tech Industry
 
 ## Social media
@@ -260,7 +260,7 @@ Founder and CEO of Girls Who Code + International Bestselling Author
 What was done to Dr. Timnit Gebru is wrong. We should ALL be outraged. #ISupportTimnit #BelieveBlackWomen https://www.linkedin.com/feed/update/urn:li:activity:6740718671053803520?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A6740718671053803520%29
 1. Olivia P. Walker
 startup founder (in stealth mode), O.W.B Public Affairs. Public Policy Guru + performer
-Racial discrimination at work changed my life and career forever.
+  1. Racial discrimination at work changed my life and career forever.
 Being dehumanized, having to face economic exclusion, plus coming to terms with society’s indifference to blatant assaults on my: (a) humanity and (b) rights of American citizenship is a pain that can only be understood by other people who have experienced it, as Elizabeth Leiba can attest.
 For this reason, #ISupportTimnit
 For this reason, I’m dedicating the remainder of my life to ensure that what happened to me, Timnit Gebru and millions of others didn’t happen in vain.
@@ -272,9 +272,7 @@ You may trod me in the very dirt
 But still, like dust, I'll rise.”
 — Maya Angelou
 https://www.linkedin.com/feed/update/urn:li:activity:6742307931116593152/
-1. Olivia P. Walker
-startup founder (in stealth mode), O.W.B Public Affairs. Public Policy Guru + performer
-“Google’s [and Jeff Dean’s] appalling treatment of Timnit Gebru exposes a dual crisis in AI research. The field is dominated by an elite, primarily white male workforce, and it is controlled and funded primarily by large industry players” — WIRED
+  1. “Google’s [and Jeff Dean’s] appalling treatment of Timnit Gebru exposes a dual crisis in AI research. The field is dominated by an elite, primarily white male workforce, and it is controlled and funded primarily by large industry players” — WIRED
 —
 Timnit Gebru, Blatant displays of racism in the workforce (targeting Black women) and the continued efforts and commitments among [some] White male “leaders” to undermine the economic mobility of women and ALL non-White’s won’t work in 2021.
 Final answer.
