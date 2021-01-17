@@ -1,8 +1,8 @@
-#ISupportTimnit
+# #ISupportTimnit
 
 A collection of notable public statements, news, and tweets about Dr. Timnit Gebru's firing so far, created in response to tweet by Dr. Mitchell https://twitter.com/mmitchell_ai/status/1350528600546500609?s=20
 
-Medium
+## Medium Posts
 https://onezero.medium.com/dr-timnit-gebru-joy-buolamwini-deborah-raji-an-enduring-sisterhood-of-face-queens-abbec581e5ec
 Dr. Timnit Gebru, Joy Buolamwini, Deborah Raji — an Enduring Sisterhood of Face Queens | by Joy Buolamwini | Dec, 2020 - OneZero
 
@@ -18,7 +18,7 @@ Standing with Dr. Timnit Gebru — #ISupportTimnit #BelieveBlackWomen | by Googl
 https://miad.medium.com/dr-timnit-gebru-big-tech-and-the-ai-ethics-smokescreen-45eb03d1fe6d
 Dr. Timnit Gebru, Big Tech, and the AI Ethics Smokescreen | by Mia Dand | Dec, 2020 | Medium
 
-News
+## News
 MIT Technology Review
 https://www.technologyreview.com/2020/12/04/1013294/google-ai-ethics-research-paper-forced-out-timnit-gebru/
 We read the paper that forced Timnit Gebru out of Google. Here’s what it says. | MIT Technology Review
@@ -31,16 +31,6 @@ Wired
 https://www.wired.com/story/timnit-gebru-exit-google-exposes-crisis-in-ai/
 Opinion: Timnit Gebru’s Exit From Google Exposes a Crisis in AI
 www.wired.com
-
-YouTube
-
-VICE
-https://www.youtube.com/watch?v=fWqpPsMXVsI
-AI Ethics Researcher Timnit Gebru's Firing Doesn’t Look Good For Google
-
-Bloomberg Technology 
-https://www.youtube.com/watch?v=PU-ilYUpWy0
-Firing Backlash Led to Google CEO Apology: Timnit Gebru
 
 NPR
 https://www.npr.org/2020/12/17/947413170/google-ai-team-demands-ousted-black-researcher-be-rehired-and-promoted
@@ -57,3 +47,14 @@ WATCH: Timnit Gebru accuses Google and the wider tech sector of institutional ra
 VOX
 https://www.vox.com/recode/2020/12/4/22153786/google-timnit-gebru-ethical-ai-jeff-dean-controversy-fired
 Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tech - Vox
+
+## YouTube Videos
+
+VICE
+https://www.youtube.com/watch?v=fWqpPsMXVsI
+AI Ethics Researcher Timnit Gebru's Firing Doesn’t Look Good For Google
+
+Bloomberg Technology 
+https://www.youtube.com/watch?v=PU-ilYUpWy0
+Firing Backlash Led to Google CEO Apology: Timnit Gebru
+
