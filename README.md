@@ -133,6 +133,23 @@ If you were unfamiliar before this week with Dr.
 @timnitGebru
 , the AI ethics leader fired by Google, I've put together a background thread of some of her impactful, impressive work.
 And sign the letter #ISupportTimnit #IStandWithTimnit: https://googlewalkout.medium.com/standing-with-dr-timnit-gebru-isupporttimnit-believeblackwomen-6dadc300d382
+1. Michelle Casbon
+@texasmichelle
+https://twitter.com/texasmichelle/status/1336892193185832961
+Dec 9, 2020
+Let's not forget how long it took Google to fire #BretMcGowen after seeing his public arrest record for violence against women. He got more in months than 
+@timnitGebru
+ did in hours #ISupportTimnit #BelieveWomen https://publicsearch1.chicagopolice.org/Arrests/Details/17840317
+1. Liz Fong-Jones (方禮真)
+@lizthegrey
+https://twitter.com/lizthegrey/status/1334373531572813826?s=20
+Dec 3, 2020
+What Google is doing to 
+@timnitGebru is unconscionable and is disparate treatment. When I sent this letter to my manager and HR, I was not immediately terminated.
+The company did not honor my Feb 25 date (and pushed me out by Jan 26 instead), but that's still miles different.
+1. Ifeoma Ozoma
+@IfeomaOzoma https://twitter.com/IfeomaOzoma/status/1334354324453900290
+We're seeing - IN REAL TIME - exactly how aggressively these tech companies move against Black women. Do not look away from this. If you're at Google now please speak up about this in any way you can - especially externally if you have the safety to do so.
 
 ##### Outrage over gaslighting "year in review" by Jeff Dean
 1. Dr. Nicki Washington
