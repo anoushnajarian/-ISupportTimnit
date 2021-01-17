@@ -4,7 +4,7 @@ Under construction. Welcome your feedback and collaboration!
 
 "A collection of notable public statements, news, and tweets about Dr. Timnit Gebru's firing so far" - created in response to tweet by Dr. Mitchell https://twitter.com/mmitchell_ai/status/1350528600546500609?s=20
 
-## Medium Posts
+## Blog Posts
 1. https://googlewalkout.medium.com/standing-with-dr-timnit-gebru-isupporttimnit-believeblackwomen-6dadc300d382
 Standing with Dr. Timnit Gebru — #ISupportTimnit #BelieveBlackWomen | by Google Walkout For Real Change | Dec, 2020 - Medium
 1. https://onezero.medium.com/dr-timnit-gebru-joy-buolamwini-deborah-raji-an-enduring-sisterhood-of-face-queens-abbec581e5ec
@@ -18,7 +18,7 @@ Dr. Timnit Gebru, Big Tech, and the AI Ethics Smokescreen | by Mia Dand | Dec, 2
 1. https://nickianselmo.medium.com/making-noise-why-isupporttimnit-72f179172d8c Making Noise. Why #ISupportTimnit
 1. https://nickianselmo.medium.com/pattern-matching-isupporttimnit-9cbb1c384a3b Whose voices are credible? Whose do we squash? — #ISupportTimnit
 
-## News
+## News articles
 1. MIT Technology Review
 https://www.technologyreview.com/2020/12/04/1013294/google-ai-ethics-research-paper-forced-out-timnit-gebru/
 We read the paper that forced Timnit Gebru out of Google. Here’s what it says. | MIT Technology Review
@@ -70,11 +70,20 @@ Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tec
 1. Seattle Times https://www.seattletimes.com/business/technology/googles-ethics-effort-is-looking-rather-evil-commentary/ Google’s ethics effort is looking rather evil
 1. Fast Company https://www.fastcompany.com/video/what-one-of-googles-top-ai-ethics-researchers-had-to-say-before-the-company-pushed-her-out/tLswTdKo What one of Google's top AI ethics researchers had to say before the company pushed her out
 1. Reuters https://www.reuters.com/article/us-alphabet-google-research-idCAKBN28D3JN Top AI ethics researcher says Google fired her; company denies it
+1. Platformer https://www.platformer.news/p/the-withering-email-that-got-an-ethical The withering email that got an ethical AI researcher fired at Google
+1. Brookings https://www.brookings.edu/blog/techtank/2020/12/17/if-not-ai-ethicists-like-timnit-gebru-who-will-hold-big-tech-accountable/ If not AI ethicists like Timnit Gebru, who will hold Big Tech accountable?
+1. The Stanford Daily https://www.stanforddaily.com/2020/12/15/in-solidarity-with-dr-timnit-gebru/ In solidarity with Dr. Timnit Gebru
+1. Venture Beat https://venturebeat.com/2020/12/10/timnit-gebru-googles-dehumanizing-memo-paints-me-as-an-angry-black-woman/ Timnit Gebru: Google’s ‘dehumanizing’ memo paints me as an angry Black woman
+1. CNBC https://www.cnbc.com/2020/12/17/googles-ai-ethics-team-makes-demands-of-executives-to-rebuild-trust.html Google AI ethics team demands changes after dismissal of renowned researcher
+1. Engadged https://www.engadget.com/google-ethical-ai-team-letter-174518115.html Google AI team demands changes after Dr. Timnit Gebru's departure
+
 
 ### Non-English publications
 1. Expansion https://expansion.mx/opinion/2020/12/21/que-hay-detras-de-la-salida-de-timnit-gebru-de-google ¿Qué hay detrás de la salida de Timnit Gebru de Google?
 1. Yahoo Finance in Italian https://it.finance.yahoo.com/notizie/chi-%C3%A8-timnit-gebru-la-200000491.html Chi è Timnit Gebru, la scienziata licenziata da Google perché denunciava i pregiudizi razziali dell'AI
 1. Silicon.FR https://www.silicon.fr/ia-google-equipe-controverse-355729.html IA : entre Google et son équipe, la controverse
+1. El Pais https://elpais.com/tecnologia/2020-12-12/por-que-el-despido-de-una-investigadora-negra-de-google-se-ha-convertido-en-un-escandalo-global.html Por qué el despido de una investigadora negra de Google se ha convertido en un escándalo global
+
 
 ## YouTube 
 
