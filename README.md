@@ -84,6 +84,8 @@ Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tec
 1. Yahoo Finance in Italian https://it.finance.yahoo.com/notizie/chi-%C3%A8-timnit-gebru-la-200000491.html Chi è Timnit Gebru, la scienziata licenziata da Google perché denunciava i pregiudizi razziali dell'AI
 1. Silicon.FR https://www.silicon.fr/ia-google-equipe-controverse-355729.html IA : entre Google et son équipe, la controverse
 1. El Pais https://elpais.com/tecnologia/2020-12-12/por-que-el-despido-de-una-investigadora-negra-de-google-se-ha-convertido-en-un-escandalo-global.html Por qué el despido de una investigadora negra de Google se ha convertido en un escándalo global
+1. 20minute.fr Google : En lutte avec la direction, des salariés créent un syndicat https://www.20minutes.fr/high-tech/2945067-20210105-google-lutte-direction-salaries-creent-syndicat?fbclid=IwAR3Tzav4Pu4_wLdXryXyPcgvpD_9sYxDSpMK2WhfTT_KfxUoYQVa59CRlN8
+1. France24 https://www.france24.com/fr/%C3%A9co-tech/20201208-intelligence-artificielle-la-question-%C3%A9thique-qui-a-fait-tiquer-google Timnit Gebru, licenciée par Google pour sa vision "éthique" de l'intelligence artificielle ?
 
 
 ## Videos 
