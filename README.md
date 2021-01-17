@@ -1,6 +1,6 @@
 # #ISupportTimnit
 
-Welcome your fredback and collaboration!
+Under construction. Welcome your feedback and collaboration!
 
 "A collection of notable public statements, news, and tweets about Dr. Timnit Gebru's firing so far" - created in response to tweet by Dr. Mitchell https://twitter.com/mmitchell_ai/status/1350528600546500609?s=20
 
@@ -112,5 +112,3 @@ People in tech: if you're hearing from Google recruiters, now is as good a time 
 ## fb
 1. Samy Bengio https://www.facebook.com/samy.bengio/posts/3469738016467233 Dec 5, 2020 
 Just wanted to say that I was stunned by what just happened to Timnit Gebru, who was in my team until a few days ago (I'm sure you've all read what happened already). I have always been and will remain a strong supporter of her scientific work to make sure that AI becomes a positive force for the minoritized, as well as her generosity and tireless actions to lift the voices of the silenced ones. She taught me a lot and still is. I stand by you, Timnit. I also stand by the rest of my team who, like me, was stunned and is trying to make sense of all this. In particular the Ethical AI team, but also the broader Brain Research team.
-
-![Under Construction](https://cdn.pixabay.com/photo/2017/06/16/07/26/under-construction-2408062_1280.png)
