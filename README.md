@@ -4,7 +4,7 @@ Under construction. Welcome your feedback and collaboration!
 
 "A collection of notable public statements, news, and tweets about Dr. Timnit Gebru's firing so far" - created in response to tweet by Dr. Mitchell https://twitter.com/mmitchell_ai/status/1350528600546500609?s=20
 
-## Blog Posts
+## Blog posts
 1. https://googlewalkout.medium.com/standing-with-dr-timnit-gebru-isupporttimnit-believeblackwomen-6dadc300d382
 Standing with Dr. Timnit Gebru — #ISupportTimnit #BelieveBlackWomen | by Google Walkout For Real Change | Dec, 2020 - Medium
 1. https://onezero.medium.com/dr-timnit-gebru-joy-buolamwini-deborah-raji-an-enduring-sisterhood-of-face-queens-abbec581e5ec
@@ -78,14 +78,14 @@ Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tec
 1. Engadged https://www.engadget.com/google-ethical-ai-team-letter-174518115.html Google AI team demands changes after Dr. Timnit Gebru's departure
 1. VICE https://www.vice.com/en/article/n7vqwq/google-has-shattered-its-pipeline-to-black-talent Google Has 'Shattered' Its Pipeline To Black Talent
 
-### Non-English publications
+### Non-English-language publications
 1. Expansion https://expansion.mx/opinion/2020/12/21/que-hay-detras-de-la-salida-de-timnit-gebru-de-google ¿Qué hay detrás de la salida de Timnit Gebru de Google?
 1. Yahoo Finance in Italian https://it.finance.yahoo.com/notizie/chi-%C3%A8-timnit-gebru-la-200000491.html Chi è Timnit Gebru, la scienziata licenziata da Google perché denunciava i pregiudizi razziali dell'AI
 1. Silicon.FR https://www.silicon.fr/ia-google-equipe-controverse-355729.html IA : entre Google et son équipe, la controverse
 1. El Pais https://elpais.com/tecnologia/2020-12-12/por-que-el-despido-de-una-investigadora-negra-de-google-se-ha-convertido-en-un-escandalo-global.html Por qué el despido de una investigadora negra de Google se ha convertido en un escándalo global
 
 
-## YouTube 
+## Videos 
 
 1. VICE
 https://www.youtube.com/watch?v=fWqpPsMXVsI
@@ -94,7 +94,7 @@ AI Ethics Researcher Timnit Gebru's Firing Doesn’t Look Good For Google
 https://www.youtube.com/watch?v=PU-ilYUpWy0
 Firing Backlash Led to Google CEO Apology: Timnit Gebru
 
-## Social Media
+## Social media
 
 ### Twitter
 
@@ -116,7 +116,7 @@ This type of reporting is possible because a certain Black Woman took a stand an
 Dec 5, 2020
 When granted access you must sometimes use that opportunity to stand in solidarity for someone else who was wronged by the same people. Timnit Gebru didn't deserve this treatment by Google and @GoogleForEdu doesn't deserve my help any longer as well. #ISupportTimnit
 
-##### Gaslighting "year in review" by Jeff Dean
+##### Pushback on gaslighting "year in review" by Jeff Dean
 1. Dr. Nicki Washington
 @dr_nickiw https://twitter.com/dr_nickiw/status/1349116676042874883?s=20
 Jan 12
@@ -146,7 +146,7 @@ Yes,
 @timnitGebru
  did do excellent work before you fired her.
 
-##### Rejections to Google Recruiting
+##### Rejections of Google's recruiting
 1. Molly White
 @molly0xFFF https://twitter.com/molly0xFFF/status/1334919780143390724?s=20
 Dec 4, 2020
