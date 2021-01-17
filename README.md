@@ -98,11 +98,14 @@ Firing Backlash Led to Google CEO Apology: Timnit Gebru
 
 ### Twitter
 
-1. Timnit Gebru 
-@timnitGebru https://twitter.com/timnitGebru/status/1343663228300234752
+#### Tweets by Dr. Gebru 
+1. @timnitGebru https://twitter.com/timnitGebru/status/1343663228300234752
 This chat is how I found out I was resignated. From my direct report in shock who was trying to reach me. I then informed my manager Samy after she informed me. She had just joined our team in May. 
 @JeffDean
  there are no words left to describe this & your subsequent gasligthing
+1. https://twitter.com/timnitGebru/status/1350218858452443143?s=20 This is not creepy at all.
+
+#### Incomplete list of notable tweets by Dr. Gebru's supporters
 1. Leslie Miley
 @shaft https://twitter.com/shaft/status/1341846233875238912?s=20
 Dec 23, 2020
@@ -111,12 +114,18 @@ This type of reporting is possible because a certain Black Woman took a stand an
 @ShanaVWhite https://twitter.com/ShanaVWhite/status/1335240132404850692?s=20
 Dec 5, 2020
 When granted access you must sometimes use that opportunity to stand in solidarity for someone else who was wronged by the same people. Timnit Gebru didn't deserve this treatment by Google and @GoogleForEdu doesn't deserve my help any longer as well. #ISupportTimnit
+##### Recruiting responses 
 1. Molly White
 @molly0xFFF https://twitter.com/molly0xFFF/status/1334919780143390724?s=20
 Dec 4, 2020
 People in tech: if you're hearing from Google recruiters, now is as good a time as any to explain to them why Google's treatment of former employees like 
 @timnitGebru, @computerfemme, and @lizthegrey is driving away talent.
 #ISupportTimnit #BelieveBlackWomen
+1. Novall Swift
+@NovallSwift https://twitter.com/NovallSwift/status/1347957899746713601?s=20
+Jan 9
+This is now my default response when a Google recruiter emails me.
+@timnitGebru 
 
 ## fb
 1. Samy Bengio https://www.facebook.com/samy.bengio/posts/3469738016467233 Dec 5, 2020 
