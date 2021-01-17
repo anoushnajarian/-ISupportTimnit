@@ -41,6 +41,7 @@ WATCH: Timnit Gebru accuses Google and the wider tech sector of institutional ra
 1. VOX 
 https://www.vox.com/recode/2020/12/4/22153786/google-timnit-gebru-ethical-ai-jeff-dean-controversy-fired
 Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tech - Vox
+1. https://www.vox.com/recode/22213494/google-union-alphabet-workers-tech-organizing-activism-labor Google’s new union, briefly explained
 1. TNW https://thenextweb.com/neural/2020/12/11/backlash-intensifies-pichais-promises-do-little-to-quell-outrage-over-timnit-gebrus-firing/
 1. The Verge https://www.theverge.com/2020/12/7/22158501/timnit-gebru-team-google-public-statement-fired Timnit Gebru’s team at Google is going public with their side of the story
 1. The Verge https://www.theverge.com/2020/12/3/22150355/google-fires-timnit-gebru-facial-recognition-ai-ethicist
