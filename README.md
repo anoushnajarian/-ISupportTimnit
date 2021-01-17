@@ -160,7 +160,7 @@ This is now my default response when a Google recruiter emails me.
 @timnitGebru 
 1. Bryan D Martin
 @BryanDMartin_ https://twitter.com/BryanDMartin_/status/1334635603627966464?s=20 What sway do I have over a company like Google? Essentially none. But they have been recruiting me, and I had an interview scheduled in a week.  I won't contribute to a company that treats its employees the way Google treated @timnitGebru
-![screenshot of letter to Google Recruiting](https://pbs.twimg.com/media/EoWUAfwUcAA5hgZ?format=jpg&name=large)
+![screenshot of letter to Google Recruiting](https://twitter.com/BryanDMartin_/status/1334635603627966464/photo/1)
 
 ## fb
 1. Samy Bengio https://www.facebook.com/samy.bengio/posts/3469738016467233 Dec 5, 2020 
