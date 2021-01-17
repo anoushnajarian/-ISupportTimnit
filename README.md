@@ -23,7 +23,8 @@ We read the paper that forced Timnit Gebru out of Google. Here’s what it says.
 1. MIT Technology Review https://www.technologyreview.com/2020/12/16/1014634/google-ai-ethics-lead-timnit-gebru-tells-story/ “I started crying”: Inside Timnit Gebru’s last days at Google—and what happens next
 1. New York Times https://www.nytimes.com/2020/12/03/technology/google-researcher-timnit-gebru.html Google Researcher Says She Was Fired Over Paper Highlighting Bias in A.I.
 1. Washington Post
-https://www.washingtonpost.com/technology/2020/12/23/google-timnit-gebru-ai-ethics/
+https://www.washingtonpost.com/technology/2020/12/23/google-timnit-gebru-ai-ethics/ Google hired Timnit Gebru to be an outspoken critic of unethical AI. Then she was fired for it.
+1. Washington Post https://www.washingtonpost.com/technology/2020/12/03/timnit-gebru-google-fired/ Google’s star AI ethics researcher, one of a few Black women in the field, says she was fired for a critical email
 1. Wired https://www.wired.com/story/timnit-gebru-exit-google-exposes-crisis-in-ai/
 Opinion: Timnit Gebru’s Exit From Google Exposes a Crisis in AI
 Timnit Gebru was critical of Google’s approach to ethical AI - The Washington Post
@@ -35,18 +36,19 @@ Researchers Demand That Google Rehire And Promote Timnit Gebru After Firing : NP
 1. BBC 
 https://www.bbc.com/news/technology-55281862
 WATCH: Timnit Gebru accuses Google and the wider tech sector of institutional racism
+1. BBC https://www.bbc.com/news/technology-55164324 Thousands more back Dr Timnit Gebru over Google 'sacking'
 1. VOX 
 https://www.vox.com/recode/2020/12/4/22153786/google-timnit-gebru-ethical-ai-jeff-dean-controversy-fired
 Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tech - Vox
 1. TNW https://thenextweb.com/neural/2020/12/11/backlash-intensifies-pichais-promises-do-little-to-quell-outrage-over-timnit-gebrus-firing/
-1. The Verge https://www.theverge.com/2020/12/7/22158501/timnit-gebru-team-google-public-statement-fired
+1. The Verge https://www.theverge.com/2020/12/7/22158501/timnit-gebru-team-google-public-statement-fired Timnit Gebru’s team at Google is going public with their side of the story
 1. The Verge https://www.theverge.com/2020/12/3/22150355/google-fires-timnit-gebru-facial-recognition-ai-ethicist
+1. CNET https://www.cnet.com/news/google-employees-dispute-companys-claim-that-ai-researcher-timnit-gebru-resigned/ Google employees dispute company's claim that AI researcher Timnit Gebru resigned
 1. TechCrunch https://techcrunch.com/2021/01/09/human-capital-whats-next-for-dr-timnit-gebru/ Human Capital: What’s next for Dr. Timnit Gebru – TechCrunch
 1. World Politics Review https://www.worldpoliticsreview.com/trend-lines/29316/what-google-s-firing-of-researcher-timnit-gebru-means-for-ai-ethics
 1. The Guardian https://www.theguardian.com/technology/2020/dec/23/google-scientists-research-ai-postive-tone?CMP=Share_iOSApp_Other Google told scientists to use 'a positive tone' in AI research, documents show
 1. NBC https://www.nbcnews.com/tech/internet/google-workers-mobilize-against-firing-top-black-female-executive-n1250038 Google workers mobilize against firing of top Black female executive
-Blame not the robot but the human behind it
-
+1. Financial Times https://www.ft.com/content/2b7e06c2-edd0-477c-b345-45eef2851e2d Blame not the robot but the human behind it
 
 ## YouTube Videos
 
