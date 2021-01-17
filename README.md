@@ -7,6 +7,7 @@ Under construction. Welcome your feedback and collaboration!
 ## Blog posts
 1. https://googlewalkout.medium.com/standing-with-dr-timnit-gebru-isupporttimnit-believeblackwomen-6dadc300d382
 Standing with Dr. Timnit Gebru — #ISupportTimnit #BelieveBlackWomen | by Google Walkout For Real Change | Dec, 2020 - Medium
+1. https://googlewalkout.medium.com/setting-the-record-straight-isupporttimnit-believeblackwomen-5d7bbfe4ed90 Setting the Record Straight #ISupportTimnit #BelieveBlackWomen | by Google Walkout For Real Change | Dec, 2020 - Medium
 1. https://onezero.medium.com/dr-timnit-gebru-joy-buolamwini-deborah-raji-an-enduring-sisterhood-of-face-queens-abbec581e5ec
 Dr. Timnit Gebru, Joy Buolamwini, Deborah Raji — an Enduring Sisterhood of Face Queens | by Joy Buolamwini | Dec, 2020 - OneZero
 1. https://onezero.medium.com/read-the-email-that-led-to-the-exit-of-google-a-i-ethicist-timnit-gebru-45a4775c14ca
@@ -122,6 +123,12 @@ Dec 5, 2020
 @jovialjoy 
 1/n 
 1. Leslie Miley
+@shaft https://twitter.com/shaft/status/1335343523806105600
+Dec 5, 2020
+1/ I woke up thinking about #TimnitGebru and how #google and 
+@JeffDean
+ used the flimsiest of HR bullshit to fire her. And let's be clear, she was fired. How do I know this, because I have been on both sides of that situation. Here's how it's done #ISupportTimnit
+1. Leslie Miley
 @shaft https://twitter.com/shaft/status/1341846233875238912?s=20
 Dec 23, 2020
 This type of reporting is possible because a certain Black Woman took a stand and would not allow her tone to be policed by corporate PR. #ISupportTimnit #BiasInAI 
@@ -150,6 +157,7 @@ The company did not honor my Feb 25 date (and pushed me out by Jan 26 instead), 
 1. Ifeoma Ozoma
 @IfeomaOzoma https://twitter.com/IfeomaOzoma/status/1334354324453900290
 We're seeing - IN REAL TIME - exactly how aggressively these tech companies move against Black women. Do not look away from this. If you're at Google now please speak up about this in any way you can - especially externally if you have the safety to do so.
+https://twitter.com/GoogleWalkout/status/1335983204503859203
 
 ##### Outrage over gaslighting "year in review" by Jeff Dean
 1. Dr. Nicki Washington
