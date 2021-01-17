@@ -107,6 +107,20 @@ This chat is how I found out I was resignated. From my direct report in shock wh
 1. https://twitter.com/timnitGebru/status/1350111062193008643?s=20 I got contacted by someone at Google a while ago saying they’re doing an investigation and can I talk to them. As if  I don’t know these *investigations* are ass covering exercises that come to the conclusion that there was no wrong doing by powerful people at the company.
 
 #### Incomplete list of notable tweets by Dr. Gebru's supporters
+1. Algorithmic Justice League
+@AJLUnited https://twitter.com/AJLUnited/status/1335242023444619265?s=20
+Dec 5, 2020
+@timnitGebru
+'s ongoing battle echos the words of the  #VoicingErasure spoken word poem- "We do not have to accept conditions that continue traditions of silencing"  
+-in collaboration w/ 
+@allisonkoe
+@sandylocks
+@ruha9
+@safiyanoble
+@smithmegan
+@schock 
+@jovialjoy 
+1/n 
 1. Leslie Miley
 @shaft https://twitter.com/shaft/status/1341846233875238912?s=20
 Dec 23, 2020
@@ -146,7 +160,8 @@ Yes,
 @timnitGebru
  did do excellent work before you fired her.
 
-##### Rejections of Google's recruiting
+
+##### Refusals to work with Google
 1. Molly White
 @molly0xFFF https://twitter.com/molly0xFFF/status/1334919780143390724?s=20
 Dec 4, 2020
