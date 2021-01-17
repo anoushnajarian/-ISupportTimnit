@@ -125,12 +125,16 @@ Dec 5, 2020
 @shaft https://twitter.com/shaft/status/1341846233875238912?s=20
 Dec 23, 2020
 This type of reporting is possible because a certain Black Woman took a stand and would not allow her tone to be policed by corporate PR. #ISupportTimnit #BiasInAI 
-1. Shana V. White (she/her)
-@ShanaVWhite https://twitter.com/ShanaVWhite/status/1335240132404850692?s=20
-Dec 5, 2020
-When granted access you must sometimes use that opportunity to stand in solidarity for someone else who was wronged by the same people. Timnit Gebru didn't deserve this treatment by Google and @GoogleForEdu doesn't deserve my help any longer as well. #ISupportTimnit
+1. Rachel Thomas
+@math_rachel
+https://twitter.com/math_rachel/status/1334914406103203842?s=20
+Dec 4, 2020
+If you were unfamiliar before this week with Dr. 
+@timnitGebru
+, the AI ethics leader fired by Google, I've put together a background thread of some of her impactful, impressive work.
+And sign the letter #ISupportTimnit #IStandWithTimnit: https://googlewalkout.medium.com/standing-with-dr-timnit-gebru-isupporttimnit-believeblackwomen-6dadc300d382
 
-##### Pushback on gaslighting "year in review" by Jeff Dean
+##### Outrage over gaslighting "year in review" by Jeff Dean
 1. Dr. Nicki Washington
 @dr_nickiw https://twitter.com/dr_nickiw/status/1349116676042874883?s=20
 Jan 12
@@ -161,7 +165,9 @@ Yes,
  did do excellent work before you fired her.
 
 
-##### Refusals to work with Google
+##### Refusal to work with Google
+1. Bryan D Martin
+@BryanDMartin_ https://twitter.com/BryanDMartin_/status/1334635603627966464?s=20 Dec 4, 2020 What sway do I have over a company like Google? Essentially none. But they have been recruiting me, and I had an interview scheduled in a week.  I won't contribute to a company that treats its employees the way Google treated @timnitGebru
 1. Molly White
 @molly0xFFF https://twitter.com/molly0xFFF/status/1334919780143390724?s=20
 Dec 4, 2020
@@ -173,8 +179,10 @@ People in tech: if you're hearing from Google recruiters, now is as good a time 
 Jan 9
 This is now my default response when a Google recruiter emails me.
 @timnitGebru 
-1. Bryan D Martin
-@BryanDMartin_ https://twitter.com/BryanDMartin_/status/1334635603627966464?s=20 What sway do I have over a company like Google? Essentially none. But they have been recruiting me, and I had an interview scheduled in a week.  I won't contribute to a company that treats its employees the way Google treated @timnitGebru
+1. Shana V. White (she/her)
+@ShanaVWhite https://twitter.com/ShanaVWhite/status/1335240132404850692?s=20
+Dec 5, 2020
+When granted access you must sometimes use that opportunity to stand in solidarity for someone else who was wronged by the same people. Timnit Gebru didn't deserve this treatment by Google and @GoogleForEdu doesn't deserve my help any longer as well. #ISupportTimnit
 
 ## fb
 1. Samy Bengio https://www.facebook.com/samy.bengio/posts/3469738016467233 Dec 5, 2020 
