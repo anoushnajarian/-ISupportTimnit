@@ -133,6 +133,10 @@ Firing Backlash Led to Google CEO Apology: Timnit Gebru
 ### Twitter
 
 #### Tweets by Dr. Gebru 
+1. https://twitter.com/timnitGebru/status/1334352694664957952
+I was fired by 
+@JeffDean
+ for my email to Brain women and Allies. My corp account has been cutoff. So I've been immediately fired :-)
 1. https://twitter.com/timnitGebru/status/1343663228300234752
 This chat is how I found out I was resignated. From my direct report in shock who was trying to reach me. I then informed my manager Samy after she informed me. She had just joined our team in May. 
 @JeffDean
