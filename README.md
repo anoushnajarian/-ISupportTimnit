@@ -93,4 +93,4 @@ People in tech: if you're hearing from Google recruiters, now is as good a time 
 @timnitGebru, @computerfemme, and @lizthegrey is driving away talent.
 #ISupportTimnit #BelieveBlackWomen
 
-!(https://cdn.pixabay.com/photo/2017/06/16/07/26/under-construction-2408062_1280.png)
+![Under Construction](https://cdn.pixabay.com/photo/2017/06/16/07/26/under-construction-2408062_1280.png)
