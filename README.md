@@ -25,6 +25,7 @@ https://www.technologyreview.com/2020/12/04/1013294/google-ai-ethics-research-pa
 We read the paper that forced Timnit Gebru out of Google. Here’s what it says. | MIT Technology Review
 1. MIT Technology Review https://www.technologyreview.com/2020/12/16/1014634/google-ai-ethics-lead-timnit-gebru-tells-story/ “I started crying”: Inside Timnit Gebru’s last days at Google—and what happens next
 1. New York Times https://www.nytimes.com/2020/12/03/technology/google-researcher-timnit-gebru.html Google Researcher Says She Was Fired Over Paper Highlighting Bias in A.I.
+1. New York Times https://www.nytimes.com/2021/01/04/technology/google-employees-union.html#click=https://t.co/m2Qmjwz32V Hundreds of Google Employees Unionize, Culminating Years of Activism
 1. Washington Post
 https://www.washingtonpost.com/technology/2020/12/23/google-timnit-gebru-ai-ethics/ Google hired Timnit Gebru to be an outspoken critic of unethical AI. Then she was fired for it.
 1. Washington Post https://www.washingtonpost.com/technology/2020/12/03/timnit-gebru-google-fired/ Google’s star AI ethics researcher, one of a few Black women in the field, says she was fired for a critical email
@@ -78,6 +79,13 @@ Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tec
 1. CNBC https://www.cnbc.com/2020/12/17/googles-ai-ethics-team-makes-demands-of-executives-to-rebuild-trust.html Google AI ethics team demands changes after dismissal of renowned researcher
 1. Engadged https://www.engadget.com/google-ethical-ai-team-letter-174518115.html Google AI team demands changes after Dr. Timnit Gebru's departure
 1. VICE https://www.vice.com/en/article/n7vqwq/google-has-shattered-its-pipeline-to-black-talent Google Has 'Shattered' Its Pipeline To Black Talent
+1. The Gradient https://thegradient.pub/the-far-reaching-impacts-of-timnit-gebru/ The Far-Reaching Impact of Dr. Timnit Gebru
+1. Wired https://www.wired.com/story/behind-paper-led-google-researchers-firing/ Behind the Paper That Led to a Google Researcher’s Firing
+
+
+#Events
+1. https://www.eventbrite.com/e/the-fight-for-the-future-organizing-the-tech-industry-tickets-136885274541 The Fight for the Future: Organizing the Tech Industry
+
 
 ### Non-English-language publications
 1. Expansion https://expansion.mx/opinion/2020/12/21/que-hay-detras-de-la-salida-de-timnit-gebru-de-google ¿Qué hay detrás de la salida de Timnit Gebru de Google?
@@ -86,7 +94,8 @@ Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tec
 1. El Pais https://elpais.com/tecnologia/2020-12-12/por-que-el-despido-de-una-investigadora-negra-de-google-se-ha-convertido-en-un-escandalo-global.html Por qué el despido de una investigadora negra de Google se ha convertido en un escándalo global
 1. 20minute.fr Google : En lutte avec la direction, des salariés créent un syndicat https://www.20minutes.fr/high-tech/2945067-20210105-google-lutte-direction-salaries-creent-syndicat?fbclid=IwAR3Tzav4Pu4_wLdXryXyPcgvpD_9sYxDSpMK2WhfTT_KfxUoYQVa59CRlN8
 1. France24 https://www.france24.com/fr/%C3%A9co-tech/20201208-intelligence-artificielle-la-question-%C3%A9thique-qui-a-fait-tiquer-google Timnit Gebru, licenciée par Google pour sa vision "éthique" de l'intelligence artificielle ?
-
+1. RTBF https://www.rtbf.be/info/medias/detail_des-salaries-de-google-annoncent-la-creation-d-un-syndicat-une-premiere-dans-la-silicon-valley?id=10666296&fbclid=IwAR1kim1ASsomlBBY1otMdvgRYGsk3tQEQbthJztc2TC6N-ISwqOc5WPlQU0 Des salariés de Google annoncent la création d’un syndicat, une première dans la Silicon Valley
+1. fd.nl https://fd.nl/futures/1369163/hoe-het-ontslag-van-een-google-onderzoeker-een-crisis-in-ai-blootlegt?utm_medium=social&utm_source=linkedin&utm_campaign=SHR_ARTT_20210112&utm_content=futures Hoe het ontslag van een Google-onderzoeker een crisis in AI blootlegt
 
 ## Videos 
 
