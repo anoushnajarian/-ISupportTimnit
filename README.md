@@ -1,5 +1,7 @@
 # #ISupportTimnit
 
+Welcome your fredback and collaboration!
+
 "A collection of notable public statements, news, and tweets about Dr. Timnit Gebru's firing so far" - created in response to tweet by Dr. Mitchell https://twitter.com/mmitchell_ai/status/1350528600546500609?s=20
 
 ## Medium Posts
@@ -42,9 +44,11 @@ WATCH: Timnit Gebru accuses Google and the wider tech sector of institutional ra
 https://www.vox.com/recode/2020/12/4/22153786/google-timnit-gebru-ethical-ai-jeff-dean-controversy-fired
 Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tech - Vox
 1. https://www.vox.com/recode/22213494/google-union-alphabet-workers-tech-organizing-activism-labor Google’s new union, briefly explained
-1. TNW https://thenextweb.com/neural/2020/12/11/backlash-intensifies-pichais-promises-do-little-to-quell-outrage-over-timnit-gebrus-firing/
+1. TNW https://thenextweb.com/neural/2020/12/11/backlash-intensifies-pichais-promises-do-little-to-quell-outrage-over-timnit-gebrus-firing/ Backlash intensifies: Pichai’s promises do little to quell outrage over Timnit Gebru’s firing
+1. TNW https://www.ft.com/content/9debcf65-7556-4247-8abb-1d165391343f Google’s new trillion-parameter AI language model is almost 6 times bigger than GPT-3
 1. The Verge https://www.theverge.com/2020/12/7/22158501/timnit-gebru-team-google-public-statement-fired Timnit Gebru’s team at Google is going public with their side of the story
-1. The Verge https://www.theverge.com/2020/12/3/22150355/google-fires-timnit-gebru-facial-recognition-ai-ethicist
+1. The Verge https://www.theverge.com/2020/12/3/22150355/google-fires-timnit-gebru-facial-recognition-ai-ethicist 
+1. The Daily Beast https://www.thedailybeast.com/fired-google-ai-ethicist-timnit-gebru-says-company-dehumanized-her-scapegoated-her-as-angry-black-woman Fired Google AI Ethicist Says Company Ignored Her, Scapegoated Her as ‘Angry Black Woman’
 1. CNET https://www.cnet.com/news/google-employees-dispute-companys-claim-that-ai-researcher-timnit-gebru-resigned/ Google employees dispute company's claim that AI researcher Timnit Gebru resigned
 1. TechCrunch https://techcrunch.com/2020/12/09/google-ceo-says-company-will-review-events-leading-up-to-dr-timnit-gebrus-departure/  Google CEO says company will review events leading up to Dr. Timnit Gebru’s departure
 1. TechCrunch https://techcrunch.com/2021/01/09/human-capital-whats-next-for-dr-timnit-gebru/ Human Capital: What’s next for Dr. Timnit Gebru – TechCrunch
@@ -54,13 +58,23 @@ Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tec
 1. Financial Times https://www.ft.com/content/2b7e06c2-edd0-477c-b345-45eef2851e2d Blame not the robot but the human behind it
 1. The Street https://www.thestreet.com/investing/hbcu-network-terminates-partnership-with-google HBCU Group Terminates Partnership With Google
 1. Nature https://www.nature.com/articles/d41586-020-03611-8 Prestigious AI meeting takes steps to improve ethics of research
+1. The New Republic https://newrepublic.com/article/160501/gets-say-dystopian-tech-future Who Gets a Say in Our Dystopian Tech Future?
+1. FT https://www.ft.com/content/9debcf65-7556-4247-8abb-1d165391343f ‘Regulation can get it wrong’: Google’s Sundar Pichai on AI and antitrust
 1. Business Insider https://www.businessinsider.com/timnit-gebru-google-firing-ai-researcher-employee-rebellion-jeff-dean-2020-12 Google is facing a mounting rebellion from its employees over the dismissal of AI ethics researcher Timnit Gebru
 1. Market Watch https://www.marketwatch.com/story/theres-a-diversity-grift-right-now-employees-at-center-of-racial-controversies-at-tech-companies-speak-out-11609250355 ‘There’s a diversity grift right now’: Employees at center of racial controversies at tech companies speak out
 1. Slate https://slate.com/podcasts/what-next-tbd/2020/12/timnit-gebru-google-ethical-ai Was This Google Ethicist Fired for Doing Her Job?
 1. Boss Betty https://bossbetty.com/industries/technology-engineering/a-tale-of-two-tech-titans-an-industry-rife-with-bias-and-the-black-women-bearing-the-brunt-of-the-burden/ A tale of two tech titans, an industry rife with bias and the Black women bearing the brunt of the burden
 1. Cheddar https://cheddar.com/media/google-union-organizers-reimagine-dont-be-evil-motto Google Union Organizers Reimagine 'Don't Be Evil' Motto
 1. Venture Beat https://venturebeat.com/2020/12/03/google-ai-ethics-co-lead-timnit-gebru-says-she-was-fired-over-an-email/ Google AI ethics co-lead Timnit Gebru says she was fired over an email
+1. ZDNet https://www.zdnet.com/article/ai-debate4-2-night-of-a-thousand-ai-scholars/ AI Debate 2: Night of a thousand AI scholars
+1. Seattle Times https://www.seattletimes.com/business/technology/googles-ethics-effort-is-looking-rather-evil-commentary/ Google’s ethics effort is looking rather evil
+1. Fast Company https://www.fastcompany.com/video/what-one-of-googles-top-ai-ethics-researchers-had-to-say-before-the-company-pushed-her-out/tLswTdKo What one of Google's top AI ethics researchers had to say before the company pushed her out
+1. Reuters https://www.reuters.com/article/us-alphabet-google-research-idCAKBN28D3JN Top AI ethics researcher says Google fired her; company denies it
 
+### Non-English publications
+1. Expansion https://expansion.mx/opinion/2020/12/21/que-hay-detras-de-la-salida-de-timnit-gebru-de-google ¿Qué hay detrás de la salida de Timnit Gebru de Google?
+1. Yahoo Finance in Italian https://it.finance.yahoo.com/notizie/chi-%C3%A8-timnit-gebru-la-200000491.html Chi è Timnit Gebru, la scienziata licenziata da Google perché denunciava i pregiudizi razziali dell'AI
+1. Silicon.FR https://www.silicon.fr/ia-google-equipe-controverse-355729.html IA : entre Google et son équipe, la controverse
 
 ## YouTube 
 
@@ -71,7 +85,9 @@ AI Ethics Researcher Timnit Gebru's Firing Doesn’t Look Good For Google
 https://www.youtube.com/watch?v=PU-ilYUpWy0
 Firing Backlash Led to Google CEO Apology: Timnit Gebru
 
-## Tweets
+## Social Media
+
+### Twitter
 
 1. Timnit Gebru 
 @timnitGebru https://twitter.com/timnitGebru/status/1343663228300234752
@@ -92,5 +108,9 @@ Dec 4, 2020
 People in tech: if you're hearing from Google recruiters, now is as good a time as any to explain to them why Google's treatment of former employees like 
 @timnitGebru, @computerfemme, and @lizthegrey is driving away talent.
 #ISupportTimnit #BelieveBlackWomen
+
+## fb
+1. Samy Bengio https://www.facebook.com/samy.bengio/posts/3469738016467233 Dec 5, 2020 
+Just wanted to say that I was stunned by what just happened to Timnit Gebru, who was in my team until a few days ago (I'm sure you've all read what happened already). I have always been and will remain a strong supporter of her scientific work to make sure that AI becomes a positive force for the minoritized, as well as her generosity and tireless actions to lift the voices of the silenced ones. She taught me a lot and still is. I stand by you, Timnit. I also stand by the rest of my team who, like me, was stunned and is trying to make sense of all this. In particular the Ethical AI team, but also the broader Brain Research team.
 
 ![Under Construction](https://cdn.pixabay.com/photo/2017/06/16/07/26/under-construction-2408062_1280.png)
