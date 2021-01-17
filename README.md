@@ -40,6 +40,7 @@ Researchers Demand That Google Rehire And Promote Timnit Gebru After Firing : NP
 1. NPR https://www.npr.org/2020/12/17/947719354/ousted-black-google-researcher-they-wanted-to-have-my-presence-but-not-me-exactl Ousted Black Google Researcher: 'They Wanted To Have My Presence, But Not Me Exactly'
 1. NPR https://www.npr.org/2020/12/18/947918291/google-researcher-discusses-departure Google Researcher Discusses Departure
 1. CNN https://www.cnn.com/2020/12/16/tech/google-timnit-gebru-ethical-ai-letter/index.html Tensions in Google's ethical AI group increase as it sends demands to CEO
+1. CNN https://www.cnn.com/2021/01/04/tech/google-alphabet-union/index.html Google workers have formed the company's first-ever union
 1. BBC 
 https://www.bbc.com/news/technology-55281862
 Timnit Gebru: Google and big tech are 'institutionally racist'
@@ -84,6 +85,7 @@ Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tec
 1. Platformer https://www.platformer.news/p/the-withering-email-that-got-an-ethical The withering email that got an ethical AI researcher fired at Google
 1. Brookings https://www.brookings.edu/blog/techtank/2020/12/17/if-not-ai-ethicists-like-timnit-gebru-who-will-hold-big-tech-accountable/ If not AI ethicists like Timnit Gebru, who will hold Big Tech accountable?
 1. The Stanford Daily https://www.stanforddaily.com/2020/12/15/in-solidarity-with-dr-timnit-gebru/ In solidarity with Dr. Timnit Gebru
+1. CNBC https://www.cnbc.com/2020/12/07/google-employees-dispute-jeff-dean-claim-timnit-gebru-did-not-resign.html Google employees say AI researcher did not resign, despite what exec claims
 1. CNBC https://www.cnbc.com/2020/12/17/googles-ai-ethics-team-makes-demands-of-executives-to-rebuild-trust.html Google AI ethics team demands changes after dismissal of renowned researcher
 1. Engadged https://www.engadget.com/google-ethical-ai-team-letter-174518115.html Google AI team demands changes after Dr. Timnit Gebru's departure
 1. VICE https://www.vice.com/en/article/n7vqwq/google-has-shattered-its-pipeline-to-black-talent Google Has 'Shattered' Its Pipeline To Black Talent
@@ -197,6 +199,9 @@ The company did not honor my Feb 25 date (and pushed me out by Jan 26 instead), 
 @IfeomaOzoma https://twitter.com/IfeomaOzoma/status/1334354324453900290
 We're seeing - IN REAL TIME - exactly how aggressively these tech companies move against Black women. Do not look away from this. If you're at Google now please speak up about this in any way you can - especially externally if you have the safety to do so.
 https://twitter.com/GoogleWalkout/status/1335983204503859203
+1. Meredith Whittaker
+@mer__edith
+https://twitter.com/mer__edith/status/1334976380254228483?s=20 Dec 4, 2020 An army of lawyers + comms people worked day's on this. It's classic. Designed to rationalize discrimination as "process" and censorship as "high standards." Most importantly, it's meant to paint Timnit as irrational, and her work as not up to Google's expectations. Don't buy it
 
 ##### Outrage over gaslighting "year in review" by Jeff Dean
 1. Dr. Nicki Washington
@@ -279,3 +284,4 @@ Final answer.
 O.W.B Public Affairs condemns Jeff Dean’s racism and his demonstrable compromised integrity.
 #ISupportTimnit #technology #racialbias #artificialntelligence #codedbias #racism
 https://www.linkedin.com/feed/update/urn:li:activity:6750414289695330304/
+
