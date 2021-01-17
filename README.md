@@ -115,13 +115,22 @@ This type of reporting is possible because a certain Black Woman took a stand an
 @ShanaVWhite https://twitter.com/ShanaVWhite/status/1335240132404850692?s=20
 Dec 5, 2020
 When granted access you must sometimes use that opportunity to stand in solidarity for someone else who was wronged by the same people. Timnit Gebru didn't deserve this treatment by Google and @GoogleForEdu doesn't deserve my help any longer as well. #ISupportTimnit
-##### Responses to Google AI "year in review" by Jeff Dean
+
+##### Approbrious for Google AI "year in review" by Jeff Dean
 1. Dr. Nicki Washington
 @dr_nickiw https://twitter.com/dr_nickiw/status/1349116676042874883?s=20
 Jan 12
 Serious question: Does "Looking Back at 2020" include acknowledgement of your clear mistreatment of 
 @timnitGebru
 , or are you just "Looking Forward" to more of the same "white guys in tech" BS for 2021?
+1. Rachel Thomas
+@math_rachel https://twitter.com/math_rachel/status/1349244684393070593?s=20 
+Jan 13
+Jeff actually links to *3* of 
+@timnitGebru
+'s papers in this post (after firing her last month & publicly claiming her latest paper didn't meet "Google standards", even though it was accepted to a top conference)
+
+Model cards, Saving Face, and Closing the AI Accountability Gap
 1. Emily M. Bender
 @emilymbender https://twitter.com/emilymbender/status/1349171317963034626?s=20 
 Jan 12
@@ -140,7 +149,7 @@ Yes,
 @timnitGebru
  did do excellent work before you fired her.
 
-##### Responses to Google Recruiting
+##### Rejections sent to Google Recruiting
 1. Molly White
 @molly0xFFF https://twitter.com/molly0xFFF/status/1334919780143390724?s=20
 Dec 4, 2020
