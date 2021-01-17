@@ -212,3 +212,33 @@ When granted access you must sometimes use that opportunity to stand in solidari
 ## fb
 1. Samy Bengio https://www.facebook.com/samy.bengio/posts/3469738016467233 Dec 5, 2020 
 Just wanted to say that I was stunned by what just happened to Timnit Gebru, who was in my team until a few days ago (I'm sure you've all read what happened already). I have always been and will remain a strong supporter of her scientific work to make sure that AI becomes a positive force for the minoritized, as well as her generosity and tireless actions to lift the voices of the silenced ones. She taught me a lot and still is. I stand by you, Timnit. I also stand by the rest of my team who, like me, was stunned and is trying to make sense of all this. In particular the Ethical AI team, but also the broader Brain Research team.
+
+# LinkedIn
+1. Joy Buolamwini Algorithmic Bias Researcher | Poet of Code | ajl.org
+Dr. Timnit Gebru, Joy Buolamwini, Deborah Raji — an Enduring Sisterhood of Face Queens https://www.linkedin.com/feed/update/urn:li:activity:6741029427938922496?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A6741029427938922496%29
+1. Reshma Saujani 
+Founder and CEO of Girls Who Code + International Bestselling Author
+What was done to Dr. Timnit Gebru is wrong. We should ALL be outraged. #ISupportTimnit #BelieveBlackWomen https://www.linkedin.com/feed/update/urn:li:activity:6740718671053803520?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A6740718671053803520%29
+1. Olivia P. Walker
+startup founder (in stealth mode), O.W.B Public Affairs. Public Policy Guru + performer
+Racial discrimination at work changed my life and career forever.
+Being dehumanized, having to face economic exclusion, plus coming to terms with society’s indifference to blatant assaults on my: (a) humanity and (b) rights of American citizenship is a pain that can only be understood by other people who have experienced it, as Elizabeth Leiba can attest.
+For this reason, #ISupportTimnit
+For this reason, I’m dedicating the remainder of my life to ensure that what happened to me, Timnit Gebru and millions of others didn’t happen in vain.
+I’ve considered the consequences. I know how this goes; in the words of Dr. Gebru, “your life gets worse when you start advocating for underrepresented people.” The aforementioned is historically accurate (re: it’s consistent with America’s well documented history).
+But here’s where I stand:
+“You may write me down in history
+With your bitter, twisted lies,
+You may trod me in the very dirt
+But still, like dust, I'll rise.”
+— Maya Angelou
+https://www.linkedin.com/feed/update/urn:li:activity:6742307931116593152/
+1. Olivia P. Walker
+startup founder (in stealth mode), O.W.B Public Affairs. Public Policy Guru + performer
+“Google’s [and Jeff Dean’s] appalling treatment of Timnit Gebru exposes a dual crisis in AI research. The field is dominated by an elite, primarily white male workforce, and it is controlled and funded primarily by large industry players” — WIRED
+—
+Timnit Gebru, Blatant displays of racism in the workforce (targeting Black women) and the continued efforts and commitments among [some] White male “leaders” to undermine the economic mobility of women and ALL non-White’s won’t work in 2021.
+Final answer.
+O.W.B Public Affairs condemns Jeff Dean’s racism and his demonstrable compromised integrity.
+#ISupportTimnit #technology #racialbias #artificialntelligence #codedbias #racism
+https://www.linkedin.com/feed/update/urn:li:activity:6750414289695330304/
