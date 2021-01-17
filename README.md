@@ -76,7 +76,7 @@ Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tec
 1. Venture Beat https://venturebeat.com/2020/12/10/timnit-gebru-googles-dehumanizing-memo-paints-me-as-an-angry-black-woman/ Timnit Gebru: Google’s ‘dehumanizing’ memo paints me as an angry Black woman
 1. CNBC https://www.cnbc.com/2020/12/17/googles-ai-ethics-team-makes-demands-of-executives-to-rebuild-trust.html Google AI ethics team demands changes after dismissal of renowned researcher
 1. Engadged https://www.engadget.com/google-ethical-ai-team-letter-174518115.html Google AI team demands changes after Dr. Timnit Gebru's departure
-
+1. VICE https://www.vice.com/en/article/n7vqwq/google-has-shattered-its-pipeline-to-black-talent Google Has 'Shattered' Its Pipeline To Black Talent
 
 ### Non-English publications
 1. Expansion https://expansion.mx/opinion/2020/12/21/que-hay-detras-de-la-salida-de-timnit-gebru-de-google ¿Qué hay detrás de la salida de Timnit Gebru de Google?
@@ -99,11 +99,12 @@ Firing Backlash Led to Google CEO Apology: Timnit Gebru
 ### Twitter
 
 #### Tweets by Dr. Gebru 
-1. @timnitGebru https://twitter.com/timnitGebru/status/1343663228300234752
+1. https://twitter.com/timnitGebru/status/1343663228300234752
 This chat is how I found out I was resignated. From my direct report in shock who was trying to reach me. I then informed my manager Samy after she informed me. She had just joined our team in May. 
 @JeffDean
  there are no words left to describe this & your subsequent gasligthing
 1. https://twitter.com/timnitGebru/status/1350218858452443143?s=20 This is not creepy at all.
+1. https://twitter.com/timnitGebru/status/1350111062193008643?s=20 I got contacted by someone at Google a while ago saying they’re doing an investigation and can I talk to them. As if  I don’t know these *investigations* are ass covering exercises that come to the conclusion that there was no wrong doing by powerful people at the company.
 
 #### Incomplete list of notable tweets by Dr. Gebru's supporters
 1. Leslie Miley
@@ -114,7 +115,32 @@ This type of reporting is possible because a certain Black Woman took a stand an
 @ShanaVWhite https://twitter.com/ShanaVWhite/status/1335240132404850692?s=20
 Dec 5, 2020
 When granted access you must sometimes use that opportunity to stand in solidarity for someone else who was wronged by the same people. Timnit Gebru didn't deserve this treatment by Google and @GoogleForEdu doesn't deserve my help any longer as well. #ISupportTimnit
-##### Recruiting responses 
+##### Responses to Google AI "year in review" by Jeff Dean
+1. Dr. Nicki Washington
+@dr_nickiw https://twitter.com/dr_nickiw/status/1349116676042874883?s=20
+Jan 12
+Serious question: Does "Looking Back at 2020" include acknowledgement of your clear mistreatment of 
+@timnitGebru
+, or are you just "Looking Forward" to more of the same "white guys in tech" BS for 2021?
+1. Emily M. Bender
+@emilymbender https://twitter.com/emilymbender/status/1349171317963034626?s=20 
+Jan 12
+I'm glad to see, in the QTs and replies, that this strategy of just pretending they didn't fire 
+@timnitGebru
+ isn't going to work, at least not here on Twitter. Huge credit to 
+@timnitGebru
+ herself and her team at Google (esp. 
+@alexhanna
+ and others) for speaking out.
+1. Julienne LaChance
+@JulienneLaChan1 https://twitter.com/JulienneLaChan1/status/1349100047640629250?s=20
+Jan 12
+"To make this easier for others to adopt for their own machine learning models, we also introduced the Model Card Toolkit for easier model transparency reporting." 
+Yes, 
+@timnitGebru
+ did do excellent work before you fired her.
+
+##### Responses to Google Recruiting
 1. Molly White
 @molly0xFFF https://twitter.com/molly0xFFF/status/1334919780143390724?s=20
 Dec 4, 2020
@@ -126,6 +152,9 @@ People in tech: if you're hearing from Google recruiters, now is as good a time 
 Jan 9
 This is now my default response when a Google recruiter emails me.
 @timnitGebru 
+1. Bryan D Martin
+@BryanDMartin_ https://twitter.com/BryanDMartin_/status/1348008509841920000?s=20
+Hey me too. Small action from any one person, but these things do compound! Hopefully they take notice that people take notice.
 
 ## fb
 1. Samy Bengio https://www.facebook.com/samy.bengio/posts/3469738016467233 Dec 5, 2020 
