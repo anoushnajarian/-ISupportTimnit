@@ -34,7 +34,8 @@ https://www.washingtonpost.com/technology/2020/12/23/google-timnit-gebru-ai-ethi
 1. Washington Post https://www.washingtonpost.com/technology/2020/12/03/timnit-gebru-google-fired/ Google’s star AI ethics researcher, one of a few Black women in the field, says she was fired for a critical email
 1. Wired https://www.wired.com/story/timnit-gebru-exit-google-exposes-crisis-in-ai/
 Opinion: Timnit Gebru’s Exit From Google Exposes a Crisis in AI
-Timnit Gebru was critical of Google’s approach to ethical AI - The Washington Post
+1. Wired https://www.wired.com/story/behind-paper-led-google-researchers-firing/ Behind the Paper That Led to a Google Researcher’s Firing
+1. Wired https://www.wired.com/story/listening-to-black-women-the-innovation-tech-cant-figure-out/ Listening to Black Women: The Innovation Tech Can't Figure Out
 1. NPR https://www.npr.org/2020/12/17/947413170/google-ai-team-demands-ousted-black-researcher-be-rehired-and-promoted
 Researchers Demand That Google Rehire And Promote Timnit Gebru After Firing : NPR
 1. NPR https://www.npr.org/2020/12/17/947719354/ousted-black-google-researcher-they-wanted-to-have-my-presence-but-not-me-exactl Ousted Black Google Researcher: 'They Wanted To Have My Presence, But Not Me Exactly'
@@ -64,6 +65,8 @@ Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tec
 1. World Politics Review https://www.worldpoliticsreview.com/trend-lines/29316/what-google-s-firing-of-researcher-timnit-gebru-means-for-ai-ethics
 1. The Guardian https://www.theguardian.com/technology/2020/dec/23/google-scientists-research-ai-postive-tone?CMP=Share_iOSApp_Other Google told scientists to use 'a positive tone' in AI research, documents show
 1. NBC https://www.nbcnews.com/tech/internet/google-workers-mobilize-against-firing-top-black-female-executive-n1250038 Google workers mobilize against firing of top Black female executive
+1. CNBC https://www.cnbc.com/2020/12/07/google-employees-dispute-jeff-dean-claim-timnit-gebru-did-not-resign.html Google employees say AI researcher did not resign, despite what exec claims
+1. CNBC https://www.cnbc.com/2020/12/17/googles-ai-ethics-team-makes-demands-of-executives-to-rebuild-trust.html Google AI ethics team demands changes after dismissal of renowned researcher
 1. Financial Times https://www.ft.com/content/2b7e06c2-edd0-477c-b345-45eef2851e2d Blame not the robot but the human behind it
 1. The Street https://www.thestreet.com/investing/hbcu-network-terminates-partnership-with-google HBCU Group Terminates Partnership With Google
 1. Nature https://www.nature.com/articles/d41586-020-03611-8 Prestigious AI meeting takes steps to improve ethics of research
@@ -76,6 +79,7 @@ Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tec
 1. Cheddar https://cheddar.com/media/google-union-organizers-reimagine-dont-be-evil-motto Google Union Organizers Reimagine 'Don't Be Evil' Motto
 1. Venture Beat https://venturebeat.com/2020/12/03/google-ai-ethics-co-lead-timnit-gebru-says-she-was-fired-over-an-email/ Google AI ethics co-lead Timnit Gebru says she was fired over an email
 1. Venture Beat https://venturebeat.com/2020/12/04/ai-weekly-in-firing-timnit-gebru-google-puts-commercial-interests-ahead-of-ethics/ AI Weekly: In firing Timnit Gebru, Google puts commercial interests ahead of ethics
+1. Venture Beat https://venturebeat.com/2020/12/07/researchers-are-starting-to-refuse-to-review-google-ai-papers/ Researchers are starting to refuse to review Google AI papers
 1. Venture Beat https://venturebeat.com/2020/12/10/timnit-gebru-googles-dehumanizing-memo-paints-me-as-an-angry-black-woman/ Timnit Gebru: Google’s ‘dehumanizing’ memo paints me as an angry Black woman
 1. Venture Beat https://venturebeat.com/2021/01/04/alphabet-workers-union-launches-with-hundreds-of-members-demanding-change/ Alphabet Workers Union launches with hundreds of members demanding change
 1. ZDNet https://www.zdnet.com/article/ai-debate4-2-night-of-a-thousand-ai-scholars/ AI Debate 2: Night of a thousand AI scholars
@@ -85,19 +89,14 @@ Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tec
 1. Platformer https://www.platformer.news/p/the-withering-email-that-got-an-ethical The withering email that got an ethical AI researcher fired at Google
 1. Brookings https://www.brookings.edu/blog/techtank/2020/12/17/if-not-ai-ethicists-like-timnit-gebru-who-will-hold-big-tech-accountable/ If not AI ethicists like Timnit Gebru, who will hold Big Tech accountable?
 1. The Stanford Daily https://www.stanforddaily.com/2020/12/15/in-solidarity-with-dr-timnit-gebru/ In solidarity with Dr. Timnit Gebru
-1. CNBC https://www.cnbc.com/2020/12/07/google-employees-dispute-jeff-dean-claim-timnit-gebru-did-not-resign.html Google employees say AI researcher did not resign, despite what exec claims
-1. CNBC https://www.cnbc.com/2020/12/17/googles-ai-ethics-team-makes-demands-of-executives-to-rebuild-trust.html Google AI ethics team demands changes after dismissal of renowned researcher
-1. Engadged https://www.engadget.com/google-ethical-ai-team-letter-174518115.html Google AI team demands changes after Dr. Timnit Gebru's departure
+1. Engadget https://www.engadget.com/google-ethical-ai-team-letter-174518115.html Google AI team demands changes after Dr. Timnit Gebru's departure
 1. VICE https://www.vice.com/en/article/n7vqwq/google-has-shattered-its-pipeline-to-black-talent Google Has 'Shattered' Its Pipeline To Black Talent
 1. The Gradient https://thegradient.pub/the-far-reaching-impacts-of-timnit-gebru/ The Far-Reaching Impact of Dr. Timnit Gebru
-1. Wired https://www.wired.com/story/behind-paper-led-google-researchers-firing/ Behind the Paper That Led to a Google Researcher’s Firing
-1. Wired https://www.wired.com/story/listening-to-black-women-the-innovation-tech-cant-figure-out/ Listening to Black Women: The Innovation Tech Can't Figure Out
 1. Business Insider https://www.businessinsider.com/google-fired-employee-diversity-recruiter-baltimore-accent-was-disability-2020-12 A Black ex-Googler claimed she was told by a manager that her Baltimore-accented speech was a 'disability' and later fired
 1. Business Insider https://www.businessinsider.com/timnit-gebru-google-ceo-sundar-pichai-non-apology-ai-researcher-2020-12 Former Google AI researcher Timnit Gebru accused Sundar Pichai of glossing over her dismissal with a non-apology designed to make the company look good
+1. Business Insider https://www.businessinsider.com/google-nicole-tinson-hbcu20x20-ended-companys-partnership-2020-12 After a Twitter thread exposed the mistreatment of Black employees at Google, I ended my company's partnership to connect HBCU students with the tech giant. Here's why we decided to pull the plug.
 1. The Times https://www.thetimes.co.uk/article/is-this-the-dawn-of-unionisation-at-google-fz2lhq9vk Is this the dawn of unionisation at Google?
 1. Bloomberg https://www.bloomberg.com/news/articles/2020-12-04/google-scientist-s-abrupt-exit-exposes-rift-in-prominent-ai-unit Google Scientist’s Abrupt Exit Exposes Rift in Prominent AI Unit
-1. Venture Beat https://venturebeat.com/2020/12/07/researchers-are-starting-to-refuse-to-review-google-ai-papers/ Researchers are starting to refuse to review Google AI papers
-1. Business Insider https://www.businessinsider.com/google-nicole-tinson-hbcu20x20-ended-companys-partnership-2020-12 After a Twitter thread exposed the mistreatment of Black employees at Google, I ended my company's partnership to connect HBCU students with the tech giant. Here's why we decided to pull the plug.
 
 ### Non-English-language publications
 1. Expansion https://expansion.mx/opinion/2020/12/21/que-hay-detras-de-la-salida-de-timnit-gebru-de-google ¿Qué hay detrás de la salida de Timnit Gebru de Google?
@@ -117,7 +116,6 @@ Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tec
 1. mercadonegro.pe https://www.mercadonegro.pe/actualidad/google-despide-a-experta-que-acuso-de-racista-y-misogino-a-su-sistema-de-identificacion-facial/ Google despide a experta que acusó de «racista y misógino» a su sistema de identificación facial
 1. La Presse https://www.lapresse.ca/affaires/techno/2021-01-04/des-salaries-de-google-creent-un-syndicat-face-aux-tensions-internes.php Des salariés de Google créent un syndicat face aux tensions internes
 1. MIT Technilogy Review en Espanol https://www.technologyreview.es/s/12953/polemica-en-google-por-despedir-su-codirectora-de-etica-para-la-ia Polémica en Google por despedir a su codirectora de Ética para la IA
-
 
 ## Videos and podcasts
 
