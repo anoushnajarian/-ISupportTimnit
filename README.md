@@ -26,12 +26,12 @@ https://www.technologyreview.com/2020/12/04/1013294/google-ai-ethics-research-pa
 We read the paper that forced Timnit Gebru out of Google. Here’s what it says. | MIT Technology Review
 1. MIT Technology Review https://www.technologyreview.com/2020/12/16/1014634/google-ai-ethics-lead-timnit-gebru-tells-story/ “I started crying”: Inside Timnit Gebru’s last days at Google—and what happens next
 1. MIT Technology Review https://www.technologyreview.com/2020/12/17/1014994/congress-wants-answers-from-google-about-timnit-gebrus-firing/ Congress wants answers from Google about Timnit Gebru’s firing
-1. New York Times https://www.nytimes.com/2020/12/03/technology/google-researcher-timnit-gebru.html Google Researcher Says She Was Fired Over Paper Highlighting Bias in A.I.
-1. New York Times https://www.nytimes.com/2021/01/04/technology/google-employees-union.html#click=https://t.co/m2Qmjwz32V Hundreds of Google Employees Unionize, Culminating Years of Activism
-1. New York Times https://www-nytimes-com.cdn.ampproject.org/c/s/www.nytimes.com/2021/01/04/opinion/google-union.amp.html We Built Google. This Is Not the Company We Want to Work For.
-1. Washington Post
+3. New York Times https://www.nytimes.com/2020/12/03/technology/google-researcher-timnit-gebru.html Google Researcher Says She Was Fired Over Paper Highlighting Bias in A.I.
+4. New York Times https://www.nytimes.com/2021/01/04/technology/google-employees-union.html#click=https://t.co/m2Qmjwz32V Hundreds of Google Employees Unionize, Culminating Years of Activism
+5. New York Times https://www-nytimes-com.cdn.ampproject.org/c/s/www.nytimes.com/2021/01/04/opinion/google-union.amp.html We Built Google. This Is Not the Company We Want to Work For.
+6. Washington Post
 https://www.washingtonpost.com/technology/2020/12/23/google-timnit-gebru-ai-ethics/ Google hired Timnit Gebru to be an outspoken critic of unethical AI. Then she was fired for it.
-1. Washington Post https://www.washingtonpost.com/technology/2020/12/03/timnit-gebru-google-fired/ Google’s star AI ethics researcher, one of a few Black women in the field, says she was fired for a critical email
+7. Washington Post https://www.washingtonpost.com/technology/2020/12/03/timnit-gebru-google-fired/ Google’s star AI ethics researcher, one of a few Black women in the field, says she was fired for a critical email
 1. Wired https://www.wired.com/story/timnit-gebru-exit-google-exposes-crisis-in-ai/
 Opinion: Timnit Gebru’s Exit From Google Exposes a Crisis in AI
 1. Wired https://www.wired.com/story/behind-paper-led-google-researchers-firing/ Behind the Paper That Led to a Google Researcher’s Firing
@@ -90,13 +90,14 @@ Why Timnit Gebru’s controversial Google exit is setting off a firestorm in tec
 1. Brookings https://www.brookings.edu/blog/techtank/2020/12/17/if-not-ai-ethicists-like-timnit-gebru-who-will-hold-big-tech-accountable/ If not AI ethicists like Timnit Gebru, who will hold Big Tech accountable?
 1. The Stanford Daily https://www.stanforddaily.com/2020/12/15/in-solidarity-with-dr-timnit-gebru/ In solidarity with Dr. Timnit Gebru
 1. Engadget https://www.engadget.com/google-ethical-ai-team-letter-174518115.html Google AI team demands changes after Dr. Timnit Gebru's departure
-1. VICE https://www.vice.com/en/article/n7vqwq/google-has-shattered-its-pipeline-to-black-talent Google Has 'Shattered' Its Pipeline To Black Talent
-1. The Gradient https://thegradient.pub/the-far-reaching-impacts-of-timnit-gebru/ The Far-Reaching Impact of Dr. Timnit Gebru
-1. Business Insider https://www.businessinsider.com/google-fired-employee-diversity-recruiter-baltimore-accent-was-disability-2020-12 A Black ex-Googler claimed she was told by a manager that her Baltimore-accented speech was a 'disability' and later fired
-1. Business Insider https://www.businessinsider.com/timnit-gebru-google-ceo-sundar-pichai-non-apology-ai-researcher-2020-12 Former Google AI researcher Timnit Gebru accused Sundar Pichai of glossing over her dismissal with a non-apology designed to make the company look good
-1. Business Insider https://www.businessinsider.com/google-nicole-tinson-hbcu20x20-ended-companys-partnership-2020-12 After a Twitter thread exposed the mistreatment of Black employees at Google, I ended my company's partnership to connect HBCU students with the tech giant. Here's why we decided to pull the plug.
-1. The Times https://www.thetimes.co.uk/article/is-this-the-dawn-of-unionisation-at-google-fz2lhq9vk Is this the dawn of unionisation at Google?
-1. Bloomberg https://www.bloomberg.com/news/articles/2020-12-04/google-scientist-s-abrupt-exit-exposes-rift-in-prominent-ai-unit Google Scientist’s Abrupt Exit Exposes Rift in Prominent AI Unit
+2. Engadget https://www.engadget.com/whats-going-on-at-google-ai-150001422.html What's going on at Google AI? The company won't stop firing its ethicists.
+3. VICE https://www.vice.com/en/article/n7vqwq/google-has-shattered-its-pipeline-to-black-talent Google Has 'Shattered' Its Pipeline To Black Talent
+4. The Gradient https://thegradient.pub/the-far-reaching-impacts-of-timnit-gebru/ The Far-Reaching Impact of Dr. Timnit Gebru
+5. Business Insider https://www.businessinsider.com/google-fired-employee-diversity-recruiter-baltimore-accent-was-disability-2020-12 A Black ex-Googler claimed she was told by a manager that her Baltimore-accented speech was a 'disability' and later fired
+6. Business Insider https://www.businessinsider.com/timnit-gebru-google-ceo-sundar-pichai-non-apology-ai-researcher-2020-12 Former Google AI researcher Timnit Gebru accused Sundar Pichai of glossing over her dismissal with a non-apology designed to make the company look good
+7. Business Insider https://www.businessinsider.com/google-nicole-tinson-hbcu20x20-ended-companys-partnership-2020-12 After a Twitter thread exposed the mistreatment of Black employees at Google, I ended my company's partnership to connect HBCU students with the tech giant. Here's why we decided to pull the plug.
+8. The Times https://www.thetimes.co.uk/article/is-this-the-dawn-of-unionisation-at-google-fz2lhq9vk Is this the dawn of unionisation at Google?
+9. Bloomberg https://www.bloomberg.com/news/articles/2020-12-04/google-scientist-s-abrupt-exit-exposes-rift-in-prominent-ai-unit Google Scientist’s Abrupt Exit Exposes Rift in Prominent AI Unit
 
 ### Non-English-language publications
 1. Expansion https://expansion.mx/opinion/2020/12/21/que-hay-detras-de-la-salida-de-timnit-gebru-de-google ¿Qué hay detrás de la salida de Timnit Gebru de Google?
