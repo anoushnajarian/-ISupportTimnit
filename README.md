@@ -126,6 +126,8 @@ AI Ethics Researcher Timnit Gebru's Firing Doesn’t Look Good For Google
 https://www.youtube.com/watch?v=PU-ilYUpWy0
 Firing Backlash Led to Google CEO Apology: Timnit Gebru
 1. In Machines We Trust https://open.spotify.com/episode/6skJyabCcgxuoSvkWGVkSV?si=xZC6_L-hR8SQafFkKHvEAQ Timnit Gebru Tells Her Story
+1. Google démantèle son éthique (et tout le monde s'en fout...) - Science4All https://www.youtube.com/watch?v=HbFadtOxs4k
+1. Google fired its ethics. This is terrifying. - Science4All https://www.youtube.com/watch?v=fe9u6YQTsWY
 
 ## Events
 1. https://www.eventbrite.com/e/the-fight-for-the-future-organizing-the-tech-industry-tickets-136885274541 The Fight for the Future: Organizing the Tech Industry
