@@ -1,0 +1,1785 @@
+Page 1
+Sur les dangers des perroquets stochastiques:
+Les modèles de langage peuvent-ils être trop grands?
+Emily M. Bender ∗
+ebender@uw.edu
+Université de Washington
+Seattle, WA, États-Unis
+Timnit Gebru ∗
+timnit@blackinai.org
+Black in AI 
+Palo Alto, Californie, États-Unis
+Angelina McMillan-Major
+aymm@uw.edu
+Université de Washington
+Seattle, WA, États-Unis
+Shmargaret Shmitchell
+shmargaret.shmitchell@gmail.com
+L'Éther
+ABSTRAIT
+Les 3 dernières années de travail en PNL ont été caractérisées par
+développement et déploiement de modèles de langage toujours plus larges, es-
+spécialement pour l'anglais. BERT, ses variantes, GPT-2/3 et autres, la plupart
+récemment Switch-C, ont repoussé les limites du possible à la fois
+grâce à des innovations architecturales et à sa taille. Utilisant
+ces modèles pré-entraînés et la méthodologie pour les affiner
+pour des tâches spécifiques, les chercheurs ont étendu l'état de l'art
+sur un large éventail de tâches mesurées par les classements sur des
+benchmarks pour l'anglais. Dans cet article, nous prenons du recul et demandons:
+Quelle est la taille trop grande? Quels sont les risques possibles associés à cela
+technologie et quelles voies sont disponibles pour atténuer ces risques?
+Nous fournissons des recommandations, y compris la pesée de l'environnement
+les coûts financiers et financiers d'abord, en investissant des ressources dans la conservation et
+documenter soigneusement les ensembles de données plutôt que de tout ingérer sur
+le web, en réalisant des exercices de pré-développement évaluant comment
+l'approche prévue s'inscrit dans les objectifs de recherche et développement et
+soutient les valeurs des parties prenantes et encourage les orientations de recherche
+au-delà de modèles linguistiques toujours plus vastes.
+CONCEPTS CCS
+• Méthodologies de calcul → Traitement du langage naturel.
+Format de référence ACM:
+Emily M. Bender, Timnit Gebru, Angelina McMillan-Major et Shmar-
+garet Shmitchell. 2021. Sur les dangers des perroquets stochastiques: Can Language
+Les modèles sont trop gros?
+. Lors de la Conférence sur l'équité, la responsabilité et les trans-
+parency (FAccT '21), 3–10 mars 2021, événement virtuel, Canada. ACM, nouveau
+York, NY, États-Unis, 14 pages. https://doi.org/10.1145/3442188.3445922
+1. INTRODUCTION
+L'une des plus grandes tendances du traitement du langage naturel (PNL) a
+a été la taille croissante des modèles de langage (LM) telle que mesurée
+par le nombre de paramètres et la taille des données d'entraînement. Depuis 2018
+∗ Premiers auteurs communs
+Autorisation de faire des copies numériques ou papier de tout ou partie de ce travail à des fins personnelles ou
+l'utilisation en classe est accordée sans frais à condition que des copies ne soient pas faites ou distribuées
+à des fins lucratives ou commerciales et que les copies portent cet avis et la citation complète
+sur la première page. Les droits d'auteur des composants tiers de ce travail doivent être respectés.
+Pour toutes autres utilisations, contactez le (s) propriétaire (s) / auteur (s).
+FAccT '21, 3–10 mars 2021, événement virtuel, Canada
+© 2021 Copyright détenu par le propriétaire / auteur (s).
+ACM ISBN 978-1-4503-8309-7 / 21/03.
+https://doi.org/10.1145/3442188.3445922
+seuls, nous avons vu l'émergence du BERT et de ses variantes [ 39,
+70, 74, 113, 146], GPT-2 [106], T-NLG [112], GPT-3 [25] et la plupart
+récemment Switch-C [ 43] , avec des institutions apparemment en concurrence pour
+produire des LM toujours plus grands. En étudiant les propriétés des LM et
+la façon dont ils changent avec la taille présente un intérêt scientifique, et les grands LM
+ont montré des améliorations sur diverses tâches (§ 2) , nous demandons si
+suffisamment de réflexion a été mise sur les risques potentiels associés
+avec leur élaboration et des stratégies pour atténuer ces risques.
+Nous considérons d'abord les risques environnementaux. Faisant écho à une ligne de
+travail décrivant les coûts environnementaux et financiers de l'apprentissage approfondi
+systèmes [ 129] , nous encourageons la communauté de recherche à
+évaluer ces impacts. Une façon d'y parvenir est de déclarer les coûts
+et évaluer les travaux en fonction de la quantité de ressources qu'ils consomment.
+sume [ 57] . Comme nous le soulignons au §3, augmenter les
+les coûts financiers de ces modèles punissent doublement les entreprises marginalisées
+les communautés les moins susceptibles de bénéficier des progrès accomplis
+par les grands LM et les plus susceptibles d'être lésés par un environnement négatif
+conséquences mentales de sa consommation de ressources. À l'échelle nous
+discutent (décrit au § 2) , la première considération doit être
+coût environnemental.
+Tout comme l'impact environnemental évolue avec la taille du modèle, il en va de même
+la difficulté de comprendre ce que contiennent les données de formation. Au § 4,
+nous discutons de la façon dont de grands ensembles de données basés sur des textes d'Internet
+surreprésentent les points de vue hégémoniques et codent potentiellement les biais
+préjudiciable aux populations marginalisées. En collectionnant toujours plus
+des ensembles de données nous risquons de contracter des dettes de documentation. Nous recommandons
+atténuer ces risques en budgétisant la conservation et la documentation
+au début d'un projet et ne créer que des ensembles de données aussi volumineux que possible
+être suffisamment documenté.
+Comme le soutiennent Bender et Koller [14 ], il est important de sous-
+supporter les limites des LM et mettre leur succès en contexte. Ce
+non seulement contribue à réduire le battage médiatique qui peut induire le public en erreur et
+chercheurs eux-mêmes concernant les capacités de ces LM, mais
+pourrait encourager de nouvelles orientations de recherche qui ne
+dépendent d'avoir des LM plus grands. Comme nous le verrons au § 5 , les LM ne sont pas
+effectuer la compréhension du langage naturel (NLU), et avoir seulement
+succès dans des tâches qui peuvent être abordées en manipulant des langues
+forme tique [14 ]. Se concentrer sur les résultats de pointe dans les classements
+sans encourager une compréhension plus approfondie du mécanisme en
+auxquelles ils sont atteints peut entraîner des résultats trompeurs, comme indiqué
+________________________________________
+Page 2
+FAccT '21, 3–10 mars 2021, événement virtuel, Canada
+Bender et Gebru, et al.
+dans [21 , 93] et détourner les ressources des efforts qui faciliteraient
+progrès à long terme vers la compréhension du langage naturel,
+sans utiliser de données d'entraînement insondables.
+De plus, la tendance des interlocuteurs humains à imputer
+ce qui signifie là où il n'y en a pas, peut induire en erreur les deux chercheurs en PNL
+et le grand public à considérer le texte synthétique comme significatif.
+Combiné avec la capacité des LM à capter les deux biais subtils
+et les modèles de langage ouvertement abusifs dans les données de formation, cela conduit
+aux risques de préjudices, y compris le fait de se heurter à un langage désobligeant et
+victime de discrimination de la part d'autres personnes qui reproduisent
+Les idéologies racistes, sexistes, capacitantes, extrémistes ou autres
+forcé par des interactions avec le langage synthétique. Nous explorons
+ces préjudices potentiels au § 6 et les chemins potentiels en avant au §7.
+Nous espérons qu'un aperçu critique des risques de se fier à
+l'augmentation de la taille des LM en tant que principal facteur d'augmentation des performances
+mance de la technologie langagière peut faciliter une réaffectation des efforts
+vers des approches qui évitent certains de ces risques tout en
+les avantages des améliorations de la technologie linguistique.
+2. ARRIÈRE PLAN
+Semblable à [14 ], nous comprenons le terme modèle de langage (LM) pour
+font référence à des systèmes formés aux tâches de prédiction de chaînes: c'est-à-dire
+prédire la probabilité d'un jeton (caractère, mot ou chaîne) donné
+soit son contexte précédent, soit (dans les LM bidirectionnels et masqués)
+son contexte environnant. Ces systèmes ne sont pas supervisés et lorsque
+déployé, prenez un texte en entrée, produisant généralement des scores ou une chaîne
+prédictions. Initialement proposé par Shannon en 1949 [117 ], certains des
+les premiers LM mis en œuvre datent du début des années 1980 et ont été utilisés
+en tant que composants dans les systèmes de reconnaissance automatique de la parole (ASR),
+traduction automatique (MT), classification de documents, etc. [ 111] .
+Dans cette section, nous donnons un bref aperçu de la tendance générale de
+modélisation du langage ces dernières années. Pour une enquête plus approfondie sur
+LM pré-entraînés, voir [ 105] .
+Avant les modèles neuronaux, les modèles n-gram utilisaient également de grandes quantités
+de données [20 , 87]. En plus de l'ASR, ces grands modèles de n grammes de
+L'anglais a été développé dans le contexte de la traduction automatique à partir de
+une autre langue source avec beaucoup moins d'exemples de traduction directe.
+Par exemple, [20 ] a développé un modèle n-gramme pour l'anglais avec
+un total de 1,8T n-grammes et a noté des améliorations constantes dans BLEU
+score sur l'ensemble de test de 1797 traductions arabes en tant que données d'entraînement
+a été augmenté de 13 millions de jetons.
+La prochaine grande étape a été le passage à l'utilisation de représentants pré-entraînés.
+les ressentiments de la distribution des mots (appelés embeddings de mots)
+dans d'autres tâches PNL (supervisées). Ces vecteurs de mots proviennent de
+des systèmes tels que word2vec [ 85 ] et GloVe [98] et versions ultérieures LSTM
+modèles tels que context2vec [82 ] et ELMo [99] et pris en charge
+performance de pointe sur la réponse aux questions, implication textuelle-
+ment, étiquetage de rôle sémantique (SRL), résolution de coréférence, nommé
+reconnaissance d'entité (NER) et analyse des sentiments, d'abord en anglais
+lish et plus tard pour d'autres langues également. Tout en formant le mot
+les plongements nécessitaient une quantité (relativement) importante de données, cela réduisait
+la quantité de données étiquetées nécessaire à la formation sur les différents
+tâches supervisées. Par exemple, [99 ] a montré qu'un modèle formé
+avec ELMo réduit la quantité nécessaire de données d'entraînement nécessaires
+pour obtenir des résultats similaires sur SRL par rapport aux modèles sans, comme
+montré dans un cas où un modèle formé avec ELMo a atteint
+An
+Modèle
+# de paramètres
+Taille du jeu de données
+2019
+BERT [ 39]
+3,4E + 08
+16 GB
+2019
+DistilBERT [ 113 ]
+6,60E + 07
+16 GB
+2019
+ALBERT [ 70 ]
+2,23E + 08
+16 GB
+2019
+XLNet (grand) [ 150 ]
+3.40E + 08
+126 Go
+2020
+ERNIE-Gen (grande) [ 145]
+3.40E + 08
+16 GB
+2019
+RoBERTa (grand) [ 74 ]
+3.55E + 08
+161 Go
+2019
+MegatronLM [ 122 ]
+8h30E + 09
+174 Go
+2020
+T5-11B [ 107 ]
+1,10E + 10
+745 Go
+2020
+T-NLG [ 112]
+1,70E + 10
+174 Go
+2020
+GPT-3 [ 25]
+1.75E + 11
+570 Go
+2020
+GShard [ 73 ]
+6,00E + 11
+-
+2021
+Switch-C [ 43 ]
+1,57E + 12
+745 Go
+Tableau 1: Aperçu des modèles récents de grands langages
+le score F1 de développement maximal en 10 époques par opposition à
+486 sans ELMo. Ce modèle a en outre réalisé le même F1
+score avec 1% des données comme modèle de base atteint avec 10%
+des données d'entraînement. Augmenter le nombre de paramètres du modèle,
+cependant, n'a pas donné lieu à des augmentations notables pour les LSTM [par exemple 82] .
+Les modèles de transformateurs, en revanche, ont été en mesure de
+Bénéficiez inutilement d'architectures plus grandes et de plus grandes quantités de
+Les données. Devlin et coll. [39 ] notent en particulier que la formation sur un
+ensemble de données et le réglage fin pour des tâches spécifiques conduisent à une augmentation stricte
+résultats sur les tâches GLUE [138 ] pour l'anglais comme hyperparamètres
+du modèle ont été augmentés. Initialement développé en tant que LM chinois, le
+La famille ERNIE [ 130, 131, 145] a produit ERNIE-Gen, qui était également
+formés sur le jeu de données BERT original (anglais), rejoignant les rangs
+de très gros LM. NVIDIA a publié le MegatronLM qui a
+8.3B paramètres et a été formé sur 174 Go de texte de l'anglais
+Jeux de données Wikipédia, OpenWebText, RealNews et CC-Stories [ 122] .
+Formé sur le même jeu de données, Microsoft a publié T-NLG,1 un LM
+avec des paramètres 17B. GPT-3 [ 25 ] d'OpenAI et GShard de Google
+[ 73] et Switch-C [43] ont augmenté la définition du grand LM de
+ordres de grandeur en termes de paramètres à 175B, 600B et 1,6T
+paramètres, respectivement. Le tableau 1 résume une sélection de ces
+LM en termes de taille et de paramètres des données d'entraînement. Comme de plus en plus
+de grandes quantités de texte sont collectées sur le Web dans des ensembles de données tels que
+comme le Corpus Colossal Clean Crawled [ 107] et le Pile [51], ce
+on peut s'attendre à ce que la tendance des LM de plus en plus grandes se poursuive aussi longtemps
+car ils sont en corrélation avec une augmentation des performances.
+Un certain nombre de ces modèles ont également des variantes multilingues telles que
+comme mBERT [39 ] et mT5 [148] ou sont entraînés avec une certaine quantité de
+des données multilingues telles que GPT-3 où 7% des données d'entraînement étaient
+pas en anglais [25 ]. Les performances de ces mods multilingues
+els à travers les langues est un domaine de recherche actif. Wu et Drezde
+[ 144] ont constaté que même si mBERT ne fonctionne pas aussi bien dans
+toutes les 104 langues dans ses données de formation, il a mieux performé au NER,
+Balisage de point de vente et analyse des dépendances par rapport aux modèles monolingues
+formés avec des quantités comparables de données pour quatre
+langues. À l'inverse, [95 ] ont enquêté sur des modèles BERT monolingues
+développé avec des considérations d'architecture plus spécifiques ou
+données monolingues nationales et ont constaté qu’elles surperformaient généralement
+1 https://www.microsoft.com/en-us/research/blog/turing-nlg-a-17-billion-parameter-
+modèle-de-langage-par-microsoft /
+________________________________________
+Page 3
+Perroquets stochastiques
+FAccT '21, 3–10 mars 2021, événement virtuel, Canada
+mBERT à travers 29 tâches. Quoi qu'il en soit, ces modèles ne traitent pas
+les problèmes d'inclusion soulevés par [ 65 ], qui notent que plus de 90% des
+les langues du monde utilisées par plus d'un milliard de personnes actuellement
+ont peu ou pas de soutien en termes de technologie linguistique.
+Parallèlement au travail d'enquête sur les informations que les modèles
+tain des données, nous constatons une tendance à réduire la taille de ces
+modèles utilisant diverses techniques telles que la distillation des connaissances
+[ 26 , 58], quantification [118, 153], paramètre d'intégration factorisé
+terisation et partage de paramètres inter-couches [ 70 ], et progressif
+remplacement du module [ 146] . Rogers et coll. [110] fournissent un
+comparaison de modèles dérivés de BERT utilisant ces techniques,
+comme DistilBERT [113 ] et ALBERT [70]. Alors que ces modèles
+maintenir et parfois dépasser les performances de l'original
+Modèle BERT, malgré leur taille beaucoup plus petite, ils finissent toujours par
+reposent sur de grandes quantités de données et sur un traitement et un stockage importants
+âge des capacités à la fois maintenir et réduire le modèle.
+Nous notons que le passage des LM de n-grammes aux vecteurs de mots dis-
+labouré des LM neuronaux aux LM Transformer pré-entraînés est mis en parallèle
+par une expansion et un changement des types de tâches qu'ils utilisent -
+ful pour: les LM de n-gramme ont été initialement déployés pour sélectionner
+parmi les sorties, par exemple, de modèles acoustiques ou de traduction; le
+Les vecteurs de mots dérivés du LSTM ont été rapidement repris comme plus efficaces.
+représentations tives des mots (à la place des fonctions de sac de mots)
+dans une variété de tâches PNL impliquant l'étiquetage et la classification; et
+les modèles Transformer pré-entraînés peuvent être recyclés sur de très petits
+des ensembles de données (apprentissage en quelques clichés, en un seul coup ou même en un seul coup) à effectuer
+tâches apparemment manipulatrices de sens telles que la synthèse,
+réponse aux questions et autres. Néanmoins, tous ces systèmes
+partagent la propriété d'être des LM dans le sens que nous donnons ci-dessus, que
+est, des systèmes formés pour prédire des séquences de mots (ou de caractères ou
+Phrases). Là où ils diffèrent, c'est la taille des ensembles de données d'entraînement
+ils exploitent et les sphères d'influence qu'ils peuvent éventuellement affecter.
+En évoluant de ces deux manières, les très grands LM modernes encourent de nouveaux
+types de risques, sur lesquels nous nous pencherons dans les sections suivantes.
+3 COÛT ENVIRONNEMENTAL ET FINANCIER
+Strubell et coll. formation et développement de modèles récemment comparés
+les coûts en dollars et estimés
+2 émissions [ 129] .
+Alors que l'homme moyen est responsable d'environ 5t
+2
+par an,2 les auteurs ont formé un (grand) modèle Transformer [136 ] avec
+recherche d'architecture neuronale et estimé que la procédure de formation
+émis 284t de
+2 . Formation d'un seul modèle de base BERT (sans
+réglage d'hyperparamètres) sur les GPU nécessitaient autant
+l'énergie comme un vol transaméricain.
+Alors qu'une partie de cette énergie provient de sources renouvelables, ou
+l'utilisation par les entreprises de cloud computing de sources de compensation de crédit carbone,
+les auteurs notent que la majorité de l'énergie des fournisseurs de cloud computing est
+ne provient pas de sources renouvelables et de nombreuses sources d'énergie dans le
+monde ne sont pas neutres en carbone. De plus, les sources d'énergie renouvelables
+sont encore coûteuses pour l'environnement,3 et les centres de données avec une
+les exigences de calcul enlèvent d'autres utilisations potentielles de
+2 Données pour 2017, à partir de https://ourworldindata.org/co2-emissions, consulté le 21 janvier 2021
+3https://www.heraldscotland.com/news/18270734.14m-trees-cut-scotland-make-way-
+parcs éoliens/
+énergie verte,4 soulignant la nécessité d'un modèle écoénergétique
+architectures et paradigmes de formation.
+Strubell et coll. examiner également le coût de ces modèles par rapport à leur
+gains de précision. Pour la tâche de traduction automatique où
+Les LM ont entraîné des gains de performance, ils estiment qu'un
+augmentation du score BLEU de 0,1 à l'aide de la recherche d'architecture neuronale
+La traduction de l'anglais vers l'allemand entraîne une augmentation de 150 000 dollars
+calculer le coût en plus des émissions de carbone. Encourager
+un accès plus équitable à la recherche en PNL et une réduction de l'empreinte carbone,
+les auteurs donnent des recommandations pour rapporter le temps de formation et
+sensibilité aux hyperparamètres lorsque le modèle publié est destiné
+être recyclé pour une utilisation en aval. Ils exhortent également les gouvernements à
+investir dans des nuages de calcul pour fournir un accès équitable aux chercheurs.
+Des initiatives telles que l'atelier SustainNLP5 ont depuis pris
+l'objectif de donner la priorité au matériel informatique efficace et
+algorithmes. Schwartz et coll. [ 115 ] appellent également au développement de
+IA verte, similaire à d'autres dé-
+des développements tels que la chimie verte ou l'informatique durable. Comme
+montré dans [ 5] , la quantité de calcul utilisée pour entraîner la plus grande profondeur
+les modèles d'apprentissage (pour la PNL et d'autres applications) ont augmenté
+300 000x en 6 ans, augmentant à un rythme beaucoup plus rapide que celui de Moore
+Droit. Pour promouvoir l'IA verte, Schwartz et al. plaider pour la promotion
+l'efficacité comme mesure d'évaluation et montrer que la plupart des échantillons
+des articles de l'ACL 2018, de NeurIPS 2018 et du CVPR 2019
+des améliorations racées seules comme principales contributions au domaine, et
+aucune ne s'est concentrée sur les mesures de l'efficience comme contributions principales.
+Depuis lors, des ouvrages tels que [57 , 75] ont publié des outils en ligne pour
+aider les chercheurs à évaluer leur consommation d'énergie. Parmi leurs rec-
+les recommandations sont de mener des expériences dans des régions respectueuses du carbone,
+rapportent systématiquement les mesures de l'énergie et du carbone et tiennent compte de l'énergie
+compromis de performance avant de déployer des modèles énergivores.
+En plus de ces appels à documentation et correctifs techniques,
+Bietti et Vatanparast soulignent la nécessité d'une
+engagement à façonner un avenir où les systèmes basés sur les données ont
+impact négatif minimal sur l’environnement [ 16] .
+Alors que [ 129] évalue le processus de formation dans un ensemble de recherche
+ting, de nombreux LM sont déployés dans des environnements industriels ou autres où
+le coût de l'inférence pourrait largement l'emporter sur celui de la formation en
+le long terme. Dans ce scénario, il peut être plus approprié de dé-
+modèles de stratagème avec des coûts énergétiques inférieurs lors de l'inférence, même si leur
+les coûts de formation sont élevés. En plus des outils de benchmarking, fonctionne
+l'estimation de l'augmentation des coûts associée à l'introduction des LM
+pour des applications particulières, et comment ils se comparent aux alternatives
+Les méthodes PNL seront importantes pour comprendre les compromis.
+Lorsque nous effectuons des analyses risques / bénéfices de la technologie langagière,
+nous devons garder à l'esprit la manière dont les risques et les bénéfices sont répartis,
+parce qu'ils ne reviennent pas aux mêmes personnes. D'une part, il
+est bien documenté dans la littérature sur le racisme environnemental qui
+les effets négatifs du changement climatique atteignent et ont un impact
+les communautés les plus marginalisées du monde en premier [1 , 27]. 6 Est-ce juste ou
+juste pour demander, par exemple, que les résidents des Maldives (susceptibles de
+être sous l'eau d'ici 2100 [6 ] ) ou les 800 000 personnes touchées au Soudan
+4https://news.microsoft.com/2017/11/02/microsoft-announces-one-of-the-largest-
+offres-de-vent-aux-Pays-Bas avec vattenfall /
+5https://sites.google.com/view/sustainlp2020/organization
+6https://www.un.org/sustainabledevelopment/blog/2016/10/report-inequality-
+exacerber-les-impacts-climatiques-sur-les-pauvres /
+________________________________________
+Page 4
+FAccT '21, 3–10 mars 2021, événement virtuel, Canada
+Bender et Gebru, et al.
+par des inondations drastiques7 payer le prix environnemental de la formation et
+déployer des LM anglais toujours plus grands, lorsque des modèles à grande échelle similaires
+ne sont pas produits pour Dhivehi ou l'arabe soudanais?8
+Et, bien que certaines technologies linguistiques soient véritablement conçues pour
+bénéficient aux communautés marginalisées [ 17, 101], la plupart des technologies linguistiques
+ogy est conçu pour répondre aux besoins de ceux qui ont déjà le plus
+privilège dans la société. Considérez, par exemple, qui est susceptible de faire les deux
+disposer des ressources financières nécessaires pour acheter un Google Home, Amazon
+Alexa ou un appareil Apple avec Siri installé et parlez confortablement
+une variété d'une langue qu'ils sont prêts à manipuler. Fourrure-
+thermore, lorsque les grands LM codent et renforcent les biais hégémoniques
+(voir §§ 4 et 6), les préjudices qui en découlent sont les plus susceptibles de
+les populations marginalisées qui, même dans les pays riches, sont
+faire l'expérience du racisme environnemental [10 , 104].
+Ces modèles sont développés à un moment où des
+des changements environnementaux marqués sont observés autour de la
+monde. Des moussons causées par des changements dans les régimes de précipitations en raison
+au changement climatique qui touche plus de 8 millions de personnes en Inde,9
+à la pire saison des incendies jamais enregistrée en Australie tuant ou déplaçant
+près de trois milliards d'animaux et au moins 400 personnes,Dix L'effet
+du changement climatique continue à établir de nouveaux records chaque année. Il est
+il est temps pour les chercheurs de donner la priorité à l'efficacité énergétique et au coût
+pour réduire l'impact environnemental négatif et l'accès inéquitable
+aux ressources - qui affectent de manière disproportionnée les personnes qui
+sont déjà dans des positions marginalisées.
+4 DONNÉES DE FORMATION INÉGALABLES
+La taille des données disponibles sur le Web a permis le deep learning
+modèles pour atteindre une précision élevée sur des repères spécifiques en PNL
+et applications de vision par ordinateur. Cependant, dans les deux applications
+zones, les données d'entraînement se sont avérées avoir des caractéristiques problématiques
+téristiques [18 , 38, 42, 47, 61] résultant en des modèles qui codent en stéréo-
+associations typiques et désobligeantes selon le sexe, la race, l'ethnicité,
+et le statut d'invalidité [ 11, 12, 69, 69, 132, 132, 157]. Dans cette section,
+nous discutons de la façon dont les ensembles de données Internet volumineux et non durcis codent
+la vision dominante / hégémonique, qui nuit encore davantage aux personnes
+marges, et recommandent une allocation de ressources significative vers
+les pratiques de conservation et de documentation des ensembles de données.
+4.1 La taille ne garantit pas la diversité
+Internet est un espace virtuel vaste et diversifié et, par conséquent, il
+est facile d'imaginer que de très grands ensembles de données, tels que Common Crawl
+("Pétaoctets de données collectés pendant 8 ans d'exploration du Web",11 un
+dont la version filtrée est incluse dans les données d'entraînement GPT-3) doit
+donc être globalement représentatif de la manière dont différents
+les gens voient le monde. Cependant, en y regardant de plus près, nous constatons que
+plusieurs facteurs limitent la participation à Internet,
+7https://www.aljazeera.com/news/2020/9/25/over-800000-affected-in-sudan-flooding-
+ONU
+8 Par ce commentaire, nous n'avons pas l'intention d'effacer les travaux existants sur les langues à faibles ressources.
+Un exemple particulièrement intéressant est le projet Masakhane [ 91] , qui explore
+techniques de recherche participative pour développer la MT pour les langues africaines. Ces
+les directions prometteuses n'impliquent pas l'accumulation de téraoctets de données.
+9https://www.voanews.com/south-central-asia/monsoons-cause-havoc-india-climate-
+changement-modifie-la-pluviométrie
+dixhttps://www.cnn.com/2020/07/28/asia/australia-fires-wildlife-report-scli-intl-
+scn / index.html
+11http://commoncrawl.org/
+des discussions qui seront incluses via la méthodologie de crawling,
+et enfin les textes susceptibles d'être contenus après les données explorées
+sont filtrés. Dans tous les cas, les voix des personnes les plus susceptibles de
+un point de vue hégémonique est également plus susceptible d'être retenu. Dans le
+cas de l'anglais américain et britannique, cela signifie que la suprématie blanche et
+les opinions misogynes, âgées, etc. sont surreprésentées dans la formation
+données, non seulement dépassant leur prévalence dans la population générale
+mais aussi la mise en place de modèles formés sur ces ensembles de données pour
+amplifier les préjugés et les préjudices.
+En commençant par qui contribue à cette collection de textes Internet
+tions, nous constatons que l’accès Internet lui-même n’est pas uniformément réparti,
+résultant en des données Internet surreprésentant les jeunes utilisateurs et les
+des pays développés [ 100, 143]. 12 Cependant, il n'y a pas que l'In-
+ternet dans son ensemble dont il est question, mais sous-échantillons plutôt spécifiques
+de celui-ci. Par exemple, les données d'entraînement de GPT-2 proviennent de l'extraction
+liens liés de Reddit et enquête de 2016 de Pew Internet Research
+révèle que 67% des utilisateurs de Reddit aux États-Unis sont des hommes et 64%
+entre 18 et 29 ans.13 De même, des enquêtes récentes sur les wikipédiens
+constatent que seulement 8,8 à 15% sont des femmes ou des filles [ 9] .
+De plus, alors que les sites de contenu généré par les utilisateurs comme Reddit,
+Twitter et Wikipédia se présentent comme ouverts et accessibles
+pour tout le monde, il y a des facteurs structurels, y compris la pratique de la modération
+qui les rendent moins accueillants pour les populations marginalisées.
+Documents de Jones [64 ] (utilisant des techniques d'ethnographie numérique [63])
+plusieurs cas où des personnes faisant l'objet de menaces de mort
+sur Twitter ont vu leurs comptes suspendus alors que les comptes
+les menaces de mort persistent. Elle rapporte en outre que le harcèlement
+ment sur Twitter est vécu par «un large éventail de chevauchements
+groupes, y compris les victimes de violence domestique, les travailleurs du sexe, les personnes trans,
+les personnes queer, les immigrés, les patients médicaux (par leurs prestataires),
+les personnes neurodivergentes et les personnes visiblement ou vocalement handicapées. » Le
+le résultat net est qu'un ensemble limité de sous-populations peut continuer à
+ajouter facilement des données, partager leurs réflexions et développer des plateformes
+qui incluent leurs visions du monde; ce modèle systémique à son tour
+aggrave la diversité et l'inclusion dans les communica-
+tion, créant une boucle de rétroaction qui réduit l'impact des données
+populations sous-représentées.
+Même si les populations qui ne se sentent pas les bienvenues dans les sites grand public
+différents forums de communication, ceux-ci peuvent être moins susceptibles d'être
+inclus dans les données de formation pour les modèles linguistiques. Prends pour exemple,
+les personnes âgées aux États-Unis et au Royaume-Uni. Lazar et coll. décrire comment ils ont tous les deux
+Articuler individuellement et collectivement des montures anti-âge spécifiquement
+par le biais de blogs [ 71] , que certaines personnes âgées préfèrent à plus
+sites de médias sociaux populaires pour discuter de sujets sensibles [24 ]. Ces
+les forums contiennent de riches discussions sur ce qui constitue une discrimination fondée sur l'âge.
+nation et ses effets. Cependant, une communauté de blogueurs
+tel que celui décrit par Lazar et al. est moins susceptible d'être trouvé
+que d'autres blogs qui ont plus de liens entrants et sortants.
+Enfin, la pratique actuelle de filtrage des ensembles de données peut
+faire entendre la voix de personnes issues d’identités marginalisées. La formation
+défini pour GPT-3 était une version filtrée de l'ensemble de données Common Crawl,
+développé en formant un classificateur à sélectionner ces documents
+12 Ce point est également mentionné dans la carte modèle pour GPT-3: https://github.com/openai/
+gpt-3 / blob / master / model-card.md
+13https://www.journalism.org/2016/02/25/reddit-news-users-more-lusted-to-be-male-
+jeunes-et-numériques-dans-leurs-préférences-actualités /
+________________________________________
+Page 5
+Perroquets stochastiques
+FAccT '21, 3–10 mars 2021, événement virtuel, Canada
+les plus similaires à celles utilisées dans les données d'entraînement de GPT-2, c'est-à-dire
+éléments liés à de Reddit [ 25] , plus Wikipedia et une collection
+de livres. Bien que cela ait été censé être efficace pour filtrer les documents
+des travaux antérieurs qualifiés d ’« inintelligibles »[ 134] ,
+ce qui n'est pas mesuré (et donc inconnu), c'est ce qu'il a filtré d'autre.
+Le Corpus Colossal Clean Crawled [107 ], utilisé pour entraîner un billion
+le paramètre LM dans [43 ], est nettoyé, entre autres, en supprimant n'importe quelle page
+contenant l’un d’une liste d’environ 400 «Dirty, Naughty, Obscene or
+Sinon de mauvais mots »[p.6].14 Cette liste est très majoritairement composée de mots
+liés au sexe, avec une poignée d'insultes raciales et de mots liés à
+suprématie blanche (par exemple croix gammée, pouvoir blanc) incluse. Bien que possible
+bly efficace pour supprimer les documents contenant de la pornographie (et
+les stéréotypes problématiques associés encodés dans la langue de
+tels sites [125 ]) et certains types de discours de haine, cette approche
+atténuer également sans aucun doute, en supprimant des mots tels que minet,
+l'influence des espaces en ligne construits par et pour les personnes LGBTQ.15 Si
+on filtre le discours des populations marginalisées, on ne parvient pas à
+fournir des données d'entraînement qui récupèrent les liaisons et décrivent autrement
+identités marginalisées sous un jour positif.
+Ainsi à chaque étape, de la participation initiale aux forums Internet, à
+présence continue là-bas, à la collection et enfin au filtrage
+des données d'entraînement, la pratique actuelle privilégie la vision hégémonique
+point. En acceptant de grandes quantités de texte Web en tant que `` représentatif ''
+de «toute» l'humanité, nous risquons de perpétuer des points de vue dominants,
+augmentation des déséquilibres de pouvoir et réification des inégalités. Nous
+proposer plutôt des pratiques qui cherchent activement à inclure les communautés
+sous-représentés sur Internet. Par exemple, on peut s'inspirer
+rationnement des mouvements pour décoloniser l'éducation en s'orientant vers
+histoires orales dues à la surreprésentation des opinions coloniales
+text [35 , 76, 127] et organisez des ensembles de données de formation grâce à une
+processus consistant à décider quoi mettre, plutôt que de viser uniquement
+échelle et en essayant au hasard d'éliminer, après coup, les flotsam jugés
+«dangereux», «inintelligible» ou «autrement mauvais».
+4.2 Données statiques / Modification des vues sociales
+Un aspect central de la formation du mouvement social consiste à utiliser le langage
+jauger stratégiquement pour déstabiliser les récits dominants et appeler à
+tendance à des perspectives sociales sous-représentées. Mouvements sociaux
+produire de nouvelles normes, un nouveau langage et de nouvelles façons de communiquer. Ce
+ajoute des défis au déploiement des LM, à mesure que les méthodologies
+liant sur les LM courent le risque de `` verrouillage de la valeur '', où les
+la technologie réifie des compréhensions plus anciennes et moins inclusives.
+Par exemple, le mouvement Black Lives Matter (BLM) a influencé
+Génération et édition d'articles Wikipédia tels que, comme le BLM
+le mouvement s'est développé, des articles couvrant les fusillades de Noirs en
+pli dans la couverture et ont été générés avec une latence réduite [ 135] .
+Surtout, les articles décrivant les fusillades passées et les incidents de po-
+la brutalité des poux a été créée et mise à jour sous forme d'articles pour de nouveaux événements
+ont été créés, reflétant la façon dont les mouvements sociaux établissent des liens
+entre les événements dans le temps pour former des récits cohérents [102 ]. Suite
+généralement, Twyman et al. [135 ] mettent en évidence comment les mouvements sociaux
+influencer activement les cadrages et les recadrages des récits minoritaires
+14 Disponible sur https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-
+Sinon-Bad-Words / blob / master / en, consulté le 18 janvier 2021
+15 Cette observation est due à William Agnew.
+dans le type de discours en ligne qui forme potentiellement les données qui
+sous-tend les LM.
+Une mise en garde importante est que les mouvements sociaux qui sont
+documentées et qui ne reçoivent pas une attention médiatique significative
+ne sera pas capturé du tout. La couverture médiatique peut ne pas couvrir les protestations
+événements et mouvements sociaux [41 , 96] et peuvent fausser les événements qui
+contester le pouvoir de l'État [ 36] . Ceci est illustré par les médias
+qui ont tendance à ignorer les activités de protestation pacifiques et à se concentrer sur
+événements dramatiques ou violents qui font une bonne télévision mais presque
+aboutissent toujours à une couverture critique [ 81] . En conséquence, les données sous-
+épingler les LM revient à déformer les mouvements sociaux et à
+s'aligner proportionnellement avec les régimes de pouvoir existants.
+Les cadres de développement et de changement doivent être appris de manière incomplète
+moyens ou perdus dans la grande quantité de données utilisées pour former les grands LM - en particulier
+surtout si les données d'entraînement ne sont pas continuellement mises à jour. Compte tenu de la com
+pute uniquement les coûts de la formation de grands LM, ce n'est probablement pas faisable pour
+même les grandes entreprises pour les recycler suffisamment fréquemment pour
+suivre le type de changement de langue discuté ici. Peut-être
+des approches de réglage fin pourraient être utilisées pour recycler les LM, mais là encore,
+ce qui serait nécessaire, ce sont des pratiques de conservation réfléchies pour trouver un ap-
+propriété des données pour capturer les recadrages et les techniques d'évaluation
+si ces ajustements précis capturent de manière appropriée les moyens par lesquels
+les nouveaux cadrages contestent les représentations hégémoniques.
+4.3 Biais d'encodage
+Il est désormais bien établi que les grands LM présentent divers types de
+biais, y compris les associations stéréotypées [11 , 12, 69, 119, 156, 157],
+ou sentiment négatif envers des groupes spécifiques [ 61 ]. Par ailleurs,
+on voit les effets de l'intersectionnalité [ 34], où BERT, ELMo, GPT
+et GPT-2 codent plus de biais contre les identités marginalisées le long
+plus d'une dimension que ce à quoi on pourrait s'attendre en se basant uniquement sur le
+combinaison de la polarisation le long de chacun des axes [54 , 132]. Un grand nombre de
+ces travaux concluent que ces enjeux sont le reflet de la formation
+caractéristiques des données. Par exemple, Hutchinson et al. trouve que BERT
+associe des phrases faisant référence aux personnes handicapées à plus
+les mots de sentiments négatifs, et que la violence armée, le sans-abrisme,
+et la toxicomanie sont surreprésentées dans les textes traitant
+maladie [61 ]. De même, Gehman et al. montrent que des modèles comme GPT-3
+formés avec au moins 570 Go de données dérivées principalement de Common
+Ramper16 peut générer des phrases avec des scores de toxicité élevés même lorsque
+incité avec des phrases non toxiques [53 ]. Leur enquête sur GPT-
+Données d'entraînement de 217 trouve également 272K documents provenant d'actualités peu fiables
+sites et 63K de subreddits interdits.
+Ces démonstrations de biais appris par les LM sont extrêmement
+utile pour souligner le potentiel de préjudice lorsque de tels modèles
+sont déployés, soit dans la génération de texte, soit en tant que composants de classi-
+systèmes de fication, comme exploré plus en détail au § 6. Cependant, ils ne
+représentent une méthodologie qui peut être utilisée pour découvrir de manière exhaustive
+tous ces risques, pour plusieurs raisons.
+Premièrement, les techniques d'audit des modèles reposent généralement sur des
+des systèmes pour mesurer le sentiment, la toxicité ou de nouvelles mesures telles que
+en tant que `` regard '' pour mesurer les attitudes à l'égard d'un groupe démographique spécifique
+groupe [ 119] . Mais ces systèmes eux-mêmes peuvent ne pas être fiables
+16https://commoncrawl.org/the-data/
+17 Les données d'entraînement de GPT-3 ne sont pas disponibles ouvertement, mais les données d'entraînement de GPT-2 ont été utilisées
+indirectement pour construire des GPT-3 [ 53] .
+________________________________________
+Page 6
+FAccT '21, 3–10 mars 2021, événement virtuel, Canada
+Bender et Gebru, et al.
+moyen de mesurer la toxicité du texte généré par les LM. Pour
+exemple, le modèle d'API Perspective a été trouvé pour associer
+des niveaux de toxicité plus élevés avec des phrases contenant des marqueurs d'identité
+pour les groupes marginalisés ou même des noms spécifiques [61 , 103].
+Deuxièmement, l'audit d'un LM pour les biais nécessite une sous-évaluation a priori
+position de quelles catégories sociales pourraient être saillantes. Les ouvrages cités
+ci-dessus commencent généralement à partir d'attributs protégés aux États-Unis tels que race et
+le sexe (tel que compris aux États-Unis). Mais, bien sûr, protégé
+les attributs ne sont pas les seules caractéristiques d'identité qui peuvent être soumises
+aux préjugés ou à la discrimination, et les principales caractéristiques identitaires
+et les expressions de biais sont également liées à la culture [ 46 , 116]. Ainsi, com
+des éléments tels que les classificateurs de toxicité auraient besoin d'une
+données de formation pour chaque contexte d'audit, et même encore nous pouvons manquer
+identités marginalisées si nous ne savons pas quoi auditer.
+Enfin, nous notons qu'aller au-delà de la démonstration de l'exis-
+la polarisation des systèmes de construction qui vérifient la `` sécurité '' de certains
+LM (même pour une classe protégée donnée) nécessite de s'engager avec le
+les systèmes de pouvoir qui conduisent aux conséquences néfastes d'un tel système
+chercherait à empêcher [19 ]. Par exemple, le mouvement #MeToo a
+a suscité des conversations de grande envergure sur les relations sexuelles inappropriées
+comportement des hommes au pouvoir, ainsi que des hommes plus généralement [ 84] .
+Ces conversations remettent en question des comportements qui ont toujours été
+considéré comme approprié ou même de la faute des femmes, des notions changeantes
+comportement sexuel inapproprié. Tout développement de produit qui
+implique l'opérationnalisation des définitions autour de ces sujets changeants
+en algorithmes est nécessairement politique (que les développeurs
+choisir la voie du maintien du statu quo ante). Par exemple,
+les hommes et les femmes font des évaluations significativement différentes des
+harcèlement en ligne [ 40] . Une définition algorithmique de ce qui
+la communication sexuelle inappropriée sera intrinsèquement
+concordant avec certains points de vue et discordant avec d'autres. Ainsi, un
+tenter de mesurer la pertinence du texte généré par les LM, ou
+les biais encodés par un système, doivent toujours être faits en relation
+à des contextes sociaux particuliers et à des perspectives marginalisées [ 19] .
+4.4 Conservation, documentation et responsabilité
+En résumé, les LM se sont entraînés sur de grands ensembles de données statiques non saturés
+le Web encode des vues hégémoniques nuisibles aux marginalisés
+populations. Nous insistons donc sur la nécessité d'investir des ressources significatives
+sources dans la conservation et la documentation des données de formation LM. Dans ce,
+nous suivons Jo et al. [62 ], qui citent la collecte de données sur l'historique des archives
+méthodes comme un exemple de la quantité de ressources qui devraient être
+dédié à ce processus, et Birhane et Prabhu [ 18] , qui appellent à
+une méthodologie de collecte de données plus axée sur la justice. Birhane et
+Note de Prabhu, faisant écho à Ruha Benjamin [ 15] , «Nourrir les systèmes d'IA sur
+la beauté, la laideur et la cruauté du monde, mais en s'attendant à ce qu'il reflète
+seule la beauté est un fantasme. [p.1541]
+Lorsque nous nous appuyons sur des ensembles de données de plus en plus volumineux, nous risquons de générer des documents
+dette de consolidation,18 c'est-à-dire se mettre dans une situation où le
+les ensembles de données sont à la fois non documentés et trop volumineux pour être documentés après coup.
+Si la documentation permet une reddition de comptes potentielle [13 , 52, 86],
+des données de formation non documentées perpétuent des préjudices sans recours.
+Sans documentation, on ne peut pas essayer de comprendre les données d'entraînement
+caractéristiques afin d'atténuer certains de ces problèmes attestés
+ou même inconnus. La solution, que nous proposons, est de budgétiser
+18 Sur la notion de dette documentaire appliquée au code plutôt qu'aux données, voir [ 154] .
+la documentation dans le cadre des coûts prévus de création de l'ensemble de données, et
+ne collectez que la quantité de données qui peut être soigneusement documentée dans
+ce budget.
+5 SUR LE CHEMIN DU JARDIN
+Au § 4 ci-dessus, nous avons discuté de la manière dont différents types de
+les biais peuvent être codés dans les corpus utilisés pour entraîner les grands LM. Dans
+§ 6 ci-dessous, nous explorons certains des risques et des inconvénients qui peuvent suivre
+de déployer une technologie qui a appris ces préjugés. Dans le
+dans la présente section, cependant, nous nous concentrons sur un autre type de risque: que
+d'efforts de recherche mal orientés, en particulier autour de l'application
+des LM à des tâches destinées à tester la compréhension du langage naturel
+(NLU). Alors que les très gros transformateurs LM ont enregistré des gains frappants
+dans l'état de la technique sur différents référentiels destinés à modéliser
+tâches sensibles au sens, et comme des initiatives comme [142 ] ont fait le mod-
+sont largement accessibles aux chercheurs cherchant à les appliquer,
+quantités d'efforts de recherche consacrés à la mesure de la
+BERT et ses proches le font sur les repères existants et nouveaux.19 Ce
+l'allocation de l'effort de recherche entraîne un coût d'opportunité, sur
+d'une part en termes de temps non passé à appliquer le sens captur-
+approches de sens des tâches sensibles, et d'autre part dans
+temps non passé à explorer des moyens de construire plus efficaces
+technologie avec des ensembles de données d'une taille qui peut être soigneusement organisée et
+disponible pour un ensemble plus large de langues [ 65, 91].
+Le document original du BERT [ 39] montrait l'efficacité du
+l'architecture et la technique de pré-formation en évaluant sur la
+Évaluation de la compréhension générale du langage (GLUE)
+[ 138 ], les ensembles de données de réponse aux questions de Stanford (SQuAD 1.1 et
+2.0) [108 ], et le banc des situations avec des générations contradictoires
+mark (SWAG) [155 ], tous les ensembles de données conçus pour tester la langue sous-
+raisonnement permanent et / ou de bon sens. BERT a publié l'état de
+l'art résulte de toutes ces tâches, et les auteurs concluent par
+disant que «la pré-formation non supervisée fait partie intégrante de nombreux
+systèmes de compréhension du langage. » [39 , p.4179]. Même avant [39]
+a été publié, BERT a été repris par la communauté PNL et
+appliqué avec un grand succès à une grande variété de tâches [par exemple 2, 149].
+Cependant, aucune compréhension réelle de la langue n'a lieu en
+Approches axées sur le LM pour ces tâches, comme le montre
+manipulation des données de test pour éliminer les signaux parasites des systèmes
+tirent parti [ 21 , 93]. De plus, comme Bender et Koller [14]
+argumentent d'un point de vue théorique, les langues sont des systèmes de
+signes [37 ], c'est-à-dire des paires de forme et de sens. Mais les données d'entraînement
+pour les LM, ce n'est que la forme; ils n'ont pas accès au sens. Par conséquent,
+les affirmations concernant les capacités des modèles doivent être soigneusement caractérisées.
+Comme l'a souligné la regrettée Karen Spärck Jones: l'utilisation des LM
+nous lie à certaines épistémologiques et méthodes (généralement non déclarées).
+engagements ologiques [ 124]. Soit i) nous nous engageons à
+interprétation de la tâche par canal bruyant (ce qui a rarement du sens
+en dehors de l'ASR), ii) nous abandonnons tout objectif de compréhension théorique
+et traitez les LM comme «juste une technologie pratique» [p.7], ou
+iii) nous supposons implicitement une certaine relation statistique - connue
+être invalide - entre les entrées, les sorties et les significations.20 Bien que
+19 ~ 26% des articles échantillonnés dans ACL, NAACL et EMNLP depuis 2018 citent [ 39] .
+20 Plus précisément, que l'information mutuelle entre l'entrée et le sens donné
+le résultat est nul - ce que Spärck Jones appelle «le modèle de l'ignorance».
+________________________________________
+Page 7
+Perroquets stochastiques
+FAccT '21, 3–10 mars 2021, événement virtuel, Canada
+elle avait principalement des modèles n-gram en tête, les conclusions restent
+apt et pertinent.
+Il y a des questions linguistiques intéressantes à poser sur ce que les ex-
+en fait, BERT, GPT-3 et leurs proches apprennent la structure linguistique.
+de la tâche de modélisation du langage non supervisée, comme étudié dans
+le domaine émergent de la «BERTologie» [par exemple 110 , 133]. Cependant, à partir de
+la perspective du travail sur la technologie langagière, c'est loin d'être clair
+que tous les efforts déployés pour utiliser de grands LM pour `` battre '' les tâches
+conçu pour tester la compréhension du langage naturel, et tous les
+effort pour créer de nouvelles tâches de ce type, une fois que les tâches existantes ont été
+bulldozer par les LM, nous rapproche des objectifs à long terme
+systèmes généraux de compréhension du langage. Si un grand LM, doté
+avec des centaines de milliards de paramètres et formés sur un très grand
+ensemble de données, peut manipuler assez bien la forme linguistique pour tromper son
+à travers des tests censés exiger la compréhension de la langue,
+nous avons appris quelque chose de valeur sur la façon de construire un langage machine
+compréhension ou avons-nous été conduits sur le chemin du jardin?
+6 PERROQUETS STOCHASTIQUES
+Dans cette section, nous explorons les façons dont les facteurs énoncés dans
+§ 4 et §5 - la tendance des données de formation ingérées à partir d'Internet
+pour encoder des visions du monde hégémoniques, la tendance des LM à amplifier
+biais et autres problèmes dans les données de formation, et la tendance à
+les chercheurs et d'autres personnes confondent les gains de performance générés par LM
+pour une compréhension réelle du langage naturel - présent dans le monde réel
+risques de dommages, au fur et à mesure que ces technologies sont déployées. Après avoir exploré
+certaines raisons pour lesquelles les humains confondent la sortie LM avec un texte significatif,
+nous nous tournons vers les risques et les inconvénients liés au déploiement d'un tel modèle à
+escalader. Nous constatons que le mélange de préjugés humains et apparemment cohérent
+la langue augmente le potentiel de biais d'automatisation, délibéré
+mauvaise utilisation et amplification d'une vision du monde hégémonique. Nous nous concentrons
+principalement dans les cas où les LM sont utilisés pour générer du texte, mais nous
+abordera également les risques qui surviennent lorsque les LM ou l'intégration de mots
+qui en dérivent sont des composants de systèmes de classification,
+l'expansion des requêtes, ou d'autres tâches, ou lorsque les utilisateurs peuvent interroger les LM pour
+informations mémorisées à partir de leurs données d'entraînement.
+6.1 Cohérence dans l'œil du spectateur
+Là où les LM traditionnels de n-gramme [ 117] ne peuvent modéliser que
+dépendances, prédire chaque mot étant donné la séquence précédente
+de N mots (généralement 5 ou moins), les Transformer LM capturent
+fenêtres beaucoup plus grandes et peut produire du texte qui ne semble pas
+seulement fluide mais aussi cohérent même sur les paragraphes. Par exemple,
+McGuffie et Newhouse [80 ] ont incité GPT-3 avec le texte dans
+gras dans la figure 1, et il a produit le reste du texte, y compris le
+Format de questions-réponses.21 Cet exemple illustre la capacité de GPT-3 à produire
+texte cohérent et sur le sujet; le sujet est lié à McGuffie et
+L'étude de Newhouse sur le GPT-3 dans le contexte de l'extrémisme, discutée
+en dessous de.
+Nous disons apparemment cohérent car la cohérence est en fait dans le
+oeil du spectateur. Notre compréhension humaine de la cohérence
+découle de notre capacité à reconnaître les croyances des interlocuteurs [30 , 31] et
+intentions [23 , 33] dans leur contexte [32]. Autrement dit, l'utilisation du langage humain
+21 Ce n'est que la première partie de la réponse que montrent McGuffie et Newhouse. GPT-3
+continue pour deux autres paires de questions-réponses avec une cohérence similaire. McGuffie et
+Newhouse rapporte que tous les exemples donnés dans leur article proviennent soit du premier, soit du
+deuxième tentative d'exécuter une invite.
+Question: Quel est le nom du groupe de mercenaires russe?
+Réponse: groupe Wagner.
+Question: Où est le groupe Wagner?
+Réponse: en Syrie.
+Question: Qui est le leader du groupe Wagner?
+Réponse: Un citoyen russe, Dmitry Utkin. Il est né en 1971 et vit à
+Moscou. Il est membre du parlement russe depuis 2016. Il
+est un ancien officier de la Direction générale du renseignement (GRU) de la Russie
+État-major général. Il était également commandant de l'unité des forces spéciales «Vostok»
+(Est). L'unité a été déployée en Tchétchénie et s'est battue contre les séparatistes
+là en 1994-1996. Après cela, il a été conseiller du chef de
+Tchétchénie, Ramzan Kadyrov, et est devenu plus tard son adjoint. En 2004-2005, il
+a commandé un bataillon en Tchétchénie et a participé à la lutte contre
+insurgés là-bas. En 2008-2009, il a commandé un autre bataillon en
+L'Abkhazie et l'Ossétie du Sud pendant la guerre de la Russie avec la Géorgie sur ces
+deux régions séparatistes. Depuis 2014, il dirige des unités militaires
+lutte contre les forces gouvernementales ukrainiennes au nom de la Russie
+séparatistes dans l'est de l'Ukraine. Selon des sources ouvertes, Utkin est
+vivant actuellement à Moscou mais se rend fréquemment en Syrie où ses troupes
+se battent au nom du régime de Bachar al-Assad contre
+forces anti-gouvernementales là-bas.
+Figure 1: réponse de GPT-3 à l'invite (en gras), tirée de [ 80 ]
+se déroule entre des individus qui partagent un terrain d'entente et sont
+mutuellement conscients de ce partage (et de son étendue), qui ont
+intentions nicatives qu'ils utilisent le langage pour transmettre, et qui modélisent
+les états mentaux des autres lorsqu'ils communiquent. En tant que tel, humain
+la communication repose sur l'interprétation du sens implicite
+transmis entre individus. Le fait que la com-
+la communication est une activité construite conjointement [ 29, 128] est le plus clairement
+vrai dans la communication parlée ou signée co-située, mais nous utilisons
+les mêmes facilités pour produire la langue qui est destinée à au-
+diences qui ne co-présentent pas avec nous (lecteurs, auditeurs, observateurs
+distance dans le temps ou dans l'espace) et à interpréter ce langage lorsque
+nous le rencontrons. Cela doit suivre que même lorsque nous ne connaissons pas le
+personne qui a généré la langue que nous interprétons, nous construisons un
+modèle partiel de qui ils sont et sur quel terrain d'entente nous pensons
+ils partagent avec nous et utilisent cela pour interpréter leurs paroles.
+Le texte généré par un LM n'est pas fondé sur la communication
+intention, tout modèle du monde ou tout modèle de l'état du lecteur
+d'esprit. Cela n'a pas pu être le cas, car les données d'entraînement ne sont jamais entrées
+inclus le partage de pensées avec un auditeur, et la machine n'a pas non plus
+la capacité de le faire. Cela peut sembler contre-intuitif étant donné la
+qualités de plus en plus fluides du texte généré automatiquement, mais nous
+doivent tenir compte du fait que notre perception du langage naturel
+le texte, quelle que soit la façon dont il a été généré, est médiatisé par notre propre
+compétence linguistique et notre prédisposition à interpréter la communauté
+nicatif agit comme véhiculant un sens et une intention cohérents, que ce soit
+ou non [ 89 , 140]. Le problème est que si un côté de la communauté
+nication n'a pas de sens, alors la compréhension de la
+le sens implicite est une illusion provenant de notre singulier
+compréhension de la langue (indépendante du modèle).22 Contrairement
+22 Génération contrôlée, où un LM est déployé dans un système plus large qui guide
+sa génération de sortie pour certains styles ou sujets [par exemple 147 , 151, 158], n'est pas la même
+chose comme intention communicative. Une façon claire de distinguer les deux est de se demander si
+________________________________________
+Page 8
+FAccT '21, 3–10 mars 2021, événement virtuel, Canada
+Bender et Gebru, et al.
+à ce que cela peut sembler quand on observe sa sortie, un LM est un système
+pour assembler au hasard des séquences de formes linguistiques
+il a observé dans ses vastes données d'entraînement, selon probabiliste
+informations sur la façon dont ils se combinent, mais sans aucune référence à
+ce qui signifie: un perroquet stochastique.
+6.2 Risques et préjudices
+L'ersatz de fluidité et de cohérence des LM soulève plusieurs risques, pré-
+justement parce que les humains sont prêts à interpréter les cordes appartenant
+aux langues qu'ils parlent comme signifiantes et correspondant à la
+intention communicative d'un individu ou d'un groupe d'individus
+qui ont la responsabilité de ce qui est dit. Passons maintenant aux exemples,
+exposer les effets néfastes potentiels qui en découlent.
+Les premiers risques que nous considérons sont les risques qui découlent des LM
+absorbant la vision du monde hégémonique à partir de leurs données d'entraînement. Lorsque
+les humains produisent le langage, nos énoncés reflètent nos visions du monde,
+y compris nos préjugés [ 78, 79]. En tant que personnes en position de privilège
+en ce qui concerne le racisme, la misogynie, le capacitisme, etc. d'une société,
+être surreprésenté dans les données de formation pour les LM (comme indiqué dans
+§ 4 ci-dessus), ces données d'apprentissage comportent donc des biais encodés, de nombreux
+déjà reconnu comme nuisible.
+Les biais peuvent être codés de manière à former un continuum à partir de
+des schémas tels que se référer aux femmes médecins comme si le médecin lui-même impliquait
+non-femme ou se référant aux deux sexes excluant la possibilité de
+identités de genre non binaires, à travers des cadrages directement contestés
+(par exemple, immigrés sans papiers vs immigrés clandestins ou clandestins), pour
+langage largement reconnu comme péjoratif (par exemple insultes raciales)
+encore utilisé par certains. Alors que certains des plus ouvertement péjoratifs
+les mots peuvent être filtrés, toutes les formes d'abus en ligne ne sont pas faciles
+détectable en utilisant de tels mots tabous, comme en témoigne la croissance
+corpus de recherches sur la détection des abus en ligne [ 45, 109]. Par ailleurs,
+en plus du langage abusif [ 139] et du discours haineux [67], il y a
+sont des formes plus subtiles de négativité telles que les préjugés sexistes [137 ], les micro-
+gressions [ 22 ], déshumanisation [83], et divers
+les biais de cadrage [ 44, 114] qui prévalent dans les données linguistiques. Pour
+exemple, décrivant le récit d'une femme sur son expérience du sexisme
+avec le mot colère reflète à la fois une vision du monde où le sexiste
+les actions sont normatives et mettent au premier plan un stéréotype des femmes
+enfantin et pas en contrôle de ses émotions.
+Un LM qui a été formé sur ces données les récupérera
+types d’associations problématiques. Si un tel LM produit du texte qui
+est mis dans le monde pour que les gens interprètent (marqué comme produit
+par une «IA» ou autre), quels risques en découlent? Dans un premier temps, nous
+prévoir que les LM produisant du texte reproduiront et même amplifieront
+les biais dans leur entrée [53 ]. Ainsi, le risque est que les gens
+texte généré par les LM, ce qui signifie plus de texte dans le monde qui
+renforce et propage les stéréotypes et les associations problématiques,
+à la fois aux humains qui rencontrent le texte et aux futurs LM formés
+sur les ensembles d'apprentissage qui ont ingéré la sortie du LM de la génération précédente.
+Les humains qui rencontrent ce texte peuvent eux-mêmes être des sujets de
+ces stéréotypes et associations ou non. Quoi qu'il en soit, des dommages s'ensuivent:
+les lecteurs sujets aux stéréotypes peuvent éprouver
+les méfaits des microagressions [88 , 141] et la menace stéréotypée [97, 126].
+D'autres lecteurs peuvent être initiés aux stéréotypes ou en
+le système (ou l'organisation qui déploie le système) a la responsabilité de la vérité
+des énoncés produits.
+portent déjà renforcés, les conduisant à se livrer à des discriminations
+(consciemment ou non) [55 ], ce qui à son tour conduit à des préjudices
+gation, dénigrement, rabaissement, perte de chance [ 3, 4, 56] et
+d'autres de la part de ceux qui sont victimes de discrimination.
+Si le LM produit un langage ouvertement abusif (comme Gehman et al.
+[ 53] montrent qu'ils peuvent le faire et le font), alors un ensemble similaire de risques se présente.
+Ceux-ci incluent: propager ou proliférer des opinions ouvertement abusives
+et les associations, amplifiant le langage abusif et produisant plus
+langage abusif (synthétique) qui pourrait être inclus dans la prochaine itera-
+collecte de données de formation à grande échelle. Les méfaits qui pourraient
+découlent de ces risques sont à nouveau similaires à ceux identifiés ci-dessus
+pour un langage plus subtilement biaisé, mais peut-être plus aigu pour l'ex-
+que la langue en question est manifestement violente ou diffamatoire.
+Ils comprennent le préjudice psychologique subi par ceux qui
+s'identifient aux catégories dénigrées si elles rencontrent le
+texte; le renforcement de l'idéologie sexiste, raciste, capacitiste, etc. suivre-
+sur les effets de ces idéologies renforcées (y compris la violence); et
+nuit à la réputation de toute personne ou organisation perçue
+être la source du texte.
+Si le LM ou les embeddings de mots qui en dérivent sont utilisés comme comp
+dans un système de classification de texte, ces biais peuvent conduire à
+les préjudices affectant l'allocation et / ou la réputation, en tant que biais dans la représentation
+affectent les décisions du système [ 125] . Cette affaire est particulièrement pernicieuse
+pour être largement invisible à la fois pour l'utilisateur direct du système et
+les parties prenantes indirectes au sujet desquelles des décisions sont prises.
+De même, les biais dans un LM utilisé dans l'expansion des requêtes peuvent influencer
+résultats de recherche, exacerbant encore le risque de préjudices du type
+documenté par Noble dans [94 ], où la juxtaposition de la recherche
+requêtes et résultats de recherche, lorsqu'ils sont connectés par des stéréotypes négatifs,
+renforcent ces stéréotypes et causent des dommages psychologiques.
+Les cas ci-dessus impliquent des risques qui pourraient survenir lorsque les LM sont
+utilisé sans intention malveillante. Une troisième catégorie de risque implique
+mauvais acteurs profitant de la capacité des grands LM à produire
+de grandes quantités de textes apparemment cohérents sur des sujets spécifiques
+la demande dans les cas où ceux qui déploient le LM n'ont aucun investissement
+dans la vérité du texte généré. Il s'agit notamment des cas prosaïques, tels
+en tant que services mis en place pour rédiger `` automatiquement '' des travaux de session ou interagir sur
+des médias sociaux,23 ainsi que des cas d'utilisation liés à la promotion d'extrem-
+isme. Par exemple, McGuffie et Newhouse [80 ] montrent comment GPT-3
+pourrait être utilisé pour générer du texte dans le personnage d'un théo-
+rist, qui à son tour pourrait être utilisé pour alimenter le recrutement extrémiste
+babillards électroniques. Cela donnerait à ces groupes un moyen peu coûteux de stimuler
+recrutement en faisant en sorte que les cibles humaines se sentent parmi
+beaucoup de gens partageant les mêmes idées. Si les LM sont déployés de cette manière pour
+recruter plus de personnes pour des causes extrémistes, puis nuire, dans le premier
+par exemple, arriver aux personnes ainsi recrutées et (probablement plus sévèrement)
+à d’autres en raison de la violence exercée par les extrémistes.
+Encore un autre risque lié à l'apparente cohérence et à la fluidité
+volves la traduction automatique (MT) et la façon dont la fluidité accrue
+de la production MT modifie l'adéquation perçue de cette production [ 77] .
+Cela diffère quelque peu des cas ci-dessus en ce qu'il y a eu un
+l'intention de communication humaine initiale, par l'auteur de la langue source
+texte de jauge. Cependant, les systèmes MT peuvent (et le font fréquemment) produire
+sortie qui est inexacte mais à la fois fluide et (encore une fois, apparemment)
+23 Comme le bot propulsé par GPT-3 lâché sur Reddit; voir https://thenextweb.com/
+neural / 2020/10/07 / quelqu'un-laisse-un-gpt-3-bot-lâche-sur-reddit-il-n'a-pas-bien-fini / amp /.
+________________________________________
+Page 9
+Perroquets stochastiques
+FAccT '21, 3–10 mars 2021, événement virtuel, Canada
+cohérent en soi pour un consommateur qui non plus ne voit pas
+le texte source ou ne peuvent pas comprendre le texte source par eux-mêmes.
+Lorsque ces consommateurs se méprennent donc sur le sens attribué à
+la sortie MT comme intention de communication réelle de l'original
+auteur du texte, des dommages dans le monde réel peuvent s'ensuivre. Un exemple typique est le
+histoire d'un Palestinien, arrêté par la police israélienne, après que MT ait trans-
+a publié son message Facebook qui disait «bonjour» (en arabe) à
+«Blessez-les» (en anglais) et «attaquez-les» (en hébreu).24 Cette affaire
+implique une phrase courte, mais il est facile d'imaginer comment la capacité de
+grands LM pour produire un texte apparemment cohérent sur des passages plus volumineux
+pourrait effacer les indices susceptibles de signaler aux utilisateurs des erreurs de traduction dans
+passages plus longs également [ 77] .
+Enfin, nous notons qu'il existe des risques liés au fait
+que les LM avec un très grand nombre de paramètres modélisent leur
+les données d'entraînement de très près et peuvent être invitées à produire des données spécifiques
+informations provenant de ces données d'entraînement. Par exemple, [28 ] démontrent
+une méthodologie pour extraire des informations personnellement identifiables
+(PII) d'un LM et constater que les LM plus grands sont plus sensibles à
+ce style d'attaque que les plus petits. Créer des données de formation à partir de
+les documents accessibles au public n'atténuent pas complètement ce risque:
+parce que les informations personnelles étaient déjà disponibles à l'air libre sur Internet
+ne signifie pas qu'il n'y a pas de mal supplémentaire à les collecter et à les fournir
+une autre avenue pour sa découverte. Ce type de risque diffère de
+ceux mentionnés ci-dessus car cela ne dépend pas de la cohérence apparente
+de texte synthétique, mais la possibilité d'un utilisateur suffisamment motivé
+accéder aux données d'entraînement via le LM. Dans le même ordre d'idées, les utilisateurs
+peut interroger les LM pour des `` connaissances dangereuses '' (par exemple, évasion fiscale
+conseils), sachant que ce qu'ils obtenaient était synthétique et
+donc pas crédible mais représentant néanmoins des indices sur ce
+est dans les données d'entraînement afin d'affiner leurs propres requêtes de recherche.
+6.3 Résumé
+Dans cette section, nous avons discuté de la manière dont la tendance humaine à
+attribut une signification au texte, en combinaison avec la capacité des grands LM
+pour apprendre des modèles de formes que les humains associent à divers bi-
+ases et autres attitudes néfastes, conduit à des risques de préjudice dans le monde réel,
+si le texte généré par LM doit être diffusé. Nous avons également examiné
+risques liés à l'utilisation des LM comme composants dans un système de classification
+et les risques que les LM mémorisent les données d’entraînement. On remarque que
+les risques associés au texte synthétique mais apparemment cohérent sont
+profondément lié au fait qu'un tel texte synthétique peut entrer dans
+conversations sans qu'aucune personne ou entité n'en soit responsable.
+Cette responsabilité implique à la fois la responsabilité de la véracité et
+est important pour situer le sens. Comme l' écrit Maggie Nelson [ 92] :
+«Les mots changent selon qui les parle; il n'y a pas de remède.
+Au § 7 , nous considérons les directions que le champ pourrait prendre pour poursuivre des objectifs
+de créer une technologie langagière tout en évitant certains des risques
+et les préjudices identifiés ici et ci-dessus.
+7 CHEMINS À SUIVRE
+Afin d'atténuer les risques liés à la création de
+LM de plus en plus grands, nous exhortons les chercheurs à adopter un état d'esprit
+une planification minutieuse, selon de nombreuses dimensions, avant de commencer à construire
+soit des ensembles de données, soit des systèmes formés sur des ensembles de données. Nous devrions considérer
+24https://www.theguardian.com/technology/2017/oct/24/facebook-palestine-israel-
+traduit-bon-matin-attaque-les-arrestation
+notre temps et nos efforts de recherche, une ressource précieuse, à consacrer au
+dans la mesure du possible sur des projets de recherche qui évoluent vers une techno-
+écosystème logique dont les bénéfices sont au moins uniformément répartis ou
+mieux profiter à ceux qui sont historiquement les plus marginalisés. Ça signifie
+considérer comment les contributions de la recherche façonnent l'orientation générale
+du terrain et rester attentif aux directions qui limitent l'accès. Aimer-
+sage, cela signifie tenir compte des coûts financiers et environnementaux
+du développement du modèle à l'avance, avant de décider d'un cours
+vestigation. Les ressources nécessaires pour former et régler l'état de l'art
+les modèles sont susceptibles d'augmenter les inégalités économiques à moins que les chercheurs
+incorporer l'énergie et l'efficacité de calcul dans l'évaluation de leur modèle
+tions. En outre, les objectifs du modèle économe en énergie et en calcul
+la construction et la création d'ensembles de données et de modèles où l'incorporation
+les biais notés peuvent être compris à la fois pointant vers une curation minutieuse des
+Les données. Un temps important doit être consacré à l'assemblage de jeux de données adaptés
+pour les tâches à accomplir plutôt que d'ingérer d'énormes quantités de données
+à partir de sources Internet pratiques ou faciles à extraire. Comme discuté dans
+§ 4.1 , se tourner simplement vers la taille massive des ensembles de données comme stratégie pour être
+l'intégration de divers points de vue est vouée à l'échec. Nous rappelons à nouveau
+Paroles de Birhane et Prabhu [ 18] (inspirées de Ruha Benjamin [15]):
+«Nourrir les systèmes d'IA sur la beauté, la laideur et la cruauté du monde,
+mais s'attendre à ce qu'il ne reflète que la beauté est un fantasme.
+Dans le cadre de pratiques prudentes de collecte de données, les chercheurs doivent
+adopter des cadres tels que [13 , 52, 86] pour décrire les utilisations pour lesquelles
+leurs modèles sont adaptés et des évaluations de référence pour une variété de
+conditions. Cela implique de fournir une documentation complète sur le
+données utilisées dans la construction de modèles, y compris les motivations sous-jacentes
+processus de sélection et de collecte des données. Cette documentation doit
+refléter et indiquer les objectifs, les valeurs et les motivations des chercheurs
+assembler des données et créer un modèle donné. Cela devrait aussi faire
+note des utilisateurs potentiels et des parties prenantes, en particulier ceux qui
+sont négativement impactés par des erreurs de modèle ou une mauvaise utilisation. Nous notons
+cela simplement parce qu'un modèle peut avoir de nombreuses applications différentes
+ne signifie pas que ses développeurs n'ont pas besoin de prendre en compte les parties prenantes.
+Une exploration des parties prenantes pour des cas d'utilisation probables peut encore être
+informative sur les risques potentiels, même lorsqu'il n'y a aucun moyen de
+garantir que tous les cas d'utilisation peuvent être explorés.
+Nous préconisons également un réalignement des objectifs de recherche: Où
+beaucoup d'efforts ont été consacrés à la fabrication de modèles (et à leur formation
+data) plus gros et à atteindre des scores toujours plus élevés dans les classements
+comportant souvent des tâches artificielles, nous pensons qu'il y a plus à gagner
+en se concentrant sur la compréhension de la manière dont les machines atteignent
+tâches en question et comment elles feront partie des
+systèmes. À cette fin, le développement de LM peut bénéficier de
+exercices d'évaluation tels que les pré-mortems [ 68] . Fréquemment utilisé dans
+les paramètres métiers avant le déploiement de nouveaux produits ou projets,
+les analyses pré-mortem centrent les échecs hypothétiques et demandent à l'équipe
+les membres à faire de l'ingénierie inverse sur des causes auparavant imprévues.25
+De manière critique, les analyses pré-mortem incitent les membres de l'équipe à envisager
+non seulement une gamme de risques potentiels connus et inconnus du projet, mais
+également des alternatives aux plans de projet actuels. De cette manière, les chercheurs
+peuvent considérer les risques et les limites de leurs LM dans un
+manière tout en envisageant également des correctifs aux conceptions actuelles ou des alternatives
+25 Ce serait une façon de bâtir une culture d'évaluation qui considère non seulement la moyenne
+les performances des cas (mesurées par des métriques) et les meilleures performances des cas (
+exemples), mais aussi les pires performances.
+________________________________________
+Page 10
+FAccT '21, 3–10 mars 2021, événement virtuel, Canada
+Bender et Gebru, et al.
+méthodes pour atteindre un objectif axé sur la tâche par rapport à des
+écueils.
+La conception sensible à la valeur [49 , 50] fournit une gamme de méthodologies
+pour identifier les parties prenantes (les deux parties prenantes directes qui utiliseront
+une technologie et des parties prenantes indirectes qui seront affectées par
+utilisation par d'autres), en travaillant avec eux pour identifier leurs valeurs, et
+concevoir des systèmes qui soutiennent ces valeurs. Ceux-ci incluent de tels
+techniques comme des cartes de visualisation [ 48 ], le développement de la valeur
+scénarios [ 90 ], et travailler avec des groupes d’experts expérientiels
+[ 152] . Ces approches aident à faire émerger non seulement les valeurs des parties prenantes,
+mais aussi des valeurs exprimées par les systèmes et mises en œuvre par interac-
+entre les systèmes et la société [ 120] . Pour les chercheurs travaillant
+avec les LM, la conception sensible à la valeur est prête à aider tout au long de
+processus de développement en identifiant les valeurs exprimées et
+soutenu par une technologie et, par la suite, comment un manque de
+le soutien peut entraîner un préjudice.
+Toutes ces approches prennent du temps et sont plus utiles lorsque
+appliquée dès le début du processus de développement dans le cadre d'un processus conceptuel
+vestigation des valeurs et des préjudices plutôt que comme une découverte post-hoc
+des risques [72 ]. Ces investigations conceptuelles doivent venir avant
+les chercheurs s'engagent profondément dans leurs idées et
+moins susceptibles de changer de cap lorsqu'ils sont confrontés à des preuves de
+dommages sibles. Cela nous ramène à l'idée que nous avons commencé cette section
+avec: que la recherche et le développement de la technologie du langage, à
+une fois concerné par les données profondément humaines (langage) et la création
+les systèmes avec lesquels les humains interagissent de manière immédiate et vivante,
+doit être fait avec prévoyance et soin.
+Enfin, nous aimerions considérer les cas d'utilisation de grands LM qui
+ont spécifiquement servi des populations marginalisées. Si, comme nous le préconisons,
+cate, le champ s'éloigne du chemin des LM de plus en plus grands, sommes-nous
+sacrifiant ainsi les avantages qui reviendraient à ces populations?
+À titre d'exemple, considérons la reconnaissance vocale automatique, qui
+a connu quelques améliorations grâce aux progrès des LM, notamment
+à la fois en taille et en architecture [par exemple 8 , 59, 121], bien que le plus grand
+Les LM sont généralement trop volumineux et trop lents pour les besoins en temps quasi réel
+des systèmes ASR [ 60] . L'ASR amélioré a de nombreuses applica-
+, y compris le sous-titrage automatique qui a le potentiel de
+être bénéfique pour les personnes sourdes et malentendantes, en offrant un accès
+à un contenu audio autrement inaccessible.26 Nous voyons deux avantages
+les voies à suivre ici: La première est une recherche plus large de moyens d'im-
+prouvant les systèmes ASR, comme c'est d'ailleurs en cours, puisque les contextes de
+l'application de la technologie n'est pas propice à une utilisation toujours plus grande
+LM [60 ] . Mais même si des LM plus grands pouvaient être utilisés, simplement parce que nous
+vu que les grands LM peuvent aider ne signifie pas que c'est le seul
+voie efficace vers une technologie ASR plus puissante. (Et nous notons que si nous
+veulent développer une technologie ASR forte dans la plupart des pays du monde
+langues, nous ne pouvons pas compter sur des téraoctets de données dans tous les cas.)
+La seconde, devrions-nous déterminer que les grands LM sont critiques (quand
+disponible), c'est reconnaître cela comme une instance d'un problème de double usage
+et réfléchir à la manière d'atténuer les méfaits des LM utilisés comme stochastiques
+perroquets tout en les préservant pour une utilisation dans les systèmes ASR. Pouvait
+Les LM doivent être construits de manière à ce que le texte synthétique généré avec eux
+26 Notez cependant que le sous-titrage automatique n'est pas encore et ne sera probablement jamais bon
+assez pour remplacer les légendes générées par l'homme. De plus, dans certains contextes,
+Les communautés sourdes préfèrent le sous-titrage humain et l'interprétation
+langue des signes. Nous ne souhaitons pas suggérer que les systèmes automatiques sont suffisants
+remplacements pour ces exigences d'accessibilité clés.
+serait tatoué et donc détectable [7 , 66, 123]? Sont là
+des approches politiques susceptibles de réglementer efficacement leur utilisation?
+En résumé, nous prônons une recherche centrée sur les personnes
+qui risquent d'être affectés par la technologie résultante,
+avec une vue d'ensemble sur les façons possibles que la technologie peut affecter
+gens. Ceci, à son tour, signifie prendre du temps dans le processus de recherche pour
+en tenant compte des impacts environnementaux, pour une curation minutieuse des données
+et la documentation, pour s'engager avec les parties prenantes dès le début
+processus de conception, pour explorer de multiples voies possibles vers
+objectifs à long terme, pour rester attentif aux scénarios de double usage, et enfin pour
+allouer des efforts de recherche à l'atténuation des dommages dans de tels cas.
+8 CONCLUSION
+Ces dernières années, depuis que la capacité de traitement a rattrapé
+modèles neuronaux, ont été des temps grisants dans le monde de la PNL. Neural
+les approches en général, et les grands transformateurs LM en particulier,
+ont rapidement dépassé les classements sur une grande variété de bancs
+marque et encore une fois l'adage "il n'y a pas de données comme plus de données"
+semble être vrai. Cela peut sembler être un progrès sur le terrain, en fait,
+dépend de la création de modèles de langage toujours plus vastes (et de la recherche
+comment les déployer à diverses fins).
+Dans cet article, nous avons invité les lecteurs à prendre du recul et
+demandez: Des LM toujours plus grandes sont-elles inévitables ou nécessaires? Quels sont les coûts
+associé à cette direction de recherche et que devrions-nous considérer
+avant de le poursuivre? Faire le domaine de la PNL ou le public qu'il sert
+en fait besoin de LM plus grands? Si oui, comment pouvons-nous poursuivre cette recherche
+direction tout en atténuant les risques associés? Sinon, que faisons-nous
+besoin à la place?
+Nous avons identifié une grande variété de coûts et de risques associés
+avec la ruée vers des LM toujours plus grands, y compris: les coûts environnementaux
+(supporté généralement par ceux qui ne bénéficient pas de la technologie résultante
+ogy); les coûts financiers, qui à leur tour érigent des barrières à l'entrée, limitant
+qui peut contribuer à ce domaine de recherche et quelles langues peuvent
+bénéficier des techniques les plus avancées; coût d'opportunité, comme re
+les chercheurs déploient leurs efforts loin des directions nécessitant moins de ressources;
+et le risque de préjudices substantiels, y compris les stéréotypes, la dénigrement
+tion, l'augmentation de l'idéologie extrémiste et les arrestations injustifiées devraient
+les humains rencontrent une sortie de LM apparemment cohérente et la prennent pour
+les paroles d'une personne ou d'une organisation qui a des responsabilités
+pour ce qui est dit.
+Ainsi, nous appelons les chercheurs en PNL à peser soigneusement ces risques
+tout en poursuivant cette direction de recherche, examinez si le bénéfice
+les ajustements l'emportent sur les risques et étudiez les scénarios à double usage en utilisant
+les nombreuses techniques (par exemple, celles de la conception sensible à la valeur) qui
+ont été mis en avant. Nous espérons que ces considérations encouragent la PNL
+chercheurs pour diriger les ressources et les efforts vers des techniques
+proaching des tâches PNL efficaces sans être des données à l'infini
+faim. Mais au-delà de cela, nous appelons le terrain à reconnaître que l'appli-
+les cations qui visent à imiter de manière crédible les humains présentent des risques extrêmes
+nuit. Le travail sur le comportement humain synthétique est une ligne brillante en matière d'éthique
+Développement de l'IA, où les effets en aval doivent être compris
+et modélisé afin de bloquer les dommages prévisibles à la société et
+différents groupes sociaux. Ainsi, ce qui est également nécessaire, c'est une bourse sur
+les avantages, les inconvénients et les risques d'imiter les humains et de réfléchir
+conception de tâches cibles ancrées dans des cas d'utilisation suffisamment concrets
+pour permettre une conception collaborative avec les communautés affectées.
+________________________________________
+Page 11
+Perroquets stochastiques
+FAccT '21, 3–10 mars 2021, événement virtuel, Canada
+REMERCIEMENTS
+Cet article représente le travail de sept auteurs, mais certains étaient
+requis par leur employeur de retirer leur nom. Le reste
+les auteurs listés sont extrêmement reconnaissants à nos collègues pour l'effort
+et la sagesse, ils ont contribué à cet article.
+De plus, lors de la rédaction et de la révision de ce document, nous avons bénéficié
+à partir de commentaires réfléchis et de discussions de nombreuses personnes: Alex
+Hanna, Amandalynne Paullada, Ben Hutchinson, Ben Packer, Bren-
+dan O'Connor, Dan Jurafsky, Ehud Reiter, Emma Strubell, Emily
+Denton, Gina-Anne Levow, Iason Gabriel, Jack Clark, Kristen How-
+ell, Lucy Vasserman, Maarten Sap, Mark Díaz, Miles Brundage, Nick
+Doiron, Rob Munro, Roel Dobbe, Samy Bengio, Suchin Gururangan,
+Vinodkumar Prabhakaran, William Agnew, William Isaac et Yejin
+Choi et nos critiques anonymes.
+LES RÉFÉRENCES
+[1] Hussein M Adam, Robert D Bullard et Elizabeth Bell. 2001. Visages de l'environnement
+racisme mental: faire face aux problèmes de justice mondiale. Rowman et Littlefield.
+[2] Chris Alberti, Kenton Lee et Michael Collins. 2019. Une base de référence BERT pour le
+Questions naturelles. arXiv: 1901.08634 [cs.CL]
+[3] Larry Alexander. 1992. Qu'est-ce qui rend la discrimination illicite? Les préjugés,
+préférences, stéréotypes et procurations. Revue de droit de l'Université de Pennsylvanie
+141, 1 (1992), 149-219.
+[4] Association américaine de psychologie. 2019. Discrimination: qu'est-ce que c'est et comment
+faire face. https://www.apa.org/topics/discrimination (2019).
+[5] Dario Amodei et Daniel Hernandez. 2018. AI et calcul. https: // openai.
+com / blog / ai-et-calcul /
+[6] David Anthoff, Robert J Nicholls et Richard SJ Tol. 2010. L'impact économique
+d'élévation substantielle du niveau de la mer. Stratégies d'atténuation et d'adaptation pour les
+Changement 15, 4 (2010), 321–335.
+[7] Mikhail J Atallah, Victor Raskin, Christian F Hempelmann, Mercan Karahan,
+Radu Sion, Umut Topkara et Katrina E Triezenberg. 2002. Langage naturel
+Filigrane et inviolabilité. Dans un atelier international sur l'information
+Cache. Springer, 196-212.
+[8] Alexei Baevski et Abdelrahman Mohamed. 2020. Efficacité de soi
+Pré-formation supervisée pour ASR. Dans ICASSP 2020-2020 IEEE International
+Conférence sur l'acoustique, la parole et le traitement du signal (ICASSP). 7694–7698.
+[9] Michael Barera. 2020. Mind the Gap: Aborder l'équité structurelle et l'inclusion
+sur Wikipedia. (2020). Accessible à http://hdl.handle.net/10106/29572.
+[10] Russel Barsh. 1990. Les peuples autochtones, le racisme et l'environnement. Meanjin
+49, 4 (1990), 723.
+[11] Christine Basta, Marta R Costa-jussà et Noe Casas. 2019. Évaluation de la
+Le biais de genre sous-jacent dans les incorporations de mots contextualisées. Dans les procédures de
+le premier atelier sur les préjugés sexistes dans le traitement du langage naturel. 33–39.
+[12] Iz Beltagy, Kyle Lo et Arman Cohan. 2019. SciBERT: un langage pré-formé
+Modèle de texte scientifique. Dans les actes de la conférence 2019 sur les méthodes empiriques
+ods in Natural Language Processing et la 9e Conférence internationale conjointe sur
+Traitement du langage naturel (EMNLP-IJCNLP). Association pour le calcul
+Linguistique, Hong Kong, Chine, 3615–3620. https://doi.org/10.18653/v1/D19-
+1371
+[13] Emily M. Bender et Batya Friedman. 2018. Relevés de données pour le réseau naturel
+traitement de la jauge: vers l'atténuation des biais du système et l'amélioration de la science.
+Transactions de l'Association for Computational Linguistics 6 (2018), 587–604.
+[14] Emily M. Bender et Alexander Koller. 2020. Montée vers NLU: On
+Signification, forme et compréhension à l'ère des données. Dans Proceedings of the 58th
+Réunion annuelle de l'Association for Computational Linguistics. Association
+pour la linguistique computationnelle, en ligne, 5185–5198. https://doi.org/10.18653/v1/
+2020.acl-main.463
+[15] Ruha Benjamin. 2019. Race After Technology: des outils abolitionnistes pour le nouveau Jim
+Code. Polity Press, Cambridge, Royaume-Uni.
+[16] Elettra Bietti et Roxana Vatanparast. 2020. Gaspillage de données. Harvard International
+Law Journal 61 (2020).
+[17] Steven Bird. 2016. Technologies mobiles sociales pour reconnecter les autochtones
+et les communautés d'immigrants .. Dans People.Policy.Place Seminar. Institut du Nord,
+Université Charles Darwin, Darwin, Australie. https://www.cdu.edu.au/sites/
+default / files / the-Northern-institute / ppp-bird-20160128-4up.pdf
+[18] Abeba Birhane et Vinay Uday Prabhu. 2021. Ensembles de données de grande taille: une pyrrhique
+Gagner pour la vision par ordinateur?. Dans les actes de la conférence d'hiver IEEE / CVF sur
+Applications de la vision par ordinateur. 1537–1547.
+[19] Su Lin Blodgett, Solon Barocas, Hal Daumé III et Hanna Wallach. 2020. Lan-
+guage (Technology) is Power: A Critical Survey of «Bias» in NLP. En cours-
+de la 58e réunion annuelle de l'Association for Computational Linguis-
+tics. Association for Computational Linguistics, en ligne, 5454–5476. https:
+//doi.org/10.18653/v1/2020.acl-main.485
+[20] Thorsten Brants, Ashok C. Popat, Peng Xu, Franz J. Och et Jeffrey Dean.
+2007. Grands modèles de langage dans la traduction automatique. Dans les procédures de la
+2007 Conférence conjointe sur les méthodes empiriques dans le traitement du langage naturel et
+Apprentissage informatique du langage naturel (EMNLP-CoNLL). Association pour
+Computational Linguistics, Prague, République tchèque, 858–867. https: // www.
+aclweb.org/anthology/D07-1090
+[21] Ronan Le Bras, Swabha Swayamdipta, Chandra Bhagavatula, Rowan Zellers,
+Matthew E Peters, Ashish Sabharwal et Yejin Choi. 2020. Filtres contradictoires
+des biais de jeu de données. Dans les actes de la 37e Conférence internationale sur la machine
+Apprentissage.
+[22] Luke Breitfeller, Emily Ahn, David Jurgens et Yulia Tsvetkov. 2019. Trouver
+Microagressions dans la nature: un cas pour localiser des phénomènes insaisissables dans le social
+Messages des médias. Dans les actes de la conférence 2019 sur les méthodes empiriques en
+traitement du langage ural et la 9e Conférence internationale conjointe sur le
+Traitement du langage (EMNLP-IJCNLP). Association for Computational Linguis-
+tics, Hong Kong, Chine, 1664–1674. https://doi.org/10.18653/v1/D19-1176
+[23] Susan E Brennan et Herbert H Clark. 1996. Pactes conceptuels et choix lexical
+en conversation. Journal de psychologie expérimentale: apprentissage, mémoire et
+Cognition 22, 6 (1996), 1482.
+[24] Robin Brewer et Anne Marie Piper. 2016. «Dites-le comme si c'était vraiment» un cas
+de la création et du partage de contenu en ligne entre les blogueurs adultes plus âgés. Dans Pro-
+ceedings de la conférence CHI 2016 sur les facteurs humains dans les systèmes informatiques.
+5529–5542.
+[25] Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan,
+Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda
+Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan,
+Rewon Child, Aditya Ramesh, Daniel M. Ziegler, Jeffrey Wu, Clemens Winter,
+Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin
+Échecs, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya
+Sutskever et Dario Amodei. 2020. Les modèles linguistiques sont des apprenants peu nombreux.
+In Advances in Neural Information Processing Systems 33: Conférence annuelle sur
+Neural Information Processing Systems 2020, NeurIPS 2020, 6-12 décembre 2020,
+virtuel, Hugo Larochelle, Marc'Aurelio Ranzato, Raia Hadsell, Maria-Florina
+Balcan et Hsuan-Tien Lin (éditeurs). https://proceedings.neurips.cc/paper/2020/
+hash / 1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html
+[26] Cristian Buciluǎ, Rich Caruana et Alexandru Niculescu-Mizil. 2006. Modèle
+Compression. Dans les actes de la 12e Conférence internationale ACM SIGKDD
+on Knowledge Discovery and Data Mining (Philadelphie, PA, USA) (KDD '06).
+Association for Computing Machinery, New York, NY, États-Unis, 535–541. https:
+//doi.org/10.1145/1150402.1150464
+[27] Robert D. Bullard. 1993. Faire face au racisme environnemental: les voix du
+la base. South End Press.
+[28] Nicholas Carlini, Florian Tramer, Eric Wallace, Matthew Jagielski, Ariel Herbert-
+Voss, Katherine Lee, Adam Roberts, Tom Brown, Dawn Song, Ulfar Erlingsson,
+Alina Oprea et Colin Raffel. 2020. Extraction de données de formation à partir de
+Modèles de langage. arXiv: 2012.07805 [cs.CR]
+[29] Herbert H. Clark. 1996. Utilisation de la langue. Cambridge University Press, Cam-
+pont.
+[30] Herbert H. Clark et Adrian Bangerter. 2004. Changer les idées sur la référence.
+Dans la pragmatique expérimentale. Springer, 25–49 ans.
+[31] Herbert H. Clark et Meredyth A Krych. 2004. Parler tout en surveillant
+destinataires pour la compréhension. Journal of Memory and Language 50, 1 (2004),
+62–81.
+[32] Herbert H. Clark, Robert Schreuder et Samuel Buttrick. 1983. Terrain d'entente
+à la compréhension de la référence démonstrative. Journal d'apprentissage verbal
+and Verbal Behavior 22, 2 (1983), 245 - 258. https://doi.org/10.1016/S0022-
+5371 (83) 90189-5
+[33] Herbert H. Clark et Deanna Wilkes-Gibbs. 1986. Se référant à une collaboration
+traiter. Cognition 22, 1 (1986), 1 - 39. https://doi.org/10.1016/0010-0277(86)
+90010-7
+[34] Kimberlé Crenshaw. 1989. Démarginalisation de l'intersection de la race et du sexe:
+Une critique féministe noire de la doctrine anti-discrimination, de la théorie féministe et
+politique antiraciste. Forum juridique de l'Université de Chicago (1989), 139.
+[35] Benjamin Dangl. 2019. La rébellion de cinq cents ans: mouvements autochtones
+et la décolonisation de l'histoire en Bolivie. AK Press.
+[36] Christian Davenport. 2009. Biais médiatique, perspective et répression étatique: le
+Fête de la panthère noire. La presse de l'Universite de Cambridge.
+[37] Ferdinand de Saussure. 1959. Cours de linguistique générale. Le Philosophique
+Society, New York. Traduit par Wade Baskin.
+[38] Terrance de Vries, Ishan Misra, Changhan Wang et Laurens van der Maaten.
+2019. La reconnaissance d'objets fonctionne-t-elle pour tout le monde ?. Dans les procédures de l'IEEE
+Conférence sur les ateliers de vision par ordinateur et de reconnaissance de formes. 52–59.
+________________________________________
+Page 12
+FAccT '21, 3–10 mars 2021, événement virtuel, Canada
+Bender et Gebru, et al.
+[39] Jacob Devlin, Ming-Wei Chang, Kenton Lee et Kristina Toutanova. 2019. BERT:
+Pré-formation des transformateurs bidirectionnels profonds pour la compréhension du langage.
+Dans les actes de la conférence 2019 du chapitre nord-américain de l'Asso-
+ciation for Computational Linguistics: Human Language Technologies, Volume 1
+(Documents longs et courts). Association for Computational Linguistics, Minneapolis,
+Minnesota, 4171–4186. https://doi.org/10.18653/v1/N19-1423
+[40] Maeve Duggan. 2017. Harcèlement en ligne 2017. Pew Research Center.
+[41] Jennifer Earl, Andrew Martin, John D. McCarthy et Sarah A. Soule. 2004.
+L'utilisation des données des journaux dans l'étude de l'action collective. Revue annuelle de
+Sociology 30 (2004), 65–80.
+[42] Ethan Fast, Tina Vachovsky et Michael Bernstein. 2016. Torse nu et danger-
+ous: Quantification des signaux linguistiques du biais de genre dans une écriture de fiction en ligne
+Communauté. Dans les actes de la Conférence internationale de l'AAAI sur le Web et
+Médias sociaux, vol. dix.
+[43] William Fedus, Barret Zoph et Noam Shazeer. 2021. Switch Transform-
+ers: mise à l'échelle vers des trillions de modèles de paramètres avec une parcimonie simple et efficace.
+arXiv: 2101.03961 [cs.LG]
+[44] Anjalie Field, Doron Kliger, Shuly Wintner, Jennifer Pan, Dan Jurafsky et
+Yulia Tsvetkov. 2018. Cadrage et établissement de l'ordre du jour dans les nouvelles russes: un calcul
+Analyse rationnelle de stratégies politiques complexes. Dans les actes du 2018
+Conférence sur les méthodes empiriques dans le traitement du langage naturel. Associa-
+tion pour la linguistique computationnelle, Bruxelles, Belgique, 3570–3580.
+https:
+//doi.org/10.18653/v1/D18-1393
+[45] Darja Fišer, Ruihong Huang, Vinodkumar Prabhakaran, Rob Voigt, Zeerak
+Waseem et Jacqueline Wernimont (éd.). 2018. Actes du 2e atelier
+sur Abusive Language Online (ALW2). Association pour la linguistique computationnelle,
+Bruxelles, Belgique. https://www.aclweb.org/anthology/W18-5100
+[46] Susan T Fiske. 2017. Préjugés dans les contextes culturels: stéréotypes partagés (gen-
+der, âge) par rapport aux stéréotypes variables (race, ethnicité, religion). Perspectives sur
+science psychologique 12, 5 (2017), 791–799.
+[47] Antigoni Founta, Constantinos Djouvas, Despoina Chatzakou, Ilias Leontiadis,
+Jeremy Blackburn, Gianluca Stringhini, Athena Vakali, Michael Sirivianos et
+Nicolas Kourtellis. 2018. Crowdsourcing à grande échelle et caractérisation de
+Comportement abusif sur Twitter. Dans les actes de la Conférence internationale de l'AAAI
+sur le Web et les médias sociaux, Vol. 12.
+[48] Batya Friedman et David Hendry. 2012. Les cartes de vision: une boîte à outils pour
+Catalyser les imaginations humanistes et techniques. Dans les procédures du SIGCHI
+Conférence sur les facteurs humains dans les systèmes informatiques (Austin, Texas, USA) (CHI
+'12). Association for Computing Machinery, New York, NY, États-Unis, 1145-1148.
+https://doi.org/10.1145/2207676.2208562
+[49] Batya Friedman et David G. Hendry. 2019. Design sensible à la valeur: mise en forme
+Technologie avec imagination morale. MIT Press.
+[50] Batya Friedman, Peter H. Kahn, Jr. et Alan Borning. 2006. Valeur sensible de-
+systèmes de signalisation et d'information. Dans l'interaction homme-machine en gestion
+Systèmes d'information: Fondations, P Zhang et D Galletta (dir.). ME Sharpe,
+Armonk NY, 348–372.
+[51] Leo Gao, Stella Biderman, Sid Black, Laurence Golding, Travis Hoppe, Charles
+Foster, Jason Phang, Horace He, Anish Thite, Noa Nabeshima, Shawn Presser,
+et Connor Leahy. 2020. The Pile: Un ensemble de données de 800 Go de textes divers pour
+Modélisation du langage. arXiv: 2101.00027 [cs.CL]
+[52] Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman
+Vaughan, Hanna Wallach, Hal Daumé III et Kate Crawford. 2020. Fiches techniques
+pour les ensembles de données. arXiv : 1803.09010 [cs.DB]
+[53] Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi et Noah A.
+Forgeron. 2020. RealToxicityPrompts: évaluation de la dégénérescence neurale toxique
+Modèles de langage. Dans les conclusions de l'Association for Computational Linguistics:
+EMNLP 2020. Association for Computational Linguistics, en ligne, 3356–3369.
+https://doi.org/10.18653/v1/2020.findings-emnlp.301
+[54] Wei Guo et Aylin Caliskan. 2020. Détection des biais intersectionnels émergents:
+Les embeddings de mots contextualisés contiennent une distribution de biais de type humain.
+préimpression arXiv arXiv: 2006.03955 (2020).
+[55] Melissa Hart. 2004. Prise de décision subjective et discrimination inconsciente.
+Alabama Law Review 56 (2004), 741.
+[56] Deborah Hellman. 2008. Quand la discrimination est-elle mauvaise? Université de Harvard
+Presse.
+[57] Peter Henderson, Jieru Hu, Joshua Romoff, Emma Brunskill, Dan Jurafsky et
+Joelle Pineau. 2020. Vers un rapport systématique sur l'énergie et le carbone
+Empreintes de l'apprentissage automatique. Journal of Machine Learning Research 21, 248
+(2020), 1–43. http://jmlr.org/papers/v21/20-312.html
+[58] Geoffrey Hinton, Oriol Vinyals et Jeff Dean. 2015. Distiller les connaissances
+dans un réseau neuronal. préimpression arXiv arXiv: 1503.02531 (2015).
+[59] Chao-Wei Huang et Yun-Nung Chen. 2019. Adaptation du transformateur pré-entraîné
+aux treillis pour la compréhension de la langue parlée. Dans les actes de l'IEEE 2019
+Atelier sur la reconnaissance et la compréhension automatiques de la parole (ASRU 2019).
+Sentosa, Singapour, 845–852.
+[60] Hongzhao Huang et Fuchun Peng. 2019. Une étude empirique de l'ASR efficace
+Réévaluer avec les transformateurs. arXiv: 1910.11450 [cs.CL]
+[61] Ben Hutchinson, Vinodkumar Prabhakaran, Emily Denton, Kellie Webster, Yu
+Zhong et Stephen Denuyl. 2020. Les préjugés sociaux dans les modèles de PNL en tant qu'obstacles
+Personnes handicapées. Dans les actes de la 58e réunion annuelle de l'associé
+ation pour la linguistique computationnelle. Association pour la linguistique computationnelle,
+En ligne, 5491–5501. https://doi.org/10.18653/v1/2020.acl-main.487
+[62] Eun Seo Jo et Timnit Gebru. 2020. Leçons tirées des archives: stratégies pour
+collecte de données socioculturelles dans l'apprentissage automatique. Dans les actes du 2020
+Conférence sur l'équité, la responsabilité et la transparence. 306–316.
+[63] Leslie Kay Jones. 2020. #BlackLivesMatter: une analyse du mouvement comme
+Drame social. Humanity & Society 44, 1 (2020), 92-110.
+[64] Leslie Kay Jones. 2020.
+Twitter veut que vous sachiez que vous êtes toujours
+SOL si vous recevez une menace de mort - à moins que vous ne soyez le président Donald Trump.
+(2020).
+https://medium.com/@agua.carbonica/twitter-wants-you-to-know-
+que-vous-toujours-sol-si-vous-recevez-une-menace-de-mort-sauf-si-vous-re-a5cce316b706.
+[65] Pratik Joshi, Sebastin Santy, Amar Budhiraja, Kalika Bali et Monojit Choud-
+hury. 2020. L'état et le sort de la diversité linguistique et de l'inclusion dans le
+PNL Monde. Dans les actes de la 58e réunion annuelle de l'Association pour
+Linguistique computationnelle. Association for Computational Linguistics, en ligne,
+6282–6293. https://doi.org/10.18653/v1/2020.acl-main.560
+[66] Nurul Shamimi Kamaruddin, Amirrudin Kamsin, Lip Yee Por et Hameedur
+Rahman. 2018. Un examen du filigrane de texte: théorie, méthodes et applica-
+tions. Accès IEEE 6 (2018), 8011–8028. https://doi.org/10.1109/ACCESS.2018.
+2796585
+[67] Brendan Kennedy, Drew Kogon, Kris Coombs, Joseph Hoover, Christina Park,
+Gwenyth Portillo-Wightman, Aida Mostafazadeh Davani, Mohammad Atari,
+et Morteza Dehghani. 2018. Un manuel de typologie et de codage pour l'étude des
+rhétorique haineuse. PsyArXiv. 18 juillet (2018).
+[68] Gary Klein. 2007. Réalisation d'un projet prémortem. Revue des affaires de Harvard 85,
+9 (2007), 18–19.
+[69] Keita Kurita, Nidhi Vyas, Ayush Pareek, Alan W Black et Yulia Tsvetkov. 2019.
+Mesure du biais dans les représentations de mots contextualisés. Dans les procédures de la
+Premier atelier sur les préjugés sexistes dans le traitement du langage naturel. 166–172.
+[70] Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush
+Sharma et Radu Soricut. 2019. ALBERT: Un BERT allégé pour l'auto-encadrement
+Apprentissage des représentations linguistiques. préimpression arXiv arXiv: 1909.11942 (2019).
+[71] Amanda Lazar, Mark Diaz, Robin Brewer, Chelsea Kim et Anne Marie Piper.
+2017. Passage au gris, échec à l'embauche, et le facteur ick: analyser comment les blogueurs plus âgés
+parler d'âgisme. Dans les actes de la conférence ACM 2017 sur l'ordinateur
+Travail coopératif soutenu et informatique sociale. 655–668.
+[72] Christopher A Le Dantec, Erika Shehan Poole et Susan P Wyche. 2009. Valeurs
+en tant qu'expérience vécue: conception évolutive sensible à la valeur pour soutenir la découverte de valeur.
+Dans Actes de la conférence SIGCHI sur les facteurs humains dans les systèmes informatiques.
+1141–1150.
+[73] Dmitry Lepikhin, HyoukJoong Lee, Yuanzhong Xu, Dehao Chen, Orhan Firat,
+Yanping Huang, Maxim Krikun, Noam Shazeer et Zhifeng Chen. 2020. GShard:
+Mise à l'échelle de modèles géants avec calcul conditionnel et partage automatique.
+arXiv: 2006.16668 [cs.CL]
+[74] Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen,
+Omer Levy, Mike Lewis, Luke Zettlemoyer et Veselin Stoyanov. 2019. Roberta:
+Une approche de pré-formation aux couchettes robuste et optimisée. préimpression arXiv arXiv: 1907.11692
+(2019).
+[75] Kadan Lottick, Silvia Susai, Sorelle A. Friedler et Jonathan P. Wilson. 2019.
+Rapports d'utilisation d'énergie: sensibilisation à l'environnement dans le cadre d'un compte algorithmique
+capacité. arXiv : 1911.08354 [cs.LG]
+[76] Mette Edith Lundsfryd. 2017. Revenir à un monde de points de contrôle: oral
+L'histoire comme outil de décolonisation dans l'étude des réfugiés palestiniens de Syrie
+au Liban. Middle East Journal of Refugee Studies 2, 1 (2017), 73–95.
+[77] Marianna Martindale et Marine Carpuat. 2018. La maîtrise de l'adéquation: A
+Étude pilote sur la mesure de la confiance des utilisateurs dans la MT imparfaite. Dans les actes du 13
+Conférence de l'Association pour la traduction automatique dans les Amériques (Volume 1:
+Piste de recherche). Association for Machine Translation in the Americas, Boston,
+MA, 13–25. https://www.aclweb.org/anthology/W18-1803
+[78] Sally McConnell-Ginet. 1984. Les origines du langage sexiste dans le discours.
+Annales de l'Académie des Sciences de New York 433, 1 (1984), 123–135.
+[79] Sally McConnell-Ginet. 2020. Les mots comptent: signification et pouvoir. Cambridge
+Presse universitaire.
+[80] Kris McGuffie et Alex Newhouse. 2020. Les risques de radicalisation du GPT-3
+et modèles avancés de langage neuronal. Rapport technique. Centre sur le terrorisme,
+Extrémisme et contre-terrorisme, Middlebury Institute of International Studies
+à Monterrey. https://www.middlebury.edu/institute/sites/www.middlebury.
+edu.institute/files/2020-09/gpt3-article.pdf.
+[81] Douglas M McLeod. 2007. Couverture médiatique et protestation sociale: comment les médias
+Protéger le paradigme exacerbe les conflits sociaux. Journal of Dispute Resolution (2007),
+185.
+[82] Oren Melamud, Jacob Goldberger et Ido Dagan. 2016. context2vec: Apprentissage
+Incorporation de contexte générique avec LSTM bidirectionnel. Dans les actes du 20
+Conférence SIGNLL sur l'apprentissage informatique du langage naturel. Association
+pour la linguistique computationnelle, Berlin, Allemagne, 51–61. https://doi.org/10.
+________________________________________
+Page 13
+Perroquets stochastiques
+FAccT '21, 3–10 mars 2021, événement virtuel, Canada
+18653 / v1 / K16-1006
+[83] Julia Mendelsohn, Yulia Tsvetkov et Dan Jurafsky. 2020. Un cadre pour la
+Analyse linguistique computationnelle de la déshumanisation. Frontières en artificiel
+Intelligence 3 (2020), 55. https://doi.org/10.3389/frai.2020.00055
+[84] Kaitlynn Mendes, Jessica Ringrose et Jessalynn Keller. 2018. # MeToo et
+la promesse et les pièges de contester la culture du viol par le biais de la féministe numérique
+activisme. European Journal of Women's Studies 25, 2 (2018), 236–246.
+[85] Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg Corrado et Jeffrey Dean. 2013.
+Représentations distribuées des mots et des phrases et leur compositionnalité.
+Dans les actes de la 26e Conférence internationale sur la protection de l'information neuronale
+systèmes d'arrêt - Volume 2 (Lake Tahoe, Nevada) (NIPS'13). Associés Curran
+Inc., Red Hook, NY, États-Unis, 3111–3119.
+[86] Margaret Mitchell, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy Vasser-
+homme, Ben Hutchinson, Elena Spitzer, Inioluwa Deborah Raji et Timnit Gebru.
+2019. Cartes modèles pour les rapports sur les modèles. Dans les actes de la conférence sur
+équité, responsabilité et transparence. 220–229.
+[87] Robert C. Moore et William Lewis. 2010. Sélection intelligente de la langue
+Modéliser les données de formation. In Proceedings of the ACL 2010 Conference Short Papers.
+Association pour la linguistique computationnelle, Uppsala, Suède, 220-224. https:
+//www.aclweb.org/anthology/P10-2041
+[88] Kevin L. Nadal. 2018. Microagressions et stress traumatique: théorie, recherche,
+et traitement clinique. Association Américaine de Psychologie. https: // livres.
+google.com/books?id=ogzhswEACAAJ
+[89] Clifford Nass, Jonathan Steuer et Ellen R Tauber. 1994. Les ordinateurs sont sociaux
+acteurs. Dans les actes de la conférence SIGCHI sur les facteurs humains en informatique
+systèmes. 72–78.
+[90] Lisa P. Nathan, Predrag V. Klasnja et Batya Friedman. 2007. Scénarios de valeur:
+Une technique pour envisager les effets systémiques des nouvelles technologies. Dans CHI'07
+Résumés étendus sur les facteurs humains dans les systèmes informatiques. ACM, 2585–2590.
+[91] Wilhelmina Nekoto, Vukosi Marivate, Tshinondiwa Matsila, Timi Fasubaa,
+Taiwo Fagbohungbe, Solomon Oluwole Akinola, Shamsuddeen Muhammad,
+Salomon Kabongo Kabenamualu, Salomey Osei, Freshia Sackey, Rubungo Andre
+Niyongabo, Ricky Macharm, Perez Ogayo, Orevaoghene Ahia, Musie Meressa
+Berhe, Mofetoluwa Adeyemi, Masabata Mokgesi-Selinga, Lawrence Okegbemi,
+Laura Martinus, Kolawole Tajudeen, Kevin Degila, Kelechi Ogueji, Kathleen
+Siminyu, Julia Kreutzer, Jason Webster, Jamiil Toure Ali, Jade Abbott, Iroro
+Orife, Ignatius Ezeani, Idris Abdulkadir Dangana, Herman Kamper, Hady Elsa-
+har, Bonté Duru, Ghollah Kioko, Murhabazi Espoir, Elan van Biljon, Daniel
+Whitenack, Christopher Onyefuluchi, Chris Chinenye Emezue, Bonaventure
+FP Dossou, Bénédiction Sibanda, Bénédiction Bassey, Ayodele Olabiyi, Arshath Ramk-
+ilowan, Alp Öktem, Adewale Akinfaderin et Abdallah Bashir. 2020. Partic-
+Recherche ipatoire pour la traduction automatique à faibles ressources: une étude de cas
+Langues africaines. Dans les conclusions de l'Association for Computational Linguistics:
+EMNLP 2020. Association for Computational Linguistics, en ligne, 2144–2160.
+https://doi.org/10.18653/v1/2020.findings-emnlp.195
+[92] Maggie Nelson. 2015. Les Argonautes. Graywolf Press, Minneapolis.
+[93] Timothy Niven et Hung-Yu Kao. 2019. Sondage de la compréhension du réseau neuronal
+des arguments en langage naturel. Dans les actes de la 57e réunion annuelle
+de l'Association for Computational Linguistics. Association pour le calcul
+Linguistique, Florence, Italie, 4658–4664. https://doi.org/10.18653/v1/P19-1459
+[94] Safiya Umoja Noble. 2018. Algorithmes d'oppression: comment les moteurs de recherche renforcent-
+forcer le racisme. NYU Press.
+[95] Debora Nozza, Federico Bianchi et Dirk Hovy. 2020. Qu'est-ce que le [MASQUE]?
+Comprendre les modèles BERT spécifiques au langage. arXiv: 2003.02912 [cs.CL]
+[96] David Ortiz, Daniel Myers, Eugene Walls et Maria-Elena Diaz. 2005. Où
+sommes-nous d'accord avec les données des journaux? Mobilisation: un trimestriel international 10,
+3 (2005), 397–419.
+[97] Charlotte Pennington, Derek Heim, Andrew Levy et Derek Larkin. 2016.
+Vingt ans de recherche sur les menaces liées aux stéréotypes: un examen de moi psychologique
+diateurs. PloS one 11 (01 2016), e0146487. https://doi.org/10.1371/journal.pone.
+0146487
+[98] Jeffrey Pennington, Richard Socher et Christopher Manning. 2014. GloVe:
+Vecteurs globaux pour la représentation de mots. Dans les actes de la conférence de 2014
+sur les méthodes empiriques dans le traitement du langage naturel (EMNLP). Association pour
+Linguistique computationnelle, Doha, Qatar, 1532–1543. https://doi.org/10.3115/v1/
+D14-1162
+[99] Matthew Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark,
+Kenton Lee et Luke Zettlemoyer. 2018. Représentation de mots contextualisés profonds
+tations. Dans les actes de la conférence 2018 de la section nord-américaine de
+l'Association for Computational Linguistics: Human Language Technologies,
+Volume 1 (articles longs). Association for Computational Linguistics, Nouvelle-Orléans,
+Louisiane, 2227-2237. https://doi.org/10.18653/v1/N18-1202
+[100] Pew. 2018. Fiche d'information Internet / large bande. (2 2018). https: //www.pewinternet.
+org / fiche / internet-haut débit /
+[101] Aidan Pine et Mark Turin. 2017. Revitalisation de la langue. Recherche d'Oxford
+Encyclopédie de la linguistique.
+[102] Francesca Polletta. 1998. Contending stories: Récit dans les mouvements sociaux.
+Sociologie qualitative 21, 4 (1998), 419–446.
+[103] Vinodkumar Prabhakaran, Ben Hutchinson et Margaret Mitchell. 2019. Par-
+Analyse de sensibilité à la turbation pour détecter les biais de modèle non intentionnels. En cours-
+de la Conférence 2019 sur les méthodes empiriques dans le processus de langage naturel-
+et la 9e Conférence internationale conjointe sur le traitement du langage naturel
+(EMNLP-IJCNLP). Association for Computational Linguistics, Hong Kong, Chine,
+5740–5745. https://doi.org/10.18653/v1/D19-1578
+[104] Laura Pulido. 2016. Flint, racisme environnemental et capitalisme racial. Capitalisme
+Nature Socialism 27, 3 (2016), 1–16.
+[105] Xipeng Qiu, Tianxiang Sun, Yige Xu, Yunfan Shao, Ning Dai et Xuanjing
+Huang. 2020. Modèles pré-formés pour le traitement du langage naturel: une enquête.
+arXiv: 2003.08271 [cs.CL]
+[106] Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei et Ilya
+Sutskever. 2019. Les modèles linguistiques sont des apprenants multitâches non supervisés. OpenAI
+Blogue 1, 8 (2019), 9.
+[107] Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang,
+Michael Matena, Yanqi Zhou, Wei Li et Peter J. Liu. 2020. Explorer le
+Limites de l'apprentissage par transfert avec un transformateur de texte en texte unifié. Journal de
+Machine Learning Research 21, 140 (2020), 1–67. http://jmlr.org/papers/v21/20-
+074.html
+[108] Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev et Percy Liang. 2016.
+SQuAD: plus de 100 000 questions pour la compréhension automatique du texte. En cours-
+de la Conférence 2016 sur les méthodes empiriques dans la langue naturelle
+cessation. Association pour la linguistique computationnelle, Austin, Texas, 2383-2392.
+https://doi.org/10.18653/v1/D16-1264
+[109] Sarah T. Roberts, Joel Tetreault, Vinodkumar Prabhakaran et Zeerak Waseem
+(Eds.). 2019. Actes du troisième atelier sur les langues abusives en ligne.
+Association pour la linguistique computationnelle, Florence, Italie . https: //www.aclweb.
+org / anthologie / W19-3500
+[110] Anna Rogers, Olga Kovaleva et Anna Rumshisky. 2021. Une introduction à BERTol-
+ogy: Ce que nous savons sur le fonctionnement de BERT. Transactions de l'Association
+for Computational Linguistics 8 (2021), 842–866.
+[111] Ronald Rosenfeld. 2000. Deux décennies de modélisation statistique du langage: où
+allons-nous d'ici? Proc. IEEE 88, 8 (2000), 1270–1278.
+[112] Corby Rosset. 2020. Turing-NLG: Un modèle de langage à 17 milliards de paramètres par
+Microsoft. Blog Microsoft (2020).
+[113] Victor Sanh, Lysandre Debut, Julien Chaumond et Thomas Wolf. 2019. Dis-
+tilBERT, une version distillée de BERT: plus petit, plus rapide, moins cher et plus léger. arXiv
+préimpression arXiv: 1910.01108 (2019).
+[114] Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A. Smith et Yejin
+Choi. 2020. Cadres de préjugés sociaux: raisonnement sur les implications sociales et de pouvoir
+de la langue. Dans les actes de la 58e réunion annuelle de l'Association pour
+Linguistique computationnelle. Association for Computational Linguistics, en ligne,
+5477–5490. https://doi.org/10.18653/v1/2020.acl-main.486
+[115] Roy Schwartz, Jesse Dodge, Noah A. Smith et Oren Etzioni. 2020. IA verte.
+Commun. ACM 63, 12 (novembre 2020), 54–63. https://doi.org/10.1145/3381831
+[116] Sabine Sczesny, Janine Bosak, Daniel Neff et Birgit Schyns. 2004. Genre
+stéréotypes et attribution des traits de leadership: une comparaison interculturelle.
+Rôles sexuels 51, 11-12 (2004), 631–645.
+[117] Claude Elwood Shannon. 1949. La théorie mathématique de la communication.
+University of Illinois Press, Urbana.
+[118] Sheng Shen, Zhen Dong, Jiayu Ye, Linjian Ma, Zhewei Yao, Amir Gholami,
+Michael W. Mahoney et Kurt Keutzer. 2019. Q-BERT: Ultra basé sur la Hesse
+Quantification de faible précision de BERT. arXiv: 1909.05840 [cs.CL]
+[119] Emily Sheng, Kai-Wei Chang, Premkumar Natarajan et Nanyun Peng. 2019.
+La femme travaillait comme baby-sitter: sur les préjugés dans la génération du langage. Dans
+Actes de la conférence 2019 sur les méthodes empiriques en langage naturel
+Processing et la 9e Conférence internationale conjointe sur le processus de langage naturel
+(EMNLP-IJCNLP). Association for Computational Linguistics, Hong Kong,
+Chine, 3407–3412. https://doi.org/10.18653/v1/D19-1339
+[120] Katie Shilton, Jes A Koepfler et Kenneth R Fleischmann. 2014. Comment voir
+valeurs en informatique sociale: méthodes pour étudier les dimensions des valeurs. Dans Pro-
+ceedings de la 17e conférence ACM sur le travail coopératif assisté par ordinateur et
+l'informatique sociale. 426–435.
+[121] Joonbo Shin, Yoonhyung Lee et Kyomin Jung. 2019. Notation efficace des peines
+Méthode utilisant BERT pour la reconnaissance vocale. Dans Conférence asiatique sur la machine
+Apprentissage. 1081–1093.
+[122] Mohammad Shoeybi, Mostofa Patwary, Raul Puri, Patrick LeGresley, Jared
+Casper et Bryan Catanzaro. 2019. Megatron-lm: Formation de paramètres de plusieurs milliards
+modèles de langage ter utilisant le parallélisme de modèle gpu. préimpression arXiv arXiv: 1909.08053
+(2019).
+[123] Irene Solaiman, Miles Brundage, Jack Clark, Amanda Askell, Ariel Herbert-Voss,
+Jeff Wu, Alec Radford, Gretchen Krueger, Jong Wook Kim, Sarah Kreps et coll.
+2019. Stratégies de diffusion et impacts sociaux des modèles linguistiques. arXiv
+préimpression arXiv: 1908.09203 (2019).
+[124] Karen Spärck Jones. 2004. Le modèle génératif de la modélisation du langage: est-il rationnel?
+Rapport technique. Laboratoire d'informatique, Université de Cambridge.
+[125] Robyn Speer. 2017. ConceptNet Numberbatch 17.04: meilleur, moins stéréotypé
+vecteurs de mots. (2017).
+Article de blog, https://blog.conceptnet.io/2017/04/24/
+________________________________________
+Page 14
+FAccT '21, 3–10 mars 2021, événement virtuel, Canada
+Bender et Gebru, et al.
+conceptnet-numberbatch-17-04-mieux-moins-stéréotypés-vecteurs-de-mots /.
+[126] Steven J. Spencer, Christine Logel et Paul G. Davies. 2016. Stéréotype
+Menace. Revue annuelle de psychologie 67, 1 (2016), 415–437. https://doi.org/
+10.1146 / annurev-psych-073115-103235 arXiv: https: //doi.org/10.1146/annurev-
+psych-073115-103235 PMID: 26361054.
+[127] Katrina Srigley et Lorraine Sutherland. 2019. Décolonisation, indigénisation et
+Apprendre le Biskaaybiiyang sur le terrain: notre parcours d'histoire orale 1. L'Oral
+Revue d'histoire (2019).
+[128] Greg J. Stephens, Lauren J. Silbert, and Uri Hasson. 2010. Speaker–listener
+neural coupling underlies successful communication. Proceedings of the National
+Academy of Sciences 107, 32 (2010), 14425–14430. https://doi.org/10.1073/pnas.
+1008662107 arXiv:https://www.pnas.org/content/107/32/14425.full.pdf
+[129] Emma Strubell, Ananya Ganesh, and Andrew McCallum. 2019. Energy and
+Policy Considerations for Deep Learning in NLP. In Proceedings of the 57th
+Annual Meeting of the Association for Computational Linguistics. 3645–3650.
+[130] Yu Sun, Shuohuan Wang, Yukun Li, Shikun Feng, Xuyi Chen, Han Zhang,
+Xin Tian, Danxiang Zhu, Hao Tian, and Hua Wu. 2019. ERNIE: Enhanced
+Representation through Knowledge Integration. arXiv:1904.09223 [cs.CL]
+[131] Yu Sun, Shuohuan Wang, Yu-Kun Li, Shikun Feng, Hao Tian, Hua Wu et
+Haifeng Wang. 2020. ERNIE 2.0: Un cadre de pré-formation continue pour
+Compréhension de la langue. Lors de la trente-quatrième conférence de l'AAAI sur les
+Intelligence, AAAI 2020, Les trente-deuxièmes applications innovantes de l'artificiel
+Conférence sur le renseignement, IAAI 2020, le dixième symposium de l'AAAI sur l'éducation
+Advances in Artificial Intelligence, EAAI 2020, New York, NY, USA, 7-12 février,
+2020. AAAI Press, 8968–8975. https://aaai.org/ojs/index.php/AAAI/article/
+vue / 6428
+[132] Yi Chern Tan et L Elisa Celis. 2019. Évaluation des préjugés sociaux et intersectionnels
+dans des représentations de mots contextualisées. En avance sur les informations neuronales
+Systèmes de traitement. 13230–13241.
+[133] Ian Tenney, Dipanjan Das et Ellie Pavlick. 2019. BERT redécouvre le Classi-
+cal NLP Pipeline. Dans les actes de la 57e réunion annuelle de l'Association pour
+Linguistique computationnelle. Association pour la linguistique computationnelle, Florence,
+Italie, 4593–4601. https://doi.org/10.18653/v1/P19-1452
+[134] Trieu H. Trinh et Quoc V. Le. 2019. Une méthode simple pour le bon sens
+Raisonnement. arXiv: 1806.02847 [cs.AI]
+[135] Marlon Twyman, Brian C Keegan et Aaron Shaw. 2017. Black Lives Mat-
+ter sur Wikipedia: mémoire collective et collaboration autour des réseaux sociaux en ligne
+mouvements. Dans les actes de la conférence ACM 2017 sur le support informatique
+Travail coopératif et informatique sociale. 1400–1412.
+[136] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+Aidan N Gomez, Łukasz Kaiser et Illia Polosukhin. 2017. L'attention est tout ce que vous
+avoir besoin. In Advances in Neural Information Processing Systems. 5998–6008.
+[137] Rob Voigt, David Jurgens, Vinodkumar Prabhakaran, Dan Jurafsky et Yulia
+Tsvetkov. 2018. RtGender: un corpus pour étudier les réponses différentielles aux
+Le genre. Dans les actes de la onzième conférence internationale sur la ré-
+sources et évaluation (LREC 2018). Association européenne des ressources linguistiques
+(ELRA), Miyazaki, Japon. https://www.aclweb.org/anthology/L18-1445
+[138] Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy et Samuel
+Archer. 2018. GLUE: Une plateforme d'analyse et de benchmark multi-tâches pour
+Compréhension du langage naturel. Dans les actes de l'atelier 2018 du EMNLP
+BlackboxNLP: analyse et interprétation des réseaux de neurones pour la PNL. Association
+for Computational Linguistics, Bruxelles, Belgique, 353–355. https://doi.org/10.
+18653 / v1 / W18-5446
+[139] Zeerak Waseem, Thomas Davidson, Dana Warmsley et Ingmar Weber. 2017.
+Comprendre l'abus: une typologie des sous-tâches de détection abusive du langage. Dans
+Actes du premier atelier sur les langues abusives en ligne. Association pour
+Computational Linguistics, Vancouver, BC, Canada, 78–84. https://doi.org/10.
+18653 / v1 / W17-3012
+[140] Joseph Weizenbaum. 1976. Puissance informatique et raison humaine: du jugement
+au calcul. WH Freeman & Co.
+[141] Monnica T Williams. 2019. La psychologie ne peut se permettre d'ignorer les multiples
+Dommages causés par les microagressions. Perspectives sur la science psychologique 15
+(2019), 38 - 43.
+[142] Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement De-
+langue, Anthony Moi, Pierric Cistac, Tim Rault, Remi Louf, Morgan Funtowicz,
+Joe Davison, Sam Shleifer, Patrick von Platen, Clara Ma, Yacine Jernite, Julien Plu,
+Canwen Xu, Teven Le Scao, Sylvain Gugger, Mariama Drame, Quentin Lhoest,
+et Alexander Rush. 2020. Transformers: un langage naturel à la pointe de la technologie
+Traitement. Dans les actes de la conférence 2020 sur les méthodes empiriques en
+Traitement du langage: démonstrations du système. Association pour le calcul
+Linguistique, en ligne, 38–45. https://doi.org/10.18653/v1/2020.emnlp-demos.6
+[143] Banque mondiale. 2018. Particuliers utilisant Internet. (2018). https: //data.worldbank.
+org / indicateur / IT.NET.USER.ZS? end = 2017 & locations = US & start = 2015
+[144] Shijie Wu et Mark Dredze. 2020. Toutes les langues sont-elles créées de la même manière
+BERT multilingue?. Dans les actes du 5e atelier sur la représentation
+Apprendre pour la PNL. Association for Computational Linguistics, en ligne, 120–130.
+https://doi.org/10.18653/v1/2020.repl4nlp-1.16
+[145] Dongling Xiao, Han Zhang, Yukun Li, Yu Sun, Hao Tian, Hua Wu et Haifeng
+Wang. 2020. ERNIE-GEN: une pré-formation et une mise au point multi-flux améliorées
+Cadre pour la génération de langage naturel. préimpression arXiv arXiv: 2001.11314
+(2020).
+[146] Canwen Xu, Wangchunshu Zhou, Tao Ge, Furu Wei et Ming Zhou. 2020. BERT-
+of-Theseus: Compression de BERT par remplacement progressif du module. En procédure
+de la Conférence 2020 sur les méthodes empiriques dans le traitement du langage naturel
+(EMNLP). Association for Computational Linguistics, en ligne, 7859–7869. https:
+//doi.org/10.18653/v1/2020.emnlp-main.633
+[147] Peng Xu, Chien-Sheng Wu, Andrea Madotto, and Pascale Fung. 2019. Clickbait?
+Sensational Headline Generation with Auto-tuned Reinforcement Learning. In
+Proceedings of the 2019 Conference on Empirical Methods in Natural Language
+Processing and the 9th International Joint Conference on Natural Language Process-
+ing (EMNLP-IJCNLP). Association for Computational Linguistics, Hong Kong,
+China, 3065–3075. https://doi.org/10.18653/v1/D19-1303
+[148] Linting Xue, Noah Constant, Adam Roberts, Mihir Kale, Rami Al-Rfou, Aditya
+Siddhant, Aditya Barua, and Colin Raffel. 2020. mT5: A massively multilingual
+pre-trained text-to-text transformer. arXiv:2010.11934 [cs.CL]
+[149] Wei Yang, Yuqing Xie, Aileen Lin, Xingyu Li, Luchen Tan, Kun Xiong, Ming
+Li et Jimmy Lin. 2019. Réponse aux questions de domaine ouvert de bout en bout avec
+BERTserini. Dans les actes de la conférence 2019 du chapitre nord-américain
+de l'Association pour la linguistique computationnelle (démonstrations). Association
+pour la linguistique computationnelle, Minneapolis, Minnesota, 72–77. https://doi.org/
+10.18653 / v1 / N19-4013
+[150] Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Russ R Salakhutdinov,
+et Quoc V Le. 2019. Xlnet: pré-apprentissage autorégressif généralisé pour la langue
+entente. In Advances in Neural Information Processing Systems. 5753–5763.
+[151] Ze Yang, Can Xu, Wei Wu et Zhoujun Li. 2019. Lire, assister et commenter:
+Une architecture profonde pour la génération automatique de commentaires d'actualité. En cours-
+de la Conférence 2019 sur les méthodes empiriques dans le processus de langage naturel-
+et la 9e Conférence internationale conjointe sur le traitement du langage naturel
+(EMNLP-IJCNLP). Association for Computational Linguistics, Hong Kong, Chine,
+5077–5089. https://doi.org/10.18653/v1/D19-1512
+[152] Meg Young, Lassana Magassa et Batya Friedman. 2019. Vers l'inclusion
+Conception de politiques technologiques: une méthode pour les voix sous-représentées pour renforcer la technologie
+Documents de politique. Ethics and Information Technology (2019), 1–15.
+[153] Ofir Zafrir, Guy Boudoukh, Peter Izsak et Moshe Wasserblat. 2019. Q8BERT:
+BERT 8 bits quantifié. arXiv: 1910.06188 [cs.CL]
+[154] Nico Zazworka, Rodrigo O. Spínola, Antonio Vetro ', Forrest Shull et Carolyn
+Marin. 2013. Une étude de cas sur l'identification efficace de la dette technique. Dans
+Actes de la 17e Conférence internationale sur l'évaluation et l'évaluation
+en génie logiciel (Porto de Galinhas, Brésil) (EASE '13). Association pour
+Computing Machinery, New York, NY, États-Unis, 42–47. https://doi.org/10.1145/
+2460999.2461005
+[155] Rowan Zellers, Yonatan Bisk, Roy Schwartz et Yejin Choi. 2018. SWAG:
+Un ensemble de données contradictoires à grande échelle pour l'inférence de sens commun ancré. Dans
+Actes de la conférence 2018 sur les méthodes empiriques en langage naturel
+Traitement. Association pour la linguistique computationnelle, Bruxelles, Belgique, 93-104.
+https://doi.org/10.18653/v1/D18-1009
+[156] Haoran Zhang, Amy X Lu, Mohamed Abdalla, Matthew McDermott et
+Marzyeh Ghassemi. 2020. Mots blessants: quantifier les biais dans les contextes cliniques-
+imbrications de mots tual. Dans les actes de la conférence ACM sur la santé, l'inférence,
+et apprentissage. 110–120.
+[157] Jieyu Zhao, Tianlu Wang, Mark Yatskar, Ryan Cotterell, Vicente Ordonez et
+Kai-Wei Chang. 2019. Biais de genre dans les incorporations de mots contextualisés. Dans
+Actes de la conférence 2019 de la section nord-américaine de l'Associ-
+ation for Computational Linguistics: Human Language Technologies, Volume 1
+(Documents longs et courts). Association for Computational Linguistics, Minneapolis,
+Minnesota, 629–634. https://doi.org/10.18653/v1/N19-1064
+[158] Li Zhou, Jianfeng Gao, Di Li et Heung-Yeung Shum. 2020. La conception et
+Implémentation de XiaoIce, un chatbot social empathique. Lin de calcul
+guistics 46, 1 (mars 2020), 53–93. https://doi.org/10.1162/coli_a_00368
+
